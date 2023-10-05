@@ -14,12 +14,15 @@ function useCookieDough() {
   };
 
   const getPrice = (dozens, basePrice) => {
+    const maxDiscountRate = 0.25;
     // TODO: find the max discount rate.
     // TODO: If the "dozens" is not found in the DISCOUNT_TABLE, use the max discount rate
 
-    const discountRate = DISCOUNT_TABLE[dozens];
+    const discountRate = DISCOUNT_TABLE.hasOwnProperty(dozens)
+      ? DISCOUNT_TABLE[dozens]
+      : maxDiscountRate;
 
-    return price * (1 - discountRate);
+    return basePrice * (1 - discountRate);
   };
 
   return { getCookieDough, getPrice };

@@ -1,24 +1,21 @@
 //TODO: replace "oneDOzen", "twoDozen" with "basePrice"
 
 const cookieDough = [
+  { id: 1, title: "Chocolate Chip Cookie", basePrice: 10 },
   {
-    title: "Chocolate Chip Cookie",
+    id: 2,
+    title: "Snickerdoodles",
     basePrice: 10,
   },
   {
-    title: "Snickerdoodles",
-    oneDozen: 10,
-    twoDozen: 18,
-  },
-  {
+    id: 3,
     title: "Peanut Butter",
-    oneDozen: 10,
-    twoDozen: 18,
+    basePrice: 10,
   },
   {
+    id: 4,
     title: "Sugar Cookies",
-    oneDozen: 10,
-    twoDozen: 18,
+    basePrice: 10,
   },
 ];
 

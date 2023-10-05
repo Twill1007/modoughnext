@@ -2,12 +2,14 @@
 
 import Image from "next/image";
 import useCookieDough from "@/hooks/use-cookieDough";
-import { use } from "react";
+import { useState } from "react";
 
 export default function Home() {
   const { getCookieDough, getPrice } = useCookieDough();
 
-  const cookieArray = use(getCookieDough());
+  const price = getPrice();
+
+  const cookieArray = useState(getCookieDough());
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
@@ -15,7 +17,7 @@ export default function Home() {
         {cookieArray.map((cookie, index) => (
           <li key={index}>
             {cookie.title} - 1 Dozen: ${cookie.oneDozen}, 2 Dozen: $
-            {cookie.twoDozen} {cookie.eightDozen}
+            {cookie.twoDozen}
           </li>
         ))}
 
