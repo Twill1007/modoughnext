@@ -17,6 +17,16 @@ export const cartSlice = createSlice({
   },
 });
 
+// Function to return the cart items.
+export const selectItems = (state) => {
+  return state.cookieDough;
+};
+
+//Function to return specific items within the cart.
+export const selectItemsById = (id) => (state) => {
+  return state.cookieDough.filter((item) => item.id === id);
+};
+
 export const { addItemToCart, removeItemFromCartById } = cartSlice.actions;
 
 export default cartSlice.reducer;
