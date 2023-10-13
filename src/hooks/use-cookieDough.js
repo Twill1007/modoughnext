@@ -1,10 +1,8 @@
-import React, { useState } from "react";
+// import React, { useState } from "react";
 import cookieDough from "../constants/cookie-dough";
 import { DISCOUNT_TABLE } from "@/constants/discount-table";
 
 function useCookieDough() {
-  const [cookieArray, setCookieArray] = useState(cookieDough);
-
   const getCookieDough = async () => {
     return new Promise((resolve) => {
       setTimeout(() => {
