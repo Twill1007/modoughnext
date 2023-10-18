@@ -1,8 +1,9 @@
 "use client";
 import useCart from "@/hooks/use-cart";
-import Image from "next/image";
+
 import useCookieDough from "@/hooks/use-cookieDough";
 import { useState } from "react";
+import cookieDough from "@/constants/cookie-dough";
 
 export default function Home() {
   const { addItem, removeItem, items } = useCart();
@@ -11,20 +12,29 @@ export default function Home() {
   const cookieArray = useState(getCookieDough());
 
   const addItemHandler = () => {
-    const cookieDough = {
-      title: "Chocolate Chip",
-      quantity: 1,
-      price: getDiscountedPrice(1, 10),
-    };
-    addItem(cookieDough);
+    const selectedCookie = cookieDough.find((cookie) => cookie.id === 1);
+    if (selectedCookie) {
+      const cookieItem = {
+        id: selectedCookie.id,
+        title: selectedCookie.title,
+        price: getDiscountedPrice(selectedCookie.id, selectedCookie.basePrice),
+      };
+      addItem(cookieItem);
+      console.log(cookieItem);
+    }
+  };
+
+  const removeItemHandler = () => {
+    removeItem(1);
   };
 
   return (
     <main>
       <div>
-        <button onClick={addItemHandler}>Add Item</button>
+        <button onClick={addItemHandler}>Add</button> <br />
+        <button onClick={removeItemHandler}>Remove</button>
         {items.map((item) => (
-          <div>{item.title}</div>
+          <li key={item.id}>{item.title}</li>
         ))}
       </div>
     </main>
