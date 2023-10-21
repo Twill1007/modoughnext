@@ -20,7 +20,6 @@ export default function Home() {
         price: getDiscountedPrice(selectedCookie.id, selectedCookie.basePrice),
       };
       addItem(cookieItem);
-      console.log(cookieItem);
     }
   };
 
@@ -34,7 +33,10 @@ export default function Home() {
         <button onClick={addItemHandler}>Add</button> <br />
         <button onClick={removeItemHandler}>Remove</button>
         {items.map((item) => (
-          <li key={item.id}>{item.title}</li>
+          <li key={item.id}>
+            {item.title}
+            {item.price}
+          </li>
         ))}
       </div>
     </main>
