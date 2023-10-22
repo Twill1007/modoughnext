@@ -1,9 +1,9 @@
 import Link from "next/link";
 
-const CookieDoughPage = () => {
+const OrderPage = () => {
   return (
     <div>
-      Cookie Dough Page
+      Order Form Page/Cart Summary
       <Link href="/cookie-dough">
         <button>Go Home</button>
       </Link>
@@ -11,4 +11,4 @@ const CookieDoughPage = () => {
   );
 };
 
-export default CookieDoughPage;
+export default OrderPage;

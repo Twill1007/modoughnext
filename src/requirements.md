@@ -15,39 +15,31 @@
 ### Menu Page
 
 - CC & SD Buttons
-- Cookie Text
+- Cookie Title Text
 
 ### Cookie Page
 
 - Title of Cookie
+- Prices of Cookies
 - Picture of Cookie
 - Dropdown Menu
 - Order Form
 
 ### Order Form Page
 
-- Order Form
+- Order Form (Name, Address, Email, Submit Btn)
+- Order Summary (Cookie Title, Dozens, Price, edit Btn)
 
 ### About Us Page
 
 - Image of Mo
 - About Mo Text
-
-### Cart Page
-
-- User's Cart Order
-- Order Button
-- Edit Order Button
-- Delete Order Button
-
-### User's Information Page
-
-- Order Form (User's name, address, email)
-- Payment Form
-- Submit Button
-- Cancel Button
+- Cart Summary
+  - User's Cart Order
+  - Order Button
+  - Edit Order Button
+  - Delete Order Button
 
 ### Modal
 
-- Review User's Data and Order Text
-- Submit Order
+- Overlay Zelle/Venmo Information
