@@ -4,7 +4,7 @@ const OrderPage = () => {
   return (
     <div>
       Order Form Page/Cart Summary
-      <Link href="/cookie-dough">
+      <Link href="/cookie-menu">
         <button>Go Home</button>
       </Link>
     </div>
