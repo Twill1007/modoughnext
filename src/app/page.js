@@ -16,8 +16,12 @@ export default function Home() {
     if (selectedCookie) {
       const cookieItem = {
         id: selectedCookie.id,
+        quantity: selectedCookie.quantity,
         title: selectedCookie.title,
-        price: getDiscountedPrice(selectedCookie.id, selectedCookie.basePrice),
+        price: getDiscountedPrice(
+          selectedCookie.quantity,
+          selectedCookie.basePrice
+        ),
       };
       addItem(cookieItem);
     }
