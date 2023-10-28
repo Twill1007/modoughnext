@@ -4,9 +4,11 @@ const HomePage = () => {
   return (
     <div>
       Home Page
-      <Link href="/cookie-home">
-        <button>Go Home</button>
-      </Link>
+      <div>
+        <Link href="/cookie-menu">
+          <button>Menu</button>
+        </Link>
+      </div>
     </div>
   );
 };
