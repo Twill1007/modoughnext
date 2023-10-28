@@ -42,10 +42,10 @@ export default function Home() {
       </div>
       <h1>Menu Page</h1>
 
-      <Link href="/cookie-menu/chocolate-chip">
+      <Link href="/cookie-menu/cc">
         <button>Chocolate Chip Cookie</button>
       </Link>
-      <Link href="/cookie-menu/snickerdoodles">
+      <Link href="/cookie-menu/sd">
         <button>Snickerdoodles</button>
       </Link>
       {/* <div>

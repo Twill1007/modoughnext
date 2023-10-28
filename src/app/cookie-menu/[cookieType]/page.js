@@ -1,11 +1,20 @@
 // "use client";
-
-// import { useRouter } from "next/navigation";
+import { Fragment } from "react";
+import cookieDough from "@/constants/cookie-dough";
+import ItemSelector from "@/components/itemSelector";
 
 function CookieOrder({ params }) {
-  // const router = useRouter();
+  const selectedCookie = cookieDough.find(
+    (cookie) => cookie.id === params.cookieType
+  );
 
-  return <div>Cookie Type: {params.cookieType}</div>;
+  return (
+    <Fragment>
+      <div>{selectedCookie.title}</div>
+      <div>${selectedCookie.basePrice}/dozen</div>
+      <ItemSelector />
+    </Fragment>
+  );
 }
 
 export default CookieOrder;
