@@ -35,18 +35,27 @@ export default function Home() {
   return (
     <main>
       <div>
+        <Link href="/cookie-home">Home</Link>
+      </div>
+      <div>
+        <Link href="/cookie-about">About Us</Link>
+      </div>
+      <h1>Menu Page</h1>
+      <Link href="/cookie-order">
+        <button>Chocolate Chip Cookie</button>
+      </Link>
+      <button>Snickerdoodles</button>
+      {/* <div>
         <button onClick={addItemHandler}>Add</button> <br />
         <button onClick={removeItemHandler}>Remove</button>
         {items.map((item) => (
           <li key={item.id}>
             {item.title}
+            {item.quantity}
             {item.price}
           </li>
         ))}
-      </div>
-      <Link href="/cookie-home">
-        <button>Go Home</button>
-      </Link>
+      </div> */}
     </main>
   );
 }

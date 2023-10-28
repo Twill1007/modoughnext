@@ -3,10 +3,8 @@ import Link from "next/link";
 const OrderPage = () => {
   return (
     <div>
-      Order Form Page/Cart Summary
-      <Link href="/cookie-menu">
-        <button>Go Home</button>
-      </Link>
+      <Link href="/cookie-menu">Home</Link>
+      <h1> Order Form Page/Cart Summary</h1>
     </div>
   );
 };
