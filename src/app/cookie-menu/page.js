@@ -41,10 +41,12 @@ export default function Home() {
         <Link href="/cookie-about">About Us</Link>
       </div>
       <h1>Menu Page</h1>
-      <Link href="/cookie-order">
+      <Link href="/cookie-order/chocolate-chip">
         <button>Chocolate Chip Cookie</button>
       </Link>
-      <button>Snickerdoodles</button>
+      <Link href="/cookie-order/snickerdoodle">
+        <button>Snickerdoodles</button>
+      </Link>
       {/* <div>
         <button onClick={addItemHandler}>Add</button> <br />
         <button onClick={removeItemHandler}>Remove</button>
