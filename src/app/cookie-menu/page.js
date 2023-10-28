@@ -41,10 +41,11 @@ export default function Home() {
         <Link href="/cookie-about">About Us</Link>
       </div>
       <h1>Menu Page</h1>
-      <Link href="/cookie-order/chocolate-chip">
+
+      <Link href="/cookie-menu/chocolate-chip">
         <button>Chocolate Chip Cookie</button>
       </Link>
-      <Link href="/cookie-order/snickerdoodle">
+      <Link href="/cookie-menu/snickerdoodles">
         <button>Snickerdoodles</button>
       </Link>
       {/* <div>
