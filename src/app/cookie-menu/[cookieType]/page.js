@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 import { Fragment } from "react";
 import cookieDough from "@/constants/cookie-dough";
 import ItemSelector from "@/components/itemSelector";
@@ -11,7 +11,7 @@ function CookieOrder({ params }) {
   return (
     <Fragment>
       <div>{selectedCookie.title}</div>
-      <div>${selectedCookie.basePrice}/dozen</div>
+
       <ItemSelector />
     </Fragment>
   );
