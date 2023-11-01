@@ -3,9 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { addItemToCart } from "@/state/cart-slice";
 import { removeItemFromCartById } from "@/state/cart-slice";
-import { cartSlice } from "@/state/cart-slice";
 
-function ItemSelector() {
+function ItemSelector(props) {
   const selectCart = (state) => state.cart;
   const cart = useSelector(selectCart);
   const dispatch = useDispatch();
@@ -14,7 +13,6 @@ function ItemSelector() {
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
   };
-  console.log(cart);
 
   const handleSubmit = () => {
     if (selectedValue !== "Select") {
@@ -47,7 +45,12 @@ function ItemSelector() {
         Delete Item
       </button>
       <Link href="/cookie-home">Home</Link>
-      {selectedValue === "select" && <div>{selectedValue}</div>}
+      {selectedValue === "select" && (
+        <div>
+          {selectedValue} {props.cookieType.title}
+        </div>
+      )}
+      {/* {selectedValue.id === "cc" && <div>{props.cookieType.title}</div>} */}
     </Fragment>
   );
 }
