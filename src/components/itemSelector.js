@@ -17,9 +17,14 @@ function ItemSelector(props) {
     const fetchCookieDough = async () => {
       try {
         const cookieDough = await getCookieDough();
-        console.log("Cookie Dough:", cookieDough);
+        //cookieDough holds the array of cookies
+        //This is how I access the titles within the array.
+        cookieDough.forEach((cookie) => {
+          console.log("Cookie Title:", cookie.title);
+          console.log("Cookie Base Price:", cookie.basePrice);
+        });
       } catch (error) {
-        console.error("Error fetching cookie dough", error);
+        console.log("Error fetching", error);
       }
     };
     fetchCookieDough();
@@ -48,29 +53,27 @@ function ItemSelector(props) {
     dispatch(removeItemFromCartById(selectedValue));
   };
 
-  const cookieDoughData = getCookieDough();
-  console.log("What is this?", cookieDoughData);
-
   return (
     <Fragment>
-      <select value={selectedValue} onChange={handleDropdownChange}>
-        <option value="Select">--Please Select a Cookie--</option>
-        {Array.isArray(cookieDoughData) &&
-          cookieDoughData.map((cookie) => (
-            <option key={cookie.id} value={cookie.id}>
-              {cookie.title}
-            </option>
+      <form>
+        <select value={selectedValue} onChange={handleDropdownChange}>
+          <option value="Select">--Please Select a Cookie--</option>
+          <option value="One Dozen for $10">One Dozen</option>
+          <option value="Two Dozen for $18">Two Dozen</option>
+          <option value="Three Dozen for $24">Three Dozen</option>
+          <option value="Four Dozen for $30">Four Dozen</option>
+          <option value="Five Dozen for $35">Five Dozen</option>
+        </select>
+        <button onClick={handleSubmit}>Complete Order</button>
+        <div>
+          {cart.map((item) => (
+            <div key={item.id}>{item.title}</div>
           ))}
-      </select>
-      <button onClick={handleSubmit}>Complete Order</button>
-      <div>
-        {cart.map((item) => (
-          <div key={item.id}>{item.title}</div>
-        ))}
-      </div>
-      <button onClick={() => handleRemoveItem(selectedValue)}>
-        Delete Item
-      </button>
+        </div>
+        <button onClick={() => handleRemoveItem(selectedValue)}>
+          Delete Item
+        </button>
+      </form>
       <Link href="/cookie-home">Home</Link>
       {selectedValue === "select" && (
         <div>
