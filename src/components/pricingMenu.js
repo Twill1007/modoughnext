@@ -3,7 +3,9 @@ import useCookieDough from "../hooks/use-cookieDough";
 import { getDiscountedPrice } from "../hooks/use-cookieDough";
 
 function PricingMenu() {
-  return <div>prices</div>;
+  let cookies = useCookieDough();
+
+  return <div>Prices</div>;
 }
 
 export default PricingMenu;
