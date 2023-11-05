@@ -3,10 +3,12 @@ import { useDispatch, useSelector } from "react-redux";
 import Link from "next/link";
 import { addItemToCart } from "@/state/cart-slice";
 import { removeItemFromCartById } from "@/state/cart-slice";
+import useCart from "@/hooks/use-cart";
+import Button from "@mui/material/Button";
 
 function ItemSelector(props) {
-  const selectCart = (state) => state.cart;
-  const cart = useSelector(selectCart);
+  const { items, addItem, removeItem } = useCart();
+
   const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState("Select");
 
@@ -38,15 +40,21 @@ function ItemSelector(props) {
         <option value="Four Dozen for $30">Four Dozen</option>
         <option value="Five Dozen for $35">Five Dozen</option>
       </select>
-      <button onClick={handleSubmit}>Complete Order</button>
+
+      <Button variant="contained" onClick={handleSubmit}>
+        Complete Order
+      </Button>
       <div>
-        {cart.map((item) => (
+        {items.map((item) => (
           <div key={item.id}>{item.title}</div>
         ))}
       </div>
-      <button onClick={() => handleRemoveItem(selectedValue)}>
+      <Button
+        variant="contained"
+        onClick={() => handleRemoveItem(selectedValue)}
+      >
         Delete Item
-      </button>
+      </Button>
 
       <Link href="/cookie-home">Home</Link>
       {selectedValue === "select" && (
