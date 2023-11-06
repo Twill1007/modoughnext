@@ -5,6 +5,11 @@ import { addItemToCart } from "@/state/cart-slice";
 import { removeItemFromCartById } from "@/state/cart-slice";
 import useCart from "@/hooks/use-cart";
 import Button from "@mui/material/Button";
+import Box from "@mui/material/Box";
+import InputLabel from "@mui/material/InputLabel";
+import MenuItem from "@mui/material/MenuItem";
+import FormControl from "@mui/material/FormControl";
+import Select from "@mui/material/Select";
 
 function ItemSelector(props) {
   const { items, addItem, removeItem } = useCart();
@@ -32,37 +37,45 @@ function ItemSelector(props) {
 
   return (
     <Fragment>
-      <select value={selectedValue} onChange={handleDropdownChange}>
-        <option value="Select">--Please Select a Cookie--</option>
-        <option value="One Dozen for $10">One Dozen for $10</option>
-        <option value="Two Dozen for $18">Two Dozen</option>
-        <option value="Three Dozen for $24">Three Dozen</option>
-        <option value="Four Dozen for $30">Four Dozen</option>
-        <option value="Five Dozen for $35">Five Dozen</option>
-      </select>
+      <Box sx={{ minWidth: 30 }}>
+        <FormControl fullWidth>
+          <InputLabel id="demo-simple-select-label">Select Quantity</InputLabel>
+          <Select
+            labelId="demo-simple-select-label"
+            id="demo-simple-select-label"
+            value={selectedValue}
+            label="Quantity"
+            onChange={handleDropdownChange}
+          >
+            <MenuItem value={1}>One Dozen</MenuItem>
+            <MenuItem value={2}>Two Dozen</MenuItem>
+            <MenuItem value={3}>Three Dozen</MenuItem>
+          </Select>
 
-      <Button variant="contained" onClick={handleSubmit}>
-        Complete Order
-      </Button>
-      <div>
-        {items.map((item) => (
-          <div key={item.id}>{item.title}</div>
-        ))}
-      </div>
-      <Button
-        variant="contained"
-        onClick={() => handleRemoveItem(selectedValue)}
-      >
-        Delete Item
-      </Button>
+          <Button variant="contained" onClick={handleSubmit}>
+            Complete Order
+          </Button>
+          <div>
+            {items.map((item) => (
+              <div key={item.id}>{item.title}</div>
+            ))}
+          </div>
+          <Button
+            variant="contained"
+            onClick={() => handleRemoveItem(selectedValue)}
+          >
+            Delete Item
+          </Button>
 
-      <Link href="/cookie-home">Home</Link>
-      {selectedValue === "select" && (
-        <div>
-          {selectedValue} {props.cookieType.title}
-        </div>
-      )}
-      {/* {selectedValue.id === "cc" && <div>{props.cookieType.title}</div>} */}
+          <Link href="/cookie-home">Home</Link>
+          {selectedValue === "select" && (
+            <div>
+              {selectedValue} {props.cookieType.title}
+            </div>
+          )}
+          {/* {selectedValue.id === "cc" && <div>{props.cookieType.title}</div>} */}
+        </FormControl>
+      </Box>
     </Fragment>
   );
 }
