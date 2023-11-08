@@ -23,12 +23,6 @@ export default function Home() {
 
   return (
     <main>
-      <div>
-        <Link href="/cookie-home">Home</Link>
-      </div>
-      <div>
-        <Link href="/cookie-about">About Us</Link>
-      </div>
       <h1>Menu Page</h1>
       <CookieButton />
       {/* <div>

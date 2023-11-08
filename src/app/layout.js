@@ -1,11 +1,13 @@
 import Head from "next/head";
 import ReduxProvider from "@/store/reduxProvider";
+import NavBar from "@/components/NavBar";
+
 import "../app/globals.css";
 
 export default function RootLayout({ children }) {
   return (
     <>
-      <Head>
+      {/* <Head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link
           rel="preconnect"
@@ -16,10 +18,17 @@ export default function RootLayout({ children }) {
           rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700&display=swap"
         />
-      </Head>
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        />
+      </Head> */}
       <html lang="en">
         <ReduxProvider>
-          <body>{children}</body>
+          <body>
+            <NavBar />
+            {children}
+          </body>
         </ReduxProvider>
       </html>
     </>

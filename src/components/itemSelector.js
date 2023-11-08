@@ -37,45 +37,48 @@ function ItemSelector(props) {
 
   return (
     <Fragment>
-      <Box sx={{ minWidth: 30 }}>
+      {/* <Box sx={{ minWidth: 30 }}>
         <FormControl fullWidth>
-          <InputLabel id="demo-simple-select-label">Select Quantity</InputLabel>
-          <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select-label"
-            value={selectedValue}
-            label="Quantity"
-            onChange={handleDropdownChange}
-          >
-            <MenuItem value={1}>One Dozen</MenuItem>
-            <MenuItem value={2}>Two Dozen</MenuItem>
-            <MenuItem value={3}>Three Dozen</MenuItem>
-          </Select>
+          <InputLabel id="demo-simple-select-label">Select Quantity</InputLabel> */}
+      <select
+        // labelId="demo-simple-select-label"
+        // id="demo-simple-select-label"
+        value={selectedValue}
+        label="Quantity"
+        onChange={handleDropdownChange}
+      >
+        <option value="1Dozen">One Dozen</option>
+        <option value="2Dozen">Two Dozen</option>
+        <option value="3Dozen">Three Dozen</option>
+      </select>
 
-          <Button variant="contained" onClick={handleSubmit}>
-            Complete Order
-          </Button>
-          <div>
-            {items.map((item) => (
-              <div key={item.id}>{item.title}</div>
-            ))}
-          </div>
-          <Button
-            variant="contained"
-            onClick={() => handleRemoveItem(selectedValue)}
-          >
-            Delete Item
-          </Button>
+      <button
+        // variant="contained"
+        onClick={handleSubmit}
+      >
+        Complete Order
+      </button>
+      <div>
+        {items.map((item) => (
+          <div key={item.id}>{item.title}</div>
+        ))}
+      </div>
+      <button
+        // variant="contained"
+        onClick={() => handleRemoveItem(selectedValue)}
+      >
+        Delete Item
+      </button>
 
-          <Link href="/cookie-home">Home</Link>
-          {selectedValue === "select" && (
-            <div>
-              {selectedValue} {props.cookieType.title}
-            </div>
-          )}
-          {/* {selectedValue.id === "cc" && <div>{props.cookieType.title}</div>} */}
-        </FormControl>
-      </Box>
+      <Link href="/cookie-home">Home</Link>
+      {selectedValue === "select" && (
+        <div>
+          {selectedValue} {props.cookieType.title}
+        </div>
+      )}
+      {/* {selectedValue.id === "cc" && <div>{props.cookieType.title}</div>} */}
+      {/* </FormControl>
+      </Box> */}
     </Fragment>
   );
 }

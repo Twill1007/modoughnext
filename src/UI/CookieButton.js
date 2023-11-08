@@ -1,5 +1,5 @@
 import * as React from "react";
-import Button from "@mui/material/Button";
+// import Button from "@mui/material/Button";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import useCookieDough from "@/hooks/use-cookieDough";
@@ -26,7 +26,7 @@ export default function CookieButton() {
           cookieData.map((cookie, index) => (
             <div key={index}>
               <Link href={"cookie-menu/" + cookie.id}>
-                <Button variant="contained">{cookie.title}</Button>
+                <button>{cookie.title}</button>
               </Link>
             </div>
           ))
