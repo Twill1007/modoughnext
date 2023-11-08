@@ -14,21 +14,21 @@ function NavBar() {
     <header>
       <h3>Logo</h3>
       <nav ref={navRef}>
-        <Link className="navLink" href="/cookie-home">
+        <Link className="navLink" onClick={showNavBar} href="/cookie-home">
           Home
         </Link>
-        <Link className="navLink" href="/cookie-about">
+        <Link className="navLink" onClick={showNavBar} href="/cookie-about">
           About
         </Link>
-        <Link className="navLink" href="/cookie-menu">
+        <Link className="navLink" onClick={showNavBar} href="/cookie-menu">
           Menu
         </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
-          <FaTimes />
+          <FaTimes className="faTimes" />
         </button>
       </nav>
       <button className="nav-btn" onClick={showNavBar}>
-        <FaBars />
+        <FaBars className="faBars" />
       </button>
     </header>
   );

@@ -4,13 +4,13 @@
 * {
   font-family: "Handlee", cursive;
   text-decoration: none;
-  background-color: #8fd4c5;
+  background-color: var(--mainColorLight);
   color: black;
 }
 
 :root {
   --mainColor: #24a388;
-  --mainColorLight: #5165b1;
+  --mainColorLight: #8fd4c5;
   --secondaryColor: black;
   --textColor: #eee;
 }
@@ -25,9 +25,26 @@ header {
   color: var(--textColor);
 }
 
+header h3 {
+  background-color: var(--mainColor);
+  font-size: 1.5rem;
+  color: var(--textColor);
+}
+.faTimes {
+  background-color: var(--mainColor);
+}
+.faBars {
+  background-color: var(--mainColor);
+}
+
+nav {
+  background-color: var(--mainColor);
+}
+
 .navLink {
   margin: 0 2rem;
   color: var(--textColor);
+  background-color: var(--mainColor);
   text-decoration: none;
   font-size: 1.5rem;
 }
@@ -53,6 +70,15 @@ header .nav-btn {
     visibility: visible;
     opacity: 1;
   }
+
+  header .responsive_nav {
+    transform: none;
+  }
+  nav .nav-close-btn {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
   header nav {
     position: fixed;
     top: 0;
@@ -64,17 +90,8 @@ header .nav-btn {
     align-items: center;
     justify-content: center;
     gap: 1.5rem;
-    background-color: var(--mainColor);
-    /* transition: 0.5s; */
+    transition: 0.5s;
     transform: translateY(-100vh);
-  }
-  header .responsive_nav {
-    transform: none;
-  }
-  nav .nav-close-btn {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
   }
 }
 
@@ -82,18 +99,7 @@ body {
   min-height: 100vh;
 }
 
-h1 {
-  font-size: large;
-}
-
 /* a {
   text-decoration: none;
   color: black;
 } */
-
-.nav-btn {
-  background-color: red;
-}
-.nav-close-btn {
-  background-color: aqua;
-}

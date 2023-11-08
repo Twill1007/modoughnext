@@ -4,6 +4,7 @@ import Link from "next/link";
 import { addItemToCart } from "@/state/cart-slice";
 import { removeItemFromCartById } from "@/state/cart-slice";
 import useCart from "@/hooks/use-cart";
+import styles from "../app/itemSelector.css";
 import Button from "@mui/material/Button";
 import Box from "@mui/material/Box";
 import InputLabel from "@mui/material/InputLabel";
@@ -47,12 +48,14 @@ function ItemSelector(props) {
         label="Quantity"
         onChange={handleDropdownChange}
       >
+        <option value="Select">--Select--</option>
         <option value="1Dozen">One Dozen</option>
         <option value="2Dozen">Two Dozen</option>
         <option value="3Dozen">Three Dozen</option>
       </select>
 
       <button
+        className="dropDown"
         // variant="contained"
         onClick={handleSubmit}
       >
@@ -64,6 +67,7 @@ function ItemSelector(props) {
         ))}
       </div>
       <button
+        className="dropDown"
         // variant="contained"
         onClick={() => handleRemoveItem(selectedValue)}
       >
