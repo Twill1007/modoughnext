@@ -13,38 +13,23 @@ export default function CookieButton() {
       try {
         const cookieDoughData = await getCookieDough();
         setCookieData(cookieDoughData);
+        console.log("This is the cookie data", cookieDoughData);
       } catch (error) {
         console.log("Did not receive data", error);
       }
     };
     fetchData();
   }, []);
-  console.log(cookieData);
   return (
     <>
       <div className="btnContainer">
-        {cookieData.length > 0 ? (
-          cookieData.map((cookie, index) => (
-            <div className="menuBtn" key={index}>
-              <Link href={"cookie-menu/" + cookie.id}>
-                <div
-                  className={
-                    (".cookieBtn.shared-styles",
-                    `cookieBtn ${
-                      cookie.title === "Chocolate Chip Cookie"
-                        ? "cookieCC"
-                        : "cookieSD"
-                    }`)
-                  }
-                >
-                  {cookie.title}
-                </div>
-              </Link>
+        {cookieData.map((cookie, index) => (
+          <Link href={"cookie-menu/" + cookie.id}>
+            <div className={"cookieBtn cookie" + cookie.id} key={index}>
+              {cookie.title}
             </div>
-          ))
-        ) : (
-          <p>Loading data...</p>
-        )}
+          </Link>
+        ))}
       </div>
     </>
   );

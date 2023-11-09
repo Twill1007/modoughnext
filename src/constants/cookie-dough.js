@@ -7,16 +7,16 @@ const cookieDough = [
     title: "Snickerdoodles",
     basePrice: 10,
   },
-  // {
-  //   id: "pb",
-  //   title: "Peanut Butter",
-  //   basePrice: 10,
-  // },
-  // {
-  //   id: "sc",
-  //   title: "Sugar Cookies",
-  //   basePrice: 10,
-  // },
+  {
+    id: "pb",
+    title: "Peanut Butter",
+    basePrice: 10,
+  },
+  {
+    id: "sc",
+    title: "Sugar Cookies",
+    basePrice: 10,
+  },
   // {
   //   id: "fdg",
   //   title: "Fudge",
