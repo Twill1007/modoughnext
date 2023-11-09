@@ -1,5 +1,5 @@
 import * as React from "react";
-// import Button from "@mui/material/Button";
+import styles from "../app/menu.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import useCookieDough from "@/hooks/use-cookieDough";
@@ -19,14 +19,26 @@ export default function CookieButton() {
     };
     fetchData();
   }, []);
+  console.log(cookieData);
   return (
     <>
-      <div>
+      <div className="btnContainer">
         {cookieData.length > 0 ? (
           cookieData.map((cookie, index) => (
-            <div key={index}>
+            <div className="menuBtn" key={index}>
               <Link href={"cookie-menu/" + cookie.id}>
-                <button>{cookie.title}</button>
+                <div
+                  className={
+                    (".cookieBtn.shared-styles",
+                    `cookieBtn ${
+                      cookie.title === "Chocolate Chip Cookie"
+                        ? "cookieCC"
+                        : "cookieSD"
+                    }`)
+                  }
+                >
+                  {cookie.title}
+                </div>
               </Link>
             </div>
           ))

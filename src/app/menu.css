@@ -1,0 +1,46 @@
+.btnContainer {
+  display: flex;
+  justify-content: space-around;
+}
+
+.menuBtn {
+  width: 30%; /* Adjust the width as needed */
+  font-size: large;
+  color: red;
+  margin: 3rem;
+  border: 1px solid #000; /* Add a border or other styling as desired */
+}
+
+.cookieBtn {
+  font-size: xx-large;
+  color: white;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cookieBtn.shared-styles {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cookieBtn.cookieCC {
+  background-image: url("https://media.istockphoto.com/id/517109442/photo/chocolate-chip-cookie-isolated.jpg?s=2048x2048&w=is&k=20&c=R-7te4PvTLr4Z8IEd_Hnw6VMMbv9WxYxAznUubOAZA0=");
+}
+
+.cookieBtn.cookieSD {
+  background-image: url("https://media.istockphoto.com/id/1191780242/photo/close-up-of-snickerdoodle-cookies.jpg?s=2048x2048&w=is&k=20&c=LR-glePGYO89N18XVNDnXu01tpC-2gO7r4IHycgM4kw=");
+}
+
+.cookieBtn.cookiePB {
+  background-color: url("https://media.istockphoto.com/id/517109442/photo/chocolate-chip-cookie-isolated.jpg?s=2048x2048&w=is&k=20&c=R-7te4PvTLr4Z8IEd_Hnw6VMMbv9WxYxAznUubOAZA0=");
+}
+
+.cookieBtn.cookieSC {
+  background-image: url("https://media.istockphoto.com/id/1191780242/photo/close-up-of-snickerdoodle-cookies.jpg?s=2048x2048&w=is&k=20&c=LR-glePGYO89N18XVNDnXu01tpC-2gO7r4IHycgM4kw=");
+}
