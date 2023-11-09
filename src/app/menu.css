@@ -1,10 +1,12 @@
 .btnContainer {
+  position: relative;
+  top: 100px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1600px) {
   .btnContainer {
     flex-direction: column;
     align-items: center;
@@ -21,7 +23,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center;
+  align-items: top;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,10 +39,16 @@
   background-image: url("https://www.crunchycreamysweet.com/wp-content/uploads/2018/10/the-best-snickerdoodles-1a.jpg");
 }
 
-.cookieBtn.cookiepb {
-  background-color: url("https://www.budgetbytes.com/wp-content/uploads/2022/02/Flourless-Peanut-Butter-Cookies-spill.jpg");
+.cookieBtn.cookiepbc {
+  background-image: url("https://www.budgetbytes.com/wp-content/uploads/2022/02/Flourless-Peanut-Butter-Cookies-spill.jpg");
 }
 
 .cookieBtn.cookiesc {
   background-image: url("https://www.dinneratthezoo.com/wp-content/uploads/2018/11/christmas-sugar-cookies-12-500x500.jpg");
+}
+.cookieBtn.cookiefdg {
+  background-image: url("https://myheartbeets.com/wp-content/uploads/2020/11/instant-pot-chocolate-fudge.jpg");
+}
+.cookieBtn.cookiecrml {
+  background-image: url("https://sugarspunrun.com/wp-content/uploads/2022/11/Homemade-Caramel-Recipe-1-of-1.jpg");
 }

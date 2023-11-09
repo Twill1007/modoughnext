@@ -1,14 +1,14 @@
 //TODO: replace "oneDOzen", "twoDozen" with "basePrice"
 
 const cookieDough = [
-  { id: "cc", title: "Chocolate Chip Cookie", basePrice: 10 },
+  { id: "cc", title: "Chocolate Chip", basePrice: 10 },
   {
     id: "sd",
     title: "Snickerdoodles",
     basePrice: 10,
   },
   {
-    id: "pb",
+    id: "pbc",
     title: "Peanut Butter",
     basePrice: 10,
   },
@@ -17,16 +17,16 @@ const cookieDough = [
     title: "Sugar Cookies",
     basePrice: 10,
   },
-  // {
-  //   id: "fdg",
-  //   title: "Fudge",
-  //   basePrice: 10,
-  // },
-  // {
-  //   id: "crml",
-  //   title: "Caramel",
-  //   basePrice: 10,
-  // },
+  {
+    id: "fdg",
+    title: "Fudge",
+    basePrice: 10,
+  },
+  {
+    id: "crml",
+    title: "Caramel",
+    basePrice: 10,
+  },
 ];
 
 export default cookieDough;
