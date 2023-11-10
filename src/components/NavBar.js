@@ -12,11 +12,10 @@ function NavBar() {
 
   return (
     <header>
-      <h3>Logo</h3>
+      <Link href={"cookie-home/"}>
+        <h3>Mo's Dough</h3>
+      </Link>
       <nav ref={navRef}>
-        <Link className="navLink" onClick={showNavBar} href="/cookie-home">
-          Home
-        </Link>
         <Link className="navLink" onClick={showNavBar} href="/cookie-about">
           About
         </Link>

@@ -1,13 +1,14 @@
 "use client";
 import { Fragment, useEffect, useState } from "react";
-import getCookieDough from "@/constants/cookie-dough";
+import cookieDough from "@/constants/cookie-dough";
 import ItemSelector from "@/components/itemSelector";
 import PricingMenu from "@/components/pricingMenu";
 
 function CookieOrder({ params }) {
-  const selectedCookie = getCookieDough.find(
+  const selectedCookie = cookieDough.find(
     (cookie) => cookie.id === params.cookieType
   );
+  console.log(selectedCookie.title);
 
   return (
     <Fragment>

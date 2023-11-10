@@ -21,6 +21,7 @@ header {
   justify-content: space-between;
   height: 80px;
   padding: 0 2rem;
+  margin: 0;
   background-color: var(--mainColor);
   color: var(--textColor);
 }
@@ -29,6 +30,7 @@ header h3 {
   background-color: var(--mainColor);
   font-size: 1.5rem;
   color: var(--textColor);
+  margin: auto;
 }
 .faTimes {
   background-color: var(--mainColor);

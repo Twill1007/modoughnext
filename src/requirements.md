@@ -21,6 +21,8 @@
 
 - Title of Cookie
 - Prices of Cookies
+  -1 Dozen for $10
+  -2 Dozen for $18 etc.
 - Picture of Cookie
 - Dropdown Menu
 - Order Form
