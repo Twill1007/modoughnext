@@ -6,16 +6,27 @@ import { DISCOUNT_TABLE } from "@/constants/discount-table";
 
 function PricingMenu() {
   const { getDiscountedPrice } = useCookieDough();
-  let cookieDozens = DISCOUNT_TABLE;
+  const prices = cookieDough.map((cookie, index) => +cookie.basePrice);
+  console.log("prices", prices);
+  let cookieDiscount = DISCOUNT_TABLE;
+  let incrementPrice = 10;
 
-  const keys = Object.keys(cookieDozens);
-  const prices = cookieDough.map((cookie) => cookie.basePrice);
+  const keys = Object.keys(cookieDiscount);
+  const totalPrice = keys.map((x) => +x * incrementPrice);
+  console.log("price per dozen [10, 20, 30, 40, 50]", totalPrice);
+  console.log("keys", keys);
 
-  const discountedPrices = keys.map((key, index) => {
-    const basePrice = prices[index];
-    return getDiscountedPrice(key, basePrice);
+  const discount = Object.values(cookieDiscount).map((value) => {
+    return value;
   });
-  console.log(discountedPrices);
+
+  console.log("discount per quantity", discount);
+
+  const discountedPrices = totalPrice.map(
+    (total, index) => total * discount[index]
+  );
+
+  console.log("will this be the array I need?", discountedPrices);
 
   return (
     <>
@@ -24,7 +35,7 @@ function PricingMenu() {
         {keys.map((key, index) => (
           <div key={index}>
             <span>
-              {key} Dozen: {discountedPrices[index]}
+              {key} Dozen: ${discountedPrices[index]}
             </span>
           </div>
         ))}

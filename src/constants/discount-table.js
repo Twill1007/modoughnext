@@ -1,10 +1,10 @@
 //A number of "dozens" and a coresponding discount rate
 export const DISCOUNT_TABLE = {
-  1: 0,
-  2: 0.1,
-  3: 0.15,
-  4: 0.2,
-  5: 0.25,
+  1: 1,
+  2: 0.95,
+  3: 0.9,
+  4: 0.85,
+  5: 0.8,
 };
 
 // What this object represents is:
