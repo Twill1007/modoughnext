@@ -45,3 +45,8 @@
 ### Modal
 
 - Overlay Zelle/Venmo Information
+
+### UI
+
+- "Add to Cart" Button
+- "Other Cookies" Button
