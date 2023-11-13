@@ -46,7 +46,12 @@
 
 - Overlay Zelle/Venmo Information
 
-### UI
+### CartSummary/OrderForm Page
 
-- "Add to Cart" Button
-- "Other Cookies" Button
+- Cart Section displaying user's cart
+  --Cookie Types i.e. 3 dozen CC $27 2 dozen SD $19 etc.
+  --Total Amount
+  --Edit Order Button
+  --Complete Order Button
+- Order Form
+  --Input Fields for Email, First and Last Name, & Address

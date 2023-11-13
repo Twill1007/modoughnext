@@ -34,7 +34,7 @@ function ItemSelector(props) {
     dispatch(removeItemFromCartById(selectedValue));
   };
 
-  console.log(selectedValue);
+  // console.log(selectedValue);
 
   return (
     <Fragment>

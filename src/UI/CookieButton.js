@@ -1,5 +1,5 @@
 import * as React from "react";
-import styles from "../app/menu.css";
+import "../app/menu.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import useCookieDough from "@/hooks/use-cookieDough";
@@ -12,14 +12,19 @@ export default function CookieButton() {
     const fetchData = async () => {
       try {
         const cookieDoughData = await getCookieDough();
+        // console.log("Received data from getCookieDough:", cookieDoughData);
         setCookieData(cookieDoughData);
-        console.log("This is the cookie data", cookieDoughData);
       } catch (error) {
         console.log("Did not receive data", error);
       }
     };
     fetchData();
   }, []);
+  // console.log(
+  //   "Cookie Dough data in state",
+  //   cookieData.map((title) => title.id)
+  // );
+
   return (
     <>
       <div className="btnContainer">

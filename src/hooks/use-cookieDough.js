@@ -6,9 +6,9 @@ function useCookieDough() {
   const getCookieDough = async () => {
     return new Promise((resolve) => {
       setTimeout(() => {
-        console.log("Data Received", cookieDough);
+        // console.log("Data Received", cookieDough);
         resolve(cookieDough);
-      }, 1000);
+      }, 1);
     });
   };
   const getDiscountedPrice = (dozens, basePrice) => {
@@ -23,6 +23,7 @@ function useCookieDough() {
 
     return basePrice * (1 - discountRate);
   };
+  // console.log("This is the discounted amount", getDiscountedPrice(3, 10));
 
   return { getCookieDough, getDiscountedPrice };
 }
