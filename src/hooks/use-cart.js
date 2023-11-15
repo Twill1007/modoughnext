@@ -9,6 +9,7 @@ import {
 function useCart() {
   const dispatch = useDispatch();
   const items = useSelector(selectItems);
+  console.log("current items in cart", items);
   const addItem = (item) => {
     dispatch(addItemToCart(item));
   };

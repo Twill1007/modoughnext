@@ -22,6 +22,9 @@ function NavBar() {
         <Link className="navLink" onClick={showNavBar} href="/cookie-menu">
           Menu
         </Link>
+        <Link className="navLink" onClick={showNavBar} href="/order-form">
+          Cart
+        </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes className="faTimes" />
         </button>
