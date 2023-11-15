@@ -1,6 +1,5 @@
 "use client";
 import { Fragment, useEffect, useState } from "react";
-import cookieDough from "@/constants/cookie-dough";
 import useCookieDough from "@/hooks/use-cookieDough";
 import ItemSelector from "@/components/itemSelector";
 import PricingMenu from "@/components/pricingMenu";
@@ -12,8 +11,8 @@ function CookieOrder({ params }) {
     const fetchData = async () => {
       try {
         const cookieDoughData = await getCookieDough();
-        // console.log("Received data from getCookieDough:", cookieDoughData);
         setCookieData(cookieDoughData);
+        console.log("Received data from getCookieDough:", cookieData);
       } catch (error) {
         console.log("Did not receive data", error);
       }
@@ -21,16 +20,17 @@ function CookieOrder({ params }) {
     fetchData();
   }, []);
 
-  const selectedData = cookieData.map((cookie) => cookie.title);
-
-  const selectedCookie = cookieDough.find(
+  const selectedCookie = cookieData.find(
     (cookie) => cookie.id === params.cookieType
   );
-  console.log("This is the selectedCookie.id", selectedCookie.id);
 
   return (
     <Fragment>
-      <div>{selectedCookie.title}</div>
+      {selectedCookie ? (
+        <div>{selectedCookie.title}</div>
+      ) : (
+        <div>Loading...</div>
+      )}
       <PricingMenu />
       <ItemSelector cookieType={selectedCookie} />
     </Fragment>

@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react";
-import cartSlice from "@/state/cart-slice";
+
 import useCart from "@/hooks/use-cart";
 
 function CartSummary() {
@@ -12,7 +12,7 @@ function CartSummary() {
       <div>
         {items.map((item) => (
           <div key={item.id}>
-            {item.id} - {item.title}
+            {item.label} {item.type}
           </div>
         ))}
       </div>
