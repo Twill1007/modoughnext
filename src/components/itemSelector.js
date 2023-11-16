@@ -4,48 +4,50 @@ import Link from "next/link";
 import { removeItem } from "@/hooks/use-cart";
 import useCart from "@/hooks/use-cart";
 import { addItemToCart } from "@/state/cart-slice";
+import { calculatePrices } from "./pricingLogic";
 
-function ItemSelector({ params }) {
+function ItemSelector({ cookieType }) {
+  const { discountedPrices } = calculatePrices();
   const { items, addItem, removeItem } = useCart();
-
-  const dynamicId = params?.dynamicId;
-
-  const createDynamicId = () => dynamicId;
-
   const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
 
   const dropdownOptions = [
     {
-      value: "1Dozen",
+      value: "1",
       label: "One Dozen",
       type: "cookie",
-      id: createDynamicId(),
+      id: cookieType ? cookieType.id : "",
+      title: cookieType ? cookieType.title : "",
     },
     {
-      value: "2Dozen",
+      value: "2",
       label: "Two Dozen",
       type: "cookie",
-      id: createDynamicId(),
+      id: cookieType ? cookieType.id : "",
+      title: cookieType ? cookieType.title : "",
     },
     {
-      value: "3Dozen",
+      value: "3",
       label: "Three Dozen",
       type: "cookie",
-      id: createDynamicId(),
+      id: cookieType ? cookieType.id : "",
+      title: cookieType ? cookieType.title : "",
     },
     {
-      value: "4Dozen",
+      value: "4",
       label: "Four Dozen",
       type: "cookie",
-      id: createDynamicId(),
+      id: cookieType ? cookieType.id : "",
+      title: cookieType ? cookieType.title : "",
     },
     {
-      value: "5Dozen",
+      value: "5",
       label: "Five Dozen",
       type: "cookie",
-      id: createDynamicId(),
+      id: cookieType ? cookieType.id : "",
+      title: cookieType ? cookieType.title : "",
     },
   ];
 
@@ -64,7 +66,7 @@ function ItemSelector({ params }) {
   };
 
   const handleRemoveItem = () => {
-    dispatch(removeItem(selectedValue));
+    dispatch(removeItem(cookieType.id));
   };
 
   return (
@@ -92,17 +94,22 @@ function ItemSelector({ params }) {
 
       <div>
         {items.map((item) => (
-          <div key={item.id}>{item.label}</div>
+          <div key={item.id}>
+            {item.label} {item.title}
+          </div>
         ))}
       </div>
-      <button onClick={() => handleRemoveItem(selectedValue)}>
+      {/* <button onClick={() => handleRemoveItem(cookieType.id)}>
         Delete Item
-      </button>
+      </button> */}
       {buttonClicked === true && (
         <Link href="/order-form">
           <button>Go to Cart</button>
         </Link>
       )}
+      <Link href="/cookie-menu">
+        <button>Shop Other Treats</button>
+      </Link>
 
       {selectedValue === "select" && (
         <div>

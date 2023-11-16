@@ -8,7 +8,7 @@ function useCookieDough() {
       setTimeout(() => {
         // console.log("Data Received", cookieDough);
         resolve(cookieDough);
-      }, 1000);
+      }, 0.0001);
     });
   };
   const getDiscountedPrice = (dozens, basePrice) => {
