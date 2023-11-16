@@ -3,20 +3,50 @@ import { useDispatch } from "react-redux";
 import Link from "next/link";
 import { removeItem } from "@/hooks/use-cart";
 import useCart from "@/hooks/use-cart";
+import { addItemToCart } from "@/state/cart-slice";
 
-function ItemSelector(props) {
+function ItemSelector({ params }) {
   const { items, addItem, removeItem } = useCart();
 
+  const dynamicId = params?.dynamicId;
+
+  const createDynamicId = () => dynamicId;
+
   const dispatch = useDispatch();
-  const [itemsInCart, setItemsInCart] = useState(true);
   const [selectedValue, setSelectedValue] = useState("");
+  const [buttonClicked, setButtonClicked] = useState(false);
 
   const dropdownOptions = [
-    { value: "1Dozen", label: "One Dozen", type: "cookie" },
-    { value: "2Dozen", label: "Two Dozen", type: "cookie" },
-    { value: "3Dozen", label: "Three Dozen", type: "cookie" },
-    { value: "4Dozen", label: "Four Dozen", type: "cookie" },
-    { value: "5Dozen", label: "Five Dozen", type: "cookie" },
+    {
+      value: "1Dozen",
+      label: "One Dozen",
+      type: "cookie",
+      id: createDynamicId(),
+    },
+    {
+      value: "2Dozen",
+      label: "Two Dozen",
+      type: "cookie",
+      id: createDynamicId(),
+    },
+    {
+      value: "3Dozen",
+      label: "Three Dozen",
+      type: "cookie",
+      id: createDynamicId(),
+    },
+    {
+      value: "4Dozen",
+      label: "Four Dozen",
+      type: "cookie",
+      id: createDynamicId(),
+    },
+    {
+      value: "5Dozen",
+      label: "Five Dozen",
+      type: "cookie",
+      id: createDynamicId(),
+    },
   ];
 
   const handleDropdownChange = (event) => {
@@ -24,11 +54,12 @@ function ItemSelector(props) {
   };
 
   const handleSubmit = () => {
-    if (selectedValue !== "Select") {
+    if (selectedValue !== "Select" && selectedValue !== "" && !buttonClicked) {
+      setButtonClicked(true);
       const selectedItem = dropdownOptions.find(
         (option) => option.value === selectedValue
       );
-      dispatch(addItem(selectedItem));
+      dispatch(addItemToCart(selectedItem));
     }
   };
 
@@ -55,7 +86,7 @@ function ItemSelector(props) {
         ))}
       </select>
 
-      {selectedValue !== "Select" && itemsInCart && (
+      {selectedValue !== "Select" && selectedValue !== "" && !buttonClicked && (
         <button onClick={handleSubmit}>Add to Cart</button>
       )}
 
@@ -67,7 +98,7 @@ function ItemSelector(props) {
       <button onClick={() => handleRemoveItem(selectedValue)}>
         Delete Item
       </button>
-      {itemsInCart !== true && (
+      {buttonClicked === true && (
         <Link href="/order-form">
           <button>Go to Cart</button>
         </Link>
