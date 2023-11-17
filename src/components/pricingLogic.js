@@ -13,5 +13,5 @@ export function calculatePrices() {
     (total, index) => total * discount[index]
   );
 
-  return { keys, discountedPrices };
+  return { keys, discountedPrices, totalPrice };
 }

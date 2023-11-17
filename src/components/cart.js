@@ -1,32 +1,26 @@
 import React, { Fragment } from "react";
 import useCart from "@/hooks/use-cart";
-import { calculatePrices } from "./pricingLogic";
 
 function CartSummary() {
-  const { keys, discountedPrices } = calculatePrices();
   const { items } = useCart();
 
-  console.log("Discounted Prices", discountedPrices);
-  console.log("This is the quantity", keys);
+  const itemPrices = items.map((price) => price.price);
 
-  const cartItems = items.map((item) => +item.value);
-  console.log("Is this a number", cartItems);
+  const totalPrice = itemPrices.reduce((sum, price) => sum + price, 0);
 
-  const cookieQuantity = keys.map((key) => {
-    return +key;
-  });
-  console.log("Quantity of cookies", cookieQuantity);
+  console.log("This is the total Price:", totalPrice);
+
   return (
     <Fragment>
       <h1>This is the cart summary</h1>
       <div>
         {items.map((item) => (
           <div key={item.id}>
-            {item.label} {item.title} cookies!
+            {item.label} {item.title} {item.price}
           </div>
         ))}
       </div>
-      <div> Total Price: </div>
+      <div> Total Price: {totalPrice} </div>
     </Fragment>
   );
 }

@@ -13,6 +13,8 @@ function ItemSelector({ cookieType }) {
   const [selectedValue, setSelectedValue] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
 
+  const prices = discountedPrices;
+
   const dropdownOptions = [
     {
       value: "1",
@@ -20,6 +22,7 @@ function ItemSelector({ cookieType }) {
       type: "cookie",
       id: cookieType ? cookieType.id : "",
       title: cookieType ? cookieType.title : "",
+      price: prices[parseInt("1", 10)],
     },
     {
       value: "2",
@@ -27,6 +30,7 @@ function ItemSelector({ cookieType }) {
       type: "cookie",
       id: cookieType ? cookieType.id : "",
       title: cookieType ? cookieType.title : "",
+      // price: prices.map((index) => index[value]),
     },
     {
       value: "3",
@@ -50,6 +54,11 @@ function ItemSelector({ cookieType }) {
       title: cookieType ? cookieType.title : "",
     },
   ];
+
+  dropdownOptions.forEach((option) => {
+    option.price = prices[parseInt(option.value, 10) - 1];
+  });
+  console.log("Will this work?", dropdownOptions);
 
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
@@ -77,9 +86,9 @@ function ItemSelector({ cookieType }) {
         onChange={handleDropdownChange}
       >
         <option value="Select">--Select--</option>
-        {dropdownOptions.map((option) => (
+        {dropdownOptions.map((option, index) => (
           <option
-            key={option.value}
+            key={index}
             value={option.value}
             data-info={JSON.stringify(option)}
           >

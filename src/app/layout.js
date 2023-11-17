@@ -1,4 +1,3 @@
-import Head from "next/head";
 import ReduxProvider from "@/store/reduxProvider";
 import NavBar from "@/components/NavBar";
 
