@@ -22,7 +22,6 @@ function ItemSelector({ cookieType }) {
       type: "cookie",
       id: cookieType ? cookieType.id : "",
       title: cookieType ? cookieType.title : "",
-      price: prices[parseInt("1", 10)],
     },
     {
       value: "2",
