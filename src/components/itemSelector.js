@@ -101,9 +101,12 @@ function ItemSelector({ cookieType }) {
         {items.map((item) => (
           <div key={item.id}>
             {item.label} {item.title}
-            <button onClick={() => handleRemoveItem(item.productId)}>
-              Delete
-            </button>
+            <span
+              style={{ fontFamily: "monospace", cursor: "pointer" }}
+              onClick={() => handleRemoveItem(item.productId)}
+            >
+              {""} x
+            </span>
           </div>
         ))}
       </div>
