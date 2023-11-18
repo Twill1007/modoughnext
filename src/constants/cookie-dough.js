@@ -14,19 +14,19 @@ const cookieDough = [
   },
   {
     id: "sc",
-    title: "Sugar Cookie",
+    title: "Sugar Cookies",
     basePrice: 10,
   },
-  // {
-  //   id: "fdg",
-  //   title: "Fudge",
-  //   basePrice: 10,
-  // },
-  // {
-  //   id: "crml",
-  //   title: "Caramel",
-  //   basePrice: 10,
-  // },
+  {
+    id: "fdg",
+    title: "Fudge",
+    basePrice: 10,
+  },
+  {
+    id: "crml",
+    title: "Caramel",
+    basePrice: 10,
+  },
 ];
 
 export default cookieDough;

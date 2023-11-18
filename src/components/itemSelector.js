@@ -1,15 +1,13 @@
 import React, { Fragment, useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+
 import Link from "next/link";
-import { removeItem } from "@/hooks/use-cart";
 import useCart from "@/hooks/use-cart";
-import { addItemToCart } from "@/state/cart-slice";
 import { calculatePrices } from "./pricingLogic";
+import { v4 as uuidv4 } from "uuid";
 
 function ItemSelector({ cookieType }) {
   const { discountedPrices } = calculatePrices();
   const { items, addItem, removeItem } = useCart();
-  const dispatch = useDispatch();
   const [selectedValue, setSelectedValue] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
 
@@ -29,7 +27,6 @@ function ItemSelector({ cookieType }) {
       type: "cookie",
       id: cookieType ? cookieType.id : "",
       title: cookieType ? cookieType.title : "",
-      // price: prices.map((index) => index[value]),
     },
     {
       value: "3",
@@ -56,8 +53,8 @@ function ItemSelector({ cookieType }) {
 
   dropdownOptions.forEach((option) => {
     option.price = prices[parseInt(option.value, 10) - 1];
+    option.productId = uuidv4();
   });
-  console.log("Will this work?", dropdownOptions);
 
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
@@ -69,12 +66,12 @@ function ItemSelector({ cookieType }) {
       const selectedItem = dropdownOptions.find(
         (option) => option.value === selectedValue
       );
-      dispatch(addItemToCart(selectedItem));
+      addItem(selectedItem);
     }
   };
 
-  const handleRemoveItem = () => {
-    dispatch(removeItem(cookieType.id));
+  const handleRemoveItem = (productId) => {
+    removeItem(productId);
   };
 
   return (
@@ -104,12 +101,13 @@ function ItemSelector({ cookieType }) {
         {items.map((item) => (
           <div key={item.id}>
             {item.label} {item.title}
+            <button onClick={() => handleRemoveItem(item.productId)}>
+              Delete
+            </button>
           </div>
         ))}
       </div>
-      {/* <button onClick={() => handleRemoveItem(cookieType.id)}>
-        Delete Item
-      </button> */}
+
       {buttonClicked === true && (
         <Link href="/order-form">
           <button>Go to Cart</button>
