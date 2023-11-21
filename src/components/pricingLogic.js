@@ -1,7 +1,7 @@
 import { DISCOUNT_TABLE } from "@/constants/discount-table";
 
 export function calculatePrices() {
-  let increment = 10;
+  let increment = 15;
   let cookieDiscount = DISCOUNT_TABLE;
   const keys = Object.keys(cookieDiscount);
   const totalPrice = keys.map((x) => +x * increment);
