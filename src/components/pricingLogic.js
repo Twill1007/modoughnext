@@ -1,10 +1,11 @@
 import { DISCOUNT_TABLE } from "@/constants/discount-table";
+import { increment } from "@/constants/discount-table";
 
 export function calculatePrices() {
-  let increment = 15;
+  let incrementCost = increment;
   let cookieDiscount = DISCOUNT_TABLE;
   const keys = Object.keys(cookieDiscount);
-  const totalPrice = keys.map((x) => +x * increment);
+  const totalPrice = keys.map((x) => +x * incrementCost);
   const discount = Object.values(cookieDiscount).map((value) => {
     return value;
   });
