@@ -11,11 +11,15 @@
 
 - Link to About Us
 - Toggle Cart Modal (or go to page if it's not a modal)
+- Create icon for cart
+- Show update CSS graphic for icon when adding item to cart
+- Display number of items in cart
 
 ### Menu Page
 
 - CC & SD Buttons
 - Cookie Title Text
+- Remove current cart items
 
 ### Cookie Page
 
