@@ -1,10 +1,22 @@
 /* ItemSelector.css */
 
-.dropdown-container {
-  height: 250px;
+#dropdown-container-cart {
+  height: 50px;
   position: absolute;
-  top: 150px;
-  right: 0px;
+  top: 660px;
+  right: 950px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the right side */
+  justify-content: center; /* Center items vertically */
+  justify-content: space-around;
+  margin: 20px;
+}
+#dropdown-container-shop {
+  height: 50px;
+  position: absolute;
+  top: 660px;
+  right: 1065px;
   display: flex;
   flex-direction: column;
   align-items: flex-start; /* Align items to the right side */
@@ -13,8 +25,34 @@
   margin: 20px;
 }
 
+#dropdown-container-addTo {
+  height: 50px;
+  position: absolute;
+  top: 445px;
+  right: 1105px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Align items to the right side */
+  justify-content: center; /* Center items vertically */
+  justify-content: space-around;
+  margin: 20px;
+}
+.cookie-description {
+  font-size: x-large;
+  display: flex;
+  flex-direction: row;
+
+  position: absolute;
+  top: 175px;
+  right: 185px;
+  width: 800px;
+  height: 250px;
+}
+
 select {
   position: absolute;
+  top: 410px;
+  right: 1114px;
   padding: 10px;
   margin-bottom: 10px;
   font-size: 16px;

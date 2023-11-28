@@ -19,9 +19,7 @@ function PricingMenu({ cookieType }) {
           ))}
         </div>
       </div>
-      <div className={"menuCookie-id" + cookieType?.id}>
-        Here is the picture
-      </div>
+      <div className={"menuCookie-id" + cookieType?.id}></div>
     </>
   );
 }

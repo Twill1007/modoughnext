@@ -46,3 +46,31 @@
   background-repeat: no-repeat;
   background-image: url("https://www.jessicagavin.com/wp-content/uploads/2019/12/snickerdoodle-cookies-10-1200.jpg");
 }
+
+.menuCookie-idpbc {
+  position: absolute;
+  top: 150px;
+  border: 1px solid black;
+  border-radius: 15px;
+  margin: 25px;
+  height: 550px;
+  width: 550px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://preppykitchen.com/wp-content/uploads/2021/07/Peanut-Butter-Cookie-Recipe-n.jpg");
+}
+
+.menuCookie-idsc {
+  position: absolute;
+  top: 150px;
+  border-radius: 15px;
+  border: 1px solid black;
+  margin: 25px;
+  height: 550px;
+  width: 550px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://www.alattefood.com/wp-content/uploads/2019/12/Chewy-Sugar-Cookie-Recipe-99.jpg");
+}

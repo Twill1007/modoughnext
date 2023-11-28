@@ -97,7 +97,11 @@ function ItemSelector({ cookieType }) {
 
         {selectedValue !== "Select" &&
           selectedValue !== "" &&
-          !buttonClicked && <button onClick={handleSubmit}>Add to Cart</button>}
+          !buttonClicked && (
+            <button id="dropdown-container-addTo" onClick={handleSubmit}>
+              Add to Cart
+            </button>
+          )}
 
         <div>
           {items.map((item) => (
@@ -115,12 +119,24 @@ function ItemSelector({ cookieType }) {
 
         {buttonClicked === true && (
           <Link href="/order-form">
-            <button>Go to Cart</button>
+            <button id="dropdown-container-cart">Go to Cart</button>
           </Link>
         )}
-        <Link href="/cookie-menu">
+        <Link id="dropdown-container-shop" href="/cookie-menu">
           <button>Shop Other Treats</button>
         </Link>
+        <div className="cookie-description">
+          Experience the ultimate convenience and freshness with our frozen
+          chocolate chip cookie dough balls. Immerse yourself in the aroma of
+          gourmet baking without the effort. Crafted from the finest
+          ingredients, each perfectly portioned ball guarantees a batch of warm,
+          gooey cookies in minutes. From freezer to oven, effortlessly transform
+          your space into a bakery, delighting in the anticipation of every
+          golden, chewy bite. Elevate your dessert game with the convenience of
+          our frozen dough balls – a culinary secret ready to unfold. Make every
+          moment special, savor the warmth, and relish the joy of homemade
+          perfection, one cookie at a time.
+        </div>
 
         {/* {selectedValue === "select" && (
         <div>
