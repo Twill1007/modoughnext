@@ -1,6 +1,6 @@
 .btnContainer {
   position: relative;
-  top: 100px;
+  top: 150px;
   display: flex;
   flex-direction: row;
   justify-content: space-around;

@@ -4,13 +4,14 @@ import Link from "next/link";
 import useCart from "@/hooks/use-cart";
 import { calculatePrices } from "./pricingLogic";
 import { v4 as uuidv4 } from "uuid";
+import "../components/itemSelector.css";
 
 function ItemSelector({ cookieType }) {
   const { discountedPrices } = calculatePrices();
   const { items, addItem, removeItem } = useCart();
   const [selectedValue, setSelectedValue] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
-
+  console.log("Here is the cookie Type in itemSelector", cookieType);
   const prices = discountedPrices;
 
   const dropdownOptions = [
@@ -76,55 +77,57 @@ function ItemSelector({ cookieType }) {
 
   return (
     <Fragment>
-      <select
-        value={selectedValue}
-        label="Quantity"
-        onChange={handleDropdownChange}
-      >
-        <option value="Select">--Select--</option>
-        {dropdownOptions.map((option, index) => (
-          <option
-            key={index}
-            value={option.value}
-            data-info={JSON.stringify(option)}
-          >
-            {option.label}
-          </option>
-        ))}
-      </select>
-
-      {selectedValue !== "Select" && selectedValue !== "" && !buttonClicked && (
-        <button onClick={handleSubmit}>Add to Cart</button>
-      )}
-
-      <div>
-        {items.map((item) => (
-          <div key={item.id}>
-            {item.label} {item.title}
-            <span
-              style={{ fontFamily: "monospace", cursor: "pointer" }}
-              onClick={() => handleRemoveItem(item.productId)}
+      <div className="dropdown-container">
+        <select
+          value={selectedValue}
+          label="Quantity"
+          onChange={handleDropdownChange}
+        >
+          <option value="Select">--Select--</option>
+          {dropdownOptions.map((option, index) => (
+            <option
+              key={index}
+              value={option.value}
+              data-info={JSON.stringify(option)}
             >
-              {""} x
-            </span>
-          </div>
-        ))}
-      </div>
+              {option.label}
+            </option>
+          ))}
+        </select>
 
-      {buttonClicked === true && (
-        <Link href="/order-form">
-          <button>Go to Cart</button>
+        {selectedValue !== "Select" &&
+          selectedValue !== "" &&
+          !buttonClicked && <button onClick={handleSubmit}>Add to Cart</button>}
+
+        <div>
+          {items.map((item) => (
+            <div key={item.id}>
+              {item.label} {item.title}
+              <span
+                style={{ fontFamily: "monospace", cursor: "pointer" }}
+                onClick={() => handleRemoveItem(item.productId)}
+              >
+                {""} x
+              </span>
+            </div>
+          ))}
+        </div>
+
+        {buttonClicked === true && (
+          <Link href="/order-form">
+            <button>Go to Cart</button>
+          </Link>
+        )}
+        <Link href="/cookie-menu">
+          <button>Shop Other Treats</button>
         </Link>
-      )}
-      <Link href="/cookie-menu">
-        <button>Shop Other Treats</button>
-      </Link>
 
-      {selectedValue === "select" && (
+        {/* {selectedValue === "select" && (
         <div>
           {selectedValue} {props.cookieType.title}
         </div>
-      )}
+      )} */}
+      </div>
     </Fragment>
   );
 }

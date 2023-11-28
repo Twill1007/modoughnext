@@ -12,7 +12,6 @@ export default function CookieButton() {
     const fetchData = async () => {
       try {
         const cookieDoughData = await getCookieDough();
-        // console.log("Received data from getCookieDough:", cookieDoughData);
         setCookieData(cookieDoughData);
       } catch (error) {
         console.log("Did not receive data", error);
@@ -20,10 +19,6 @@ export default function CookieButton() {
     };
     fetchData();
   }, []);
-  // console.log(
-  //   "Cookie Dough data in state",
-  //   cookieData.map((title) => title.id)
-  // );
 
   return (
     <>

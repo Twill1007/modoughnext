@@ -1,0 +1,32 @@
+.menu-div-main {
+  font-size: xx-large;
+  display: flex;
+  flex-direction: column;
+  border: 3px green solid;
+  position: relative;
+  top: 10rem;
+  right: -500px;
+  width: 200px;
+}
+
+.menu-div-prices {
+  font-size: 1.4rem;
+  font-family: "Handlee", cursive;
+}
+
+.menuCookie-idcc {
+  height: 400px;
+  width: 400px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg?output-format=auto&output-quality=auto&resize=600:*");
+}
+
+/* div span {
+  background-color: red;
+} */
+
+/* .menu-div-main {
+  background-color: rgb(136, 255, 0);
+} */

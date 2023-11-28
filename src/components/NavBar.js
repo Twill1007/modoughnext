@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import CartIcon from "./cartIcon";
+import CartIcon from "../UI/cartIcon";
 import useCart from "@/hooks/use-cart";
 import Link from "next/link";
 
@@ -31,7 +31,11 @@ function NavBar() {
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes className="faTimes" />
         </button>
-        <CartIcon cartItems={items} />
+        <span>
+          <Link href="/order-form">
+            <CartIcon className="nav-cart" cartItems={items} />
+          </Link>
+        </span>
       </nav>
       <button className="nav-btn" onClick={showNavBar}>
         <FaBars className="faBars" />

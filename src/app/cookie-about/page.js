@@ -1,6 +1,6 @@
 "use client";
 import "../globals.css";
-import CartIcon from "@/components/cartIcon";
+import CartIcon from "@/UI/cartIcon";
 import useCart from "@/hooks/use-cart";
 
 import { Fragment } from "react";
@@ -44,9 +44,6 @@ const AboutPage = () => {
         day and is trying to achieve her goal. So step right up and buy these
         delicious, scrumptious, awesome, home-made snickerdooldle and chocolate
         chip cookie dough!!
-      </div>
-      <div style={{ position: "absolute", width: "600px", right: "300px" }}>
-        <CartIcon cartItems={items} /> Are we there?
       </div>
     </Fragment>
   );

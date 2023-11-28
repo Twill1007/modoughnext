@@ -12,7 +12,6 @@ function CookieOrder({ params }) {
       try {
         const cookieDoughData = await getCookieDough();
         setCookieData(cookieDoughData);
-        console.log("Received data from getCookieDough:", cookieData);
       } catch (error) {
         console.log("Did not receive data", error);
       }
@@ -31,7 +30,7 @@ function CookieOrder({ params }) {
       ) : (
         <div>Loading...</div>
       )}
-      <PricingMenu />
+      <PricingMenu cookieType={selectedCookie} />
       <ItemSelector cookieType={selectedCookie} />
     </Fragment>
   );

@@ -24,6 +24,7 @@ const OrderPage = () => {
         style={{
           border: "solid 1px black",
           position: "absolute",
+          top: "150px",
           width: "400px",
           height: "600px",
         }}
