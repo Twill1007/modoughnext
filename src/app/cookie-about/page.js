@@ -1,14 +1,17 @@
+"use client";
 import "../globals.css";
-
+import CartIcon from "@/components/cartIcon";
+import useCart from "@/hooks/use-cart";
 
 import { Fragment } from "react";
 
 const AboutPage = () => {
+  const { items } = useCart();
   const backgroundImageStyle = {
     backgroundImage:
       "url('https://www.petlandflorida.com/wp-content/uploads/2019/09/Petland_Florida_Cavalier_King_Charles_Spaniel_puppy.jpg')",
     position: "absolute",
-    width:"400px",
+    width: "400px",
     height: "400px",
     right: "600px",
     border: "1px solid blue",
@@ -19,6 +22,7 @@ const AboutPage = () => {
   return (
     <Fragment>
       <h1>About Mo</h1>
+
       <div
         style={{
           position: "absolute",
@@ -41,7 +45,9 @@ const AboutPage = () => {
         delicious, scrumptious, awesome, home-made snickerdooldle and chocolate
         chip cookie dough!!
       </div>
-      <div style={ ...backgroundImageStyle}></div>
+      <div style={{ position: "absolute", width: "600px", right: "300px" }}>
+        <CartIcon cartItems={items} /> Are we there?
+      </div>
     </Fragment>
   );
 };

@@ -1,9 +1,12 @@
 "use client";
 import { useRef } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import CartIcon from "./cartIcon";
+import useCart from "@/hooks/use-cart";
 import Link from "next/link";
 
 function NavBar() {
+  const { items } = useCart();
   const navRef = useRef();
 
   const showNavBar = () => {
@@ -28,6 +31,7 @@ function NavBar() {
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes className="faTimes" />
         </button>
+        <CartIcon cartItems={items} />
       </nav>
       <button className="nav-btn" onClick={showNavBar}>
         <FaBars className="faBars" />
