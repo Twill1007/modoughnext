@@ -10,7 +10,7 @@ function ItemSelector({ cookieType }) {
   const { discountedPrices } = calculatePrices();
   const { items, addItem, removeItem } = useCart();
   const [selectedValue, setSelectedValue] = useState("");
-  const [buttonClicked, setButtonClicked] = useState(false);
+
   const [showEditButton, setShowEditButton] = useState(false);
   console.log("Here is the cookie Type in itemSelector", cookieType);
   const prices = discountedPrices;
@@ -63,8 +63,7 @@ function ItemSelector({ cookieType }) {
   };
 
   const handleSubmit = () => {
-    if (selectedValue !== "Select" && selectedValue !== "" && !buttonClicked) {
-      setButtonClicked(true);
+    if (selectedValue !== "Select" && selectedValue !== "") {
       const selectedItem = dropdownOptions.find(
         (option) => option.value === selectedValue
       );
@@ -124,7 +123,12 @@ function ItemSelector({ cookieType }) {
             </div>
           ))}
           {items.length > 0 && (
-            <button onClick={handleShowEditButton}>Edit</button>
+            <button
+              style={{ position: "absolute", top: "213px", right: "155px" }}
+              onClick={handleShowEditButton}
+            >
+              Edit
+            </button>
           )}
         </div>
 

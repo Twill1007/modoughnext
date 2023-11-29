@@ -19,7 +19,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 135px;
+  height: 100px;
   padding: 0 2rem;
   margin: 0;
   background-color: var(--mainColor);
@@ -32,7 +32,7 @@ header {
 
 header h3 {
   background-color: var(--mainColor);
-  font-size: 1.5rem;
+  font-size: 2.5rem;
   color: var(--textColor);
   margin: auto;
 }
@@ -49,7 +49,7 @@ nav {
   align-items: center; /* Center the items vertically */
   justify-content: center; /* Center the items horizontally */
   position: absolute;
-  right: 830px; /* Adjust the right position */
+  right: 700px; /* Adjust the right position */
   padding: 2px;
   margin: 0 2rem;
   background-color: var(--mainColor);
@@ -59,8 +59,8 @@ nav {
   color: var(--textColor);
   background-color: var(--mainColor);
   text-decoration: none;
-  font-size: 1.5rem;
-  margin: 0 10px; /* Add margin to create space between links */
+  font-size: 2.5rem;
+  margin: 0 45px; /* Add margin to create space between links */
 }
 
 /* Add the following styles for cart icon */
@@ -72,7 +72,7 @@ nav {
 .nav-cart-link {
   color: var(--textColor);
   text-decoration: none;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 
 .nav-cart-link:hover {

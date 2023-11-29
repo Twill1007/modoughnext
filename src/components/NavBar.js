@@ -15,7 +15,7 @@ function NavBar() {
 
   return (
     <header>
-      <Link href="cookie-home/">
+      <Link href="/cookie-home">
         <h3>Mo's Dough</h3>
       </Link>
       <nav ref={navRef}>
