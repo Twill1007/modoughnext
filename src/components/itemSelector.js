@@ -11,6 +11,7 @@ function ItemSelector({ cookieType }) {
   const { items, addItem, removeItem } = useCart();
   const [selectedValue, setSelectedValue] = useState("");
   const [buttonClicked, setButtonClicked] = useState(false);
+  const [showEditButton, setShowEditButton] = useState(false);
   console.log("Here is the cookie Type in itemSelector", cookieType);
   const prices = discountedPrices;
 
@@ -67,12 +68,23 @@ function ItemSelector({ cookieType }) {
       const selectedItem = dropdownOptions.find(
         (option) => option.value === selectedValue
       );
-      addItem(selectedItem);
+      const itemAlreadyInCart = items.some(
+        (item) => item.id === selectedItem.id
+      );
+      if (itemAlreadyInCart) {
+        alert("Only 1 cookie type per order...for now");
+      } else {
+        addItem(selectedItem);
+      }
     }
   };
 
   const handleRemoveItem = (productId) => {
     removeItem(productId);
+  };
+
+  const handleShowEditButton = () => {
+    setShowEditButton(true);
   };
 
   return (
@@ -95,33 +107,31 @@ function ItemSelector({ cookieType }) {
           ))}
         </select>
 
-        {selectedValue !== "Select" &&
-          selectedValue !== "" &&
-          !buttonClicked && (
-            <button id="dropdown-container-addTo" onClick={handleSubmit}>
-              Add to Cart
-            </button>
-          )}
+        <button id="dropdown-container-addTo" onClick={handleSubmit}>
+          Add to Cart
+        </button>
 
-        <div>
+        <div id="cartSummary">
+          Cart Items
           {items.map((item) => (
             <div key={item.id}>
               {item.label} {item.title}
-              <span
-                style={{ fontFamily: "monospace", cursor: "pointer" }}
-                onClick={() => handleRemoveItem(item.productId)}
-              >
-                {""} x
-              </span>
+              {showEditButton && (
+                <span onClick={() => handleRemoveItem(item.productId)}>
+                  {""} x
+                </span>
+              )}
             </div>
           ))}
+          {items.length > 0 && (
+            <button onClick={handleShowEditButton}>Edit</button>
+          )}
         </div>
 
-        {buttonClicked === true && (
-          <Link href="/order-form">
-            <button id="dropdown-container-cart">Go to Cart</button>
-          </Link>
-        )}
+        <Link href="/order-form">
+          <button id="dropdown-container-cart">Go to Cart</button>
+        </Link>
+
         <Link id="dropdown-container-shop" href="/cookie-menu">
           <button>Shop Other Treats</button>
         </Link>
