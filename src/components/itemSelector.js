@@ -98,9 +98,9 @@ function ItemSelector({ cookieType }) {
           onChange={handleDropdownChange}
         >
           <option value="Select">--Select--</option>
-          {dropdownOptions.map((option, index) => (
+          {dropdownOptions.map((option, productId) => (
             <option
-              key={index}
+              key={option.productId}
               value={option.value}
               data-info={JSON.stringify(option)}
             >

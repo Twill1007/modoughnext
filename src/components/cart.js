@@ -8,14 +8,12 @@ function CartSummary() {
 
   const totalPrice = itemPrices.reduce((sum, price) => sum + price, 0);
 
-  console.log("This is the total Price:", totalPrice);
-
   return (
     <Fragment>
       <h1>This is the cart summary</h1>
       <div>
         {items.map((item) => (
-          <div key={item.id}>
+          <div key={item.productId}>
             {item.label} {item.title} {item.price}
           </div>
         ))}

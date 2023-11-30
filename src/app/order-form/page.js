@@ -14,8 +14,6 @@ const OrderPage = () => {
     e.preventDefault();
   };
 
-  console.log("Name", inputValue);
-
   const userOrder = CartSummary();
   return (
     <Fragment>

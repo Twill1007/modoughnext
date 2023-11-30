@@ -13,6 +13,6 @@ export function calculatePrices() {
   const discountedPrices = totalPrice.map((total, index) =>
     Math.round(total * discount[index])
   );
-  console.log("here is value", discountedPrices);
+
   return { keys, discountedPrices, totalPrice };
 }

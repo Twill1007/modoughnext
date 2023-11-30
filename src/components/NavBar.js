@@ -15,10 +15,10 @@ function NavBar() {
 
   return (
     <header>
-      <Link href="/cookie-home">
-        <h3>Mo's Dough</h3>
-      </Link>
       <nav ref={navRef}>
+        <Link href="/cookie-home">
+          <h3>Mo's Dough</h3>
+        </Link>
         <Link className="navLink" onClick={showNavBar} href="/cookie-about">
           About
         </Link>

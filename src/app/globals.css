@@ -10,7 +10,7 @@
 
 :root {
   --mainColor: #24a388;
-  --mainColorLight: #eee;
+  --mainColorLight: #d9f1eb;
   --secondaryColor: black;
   --textColor: #eee;
 }
@@ -32,6 +32,13 @@ header {
 
 header h3 {
   background-color: var(--mainColor);
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: 5px;
+  width: 205px;
+  right: 1020px;
   font-size: 2.5rem;
   color: var(--textColor);
   margin: auto;

@@ -4,7 +4,7 @@ import "../components/pricingMenu.css";
 
 function PricingMenu({ cookieType }) {
   const { keys, discountedPrices } = calculatePrices();
-  console.log("Here is the cookie Type in pricingMenu", cookieType?.id);
+
   return (
     <>
       <div className="menu-div-main">
