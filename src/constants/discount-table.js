@@ -7,7 +7,7 @@ export const DISCOUNT_TABLE = {
   5: 0.8,
 };
 
-export const increment = 12;
+export const increment = 10;
 
 // What this object represents is:
 {

@@ -10,9 +10,8 @@ function ItemSelector({ cookieType }) {
   const { discountedPrices } = calculatePrices();
   const { items, addItem, removeItem } = useCart();
   const [selectedValue, setSelectedValue] = useState("");
+  const [showEditDeleteX, setShowDeleteX] = useState(false);
 
-  const [showEditButton, setShowEditButton] = useState(false);
-  console.log("Here is the cookie Type in itemSelector", cookieType);
   const prices = discountedPrices;
 
   const dropdownOptions = [
@@ -82,8 +81,12 @@ function ItemSelector({ cookieType }) {
     removeItem(productId);
   };
 
-  const handleShowEditButton = () => {
-    setShowEditButton(true);
+  const handleShowDeleteX = () => {
+    setShowDeleteX(true);
+  };
+
+  const handleHideDeleteX = () => {
+    setShowDeleteX(false);
   };
 
   return (
@@ -115,19 +118,27 @@ function ItemSelector({ cookieType }) {
           {items.map((item) => (
             <div key={item.id}>
               {item.label} {item.title}
-              {showEditButton && (
+              {showEditDeleteX && (
                 <span onClick={() => handleRemoveItem(item.productId)}>
                   {""} x
                 </span>
               )}
             </div>
           ))}
-          {items.length > 0 && (
+          {items.length > 0 && !showEditDeleteX && (
             <button
-              style={{ position: "absolute", top: "213px", right: "155px" }}
-              onClick={handleShowEditButton}
+              style={{ position: "absolute", top: "213px", right: "85px" }}
+              onClick={handleShowDeleteX}
             >
-              Edit
+              Edit Cart Items
+            </button>
+          )}
+          {items.length > 0 && showEditDeleteX && (
+            <button
+              style={{ position: "absolute", top: "213px", right: "100px" }}
+              onClick={handleHideDeleteX}
+            >
+              Done Editing
             </button>
           )}
         </div>
