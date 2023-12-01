@@ -1,6 +1,6 @@
 import React, { Fragment, useEffect, useState } from "react";
-
 import Link from "next/link";
+import ModalCookie from "../components/modal/modalCookie/Modal";
 import useCart from "@/hooks/use-cart";
 import { calculatePrices } from "./pricingLogic";
 import { v4 as uuidv4 } from "uuid";
@@ -11,6 +11,7 @@ function ItemSelector({ cookieType }) {
   const { items, addItem, removeItem } = useCart();
   const [selectedValue, setSelectedValue] = useState("");
   const [showEditDeleteX, setShowDeleteX] = useState(false);
+  const [showModal, setShowModal] = useState(false);
 
   const prices = discountedPrices;
 
@@ -70,11 +71,15 @@ function ItemSelector({ cookieType }) {
         (item) => item.id === selectedItem.id
       );
       if (itemAlreadyInCart) {
-        alert("Only 1 cookie type per order...for now");
+        setShowModal(true);
       } else {
         addItem(selectedItem);
       }
     }
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
   };
 
   const handleRemoveItem = (productId) => {
@@ -90,7 +95,7 @@ function ItemSelector({ cookieType }) {
   };
 
   return (
-    <Fragment>
+    <>
       <div className="dropdown-container">
         <select
           value={selectedValue}
@@ -100,7 +105,7 @@ function ItemSelector({ cookieType }) {
           <option value="Select">--Select--</option>
           {dropdownOptions.map((option, productId) => (
             <option
-              key={option.productId}
+              key={productId}
               value={option.value}
               data-info={JSON.stringify(option)}
             >
@@ -115,8 +120,8 @@ function ItemSelector({ cookieType }) {
 
         <div id="cartSummary">
           Cart Items
-          {items.map((item) => (
-            <div key={item.id}>
+          {items.map((item, productId) => (
+            <div key={productId}>
               {item.label} {item.title}
               {showEditDeleteX && (
                 <span onClick={() => handleRemoveItem(item.productId)}>
@@ -162,14 +167,9 @@ function ItemSelector({ cookieType }) {
           moment special, savor the warmth, and relish the joy of homemade
           perfection, one cookie at a time.
         </div>
-
-        {/* {selectedValue === "select" && (
-        <div>
-          {selectedValue} {props.cookieType.title}
-        </div>
-      )} */}
       </div>
-    </Fragment>
+      {showModal && <ModalCookie onClose={closeModal}></ModalCookie>}
+    </>
   );
 }
 
