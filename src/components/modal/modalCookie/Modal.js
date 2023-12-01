@@ -14,10 +14,12 @@ const ModalCookie = ({ onClose, children }) => {
 
           {children}
         </div>
+        <div className="button">
+          <button>Combine</button>
+          <button>Replace</button>
+          <button onClick={onClose}>Cancel</button>
+        </div>
       </div>
-      <button className="closeButton" onClick={onClose}>
-        Close
-      </button>
     </>
   );
 };
