@@ -1,45 +1,30 @@
 /* ItemSelector.css */
 
-#dropdown-container-cart {
-  height: 50px;
-  position: absolute;
-  top: 660px;
-  right: 950px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the right side */
-  justify-content: center; /* Center items vertically */
-  justify-content: space-around;
-  margin: 20px;
-}
-#dropdown-container-shop {
-  height: 50px;
-  position: absolute;
-  top: 660px;
-  right: 1065px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* Align items to the right side */
-  justify-content: center; /* Center items vertically */
-  justify-content: space-around;
-  margin: 20px;
-}
-
-#dropdown-container-addTo {
+#dropdown-button-addTo {
   height: 50px;
   position: absolute;
   top: 387px;
   right: 975px;
   display: flex;
   flex-direction: column;
-  align-items: flex-start; /* Align items to the right side */
-  justify-content: center; /* Center items vertically */
+  align-items: flex-start;
+  justify-content: center;
   justify-content: space-around;
-  margin: 20px;
 }
 
-#cartSummary {
+button {
+  padding: 15px;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: #24a388;
+  color: #fff;
+  border: black 0.5px solid;
+  cursor: pointer;
+}
+
+.cartSummary {
   border: solid 1px black;
+  border-radius: 10px;
   position: absolute;
   font-size: 1.2rem;
   top: 460px;
@@ -47,17 +32,27 @@
   max-height: 500px;
   height: 200px;
   width: 500px;
+  display: flex;
+  flex-direction: column;
+}
+.buttonCookieMenu {
+  width: auto;
+  position: absolute;
+  top: 200px;
 }
 .cookie-description {
   font-size: x-large;
   display: flex;
   flex-direction: row;
-
   position: absolute;
   top: 175px;
   right: 185px;
   width: 800px;
   height: 250px;
+}
+.dropdown-selector {
+  width: 200px;
+  border-radius: 15px;
 }
 
 select {
@@ -66,23 +61,13 @@ select {
   right: 1114px;
   padding: 10px;
   margin-bottom: 10px;
-  font-size: 16px;
+  font-size: 1.2rem;
   align-self: flex-end; /* Align the select to the right side */
 }
 
 select option {
-  font-size: 24px; /* Adjust the font size of the dropdown options */
-}
-
-button {
-  padding: 15px;
-  font-size: 16px;
-  background-color: #24a388;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-
-  align-self: flex-end; /* Align the buttons to the right side */
+  font-size: 1.2rem; /* Adjust the font size of the dropdown options */
+  border-radius: 10px;
 }
 
 button:hover {

@@ -17,10 +17,8 @@
   justify-content: center;
   align-items: center;
   position: absolute;
-  width: 25%;
   padding: 15px;
-  /* top: 525px;
-  right: 910px; */
+  width: 25%;
   font-size: xx-large;
   cursor: pointer;
   font-size: 20px;
@@ -35,26 +33,10 @@
   position: relative;
 }
 
-/* .closeButton-combine {
-  position: absolute;
-  top: 525px;
-  right: 710px;
-  font-size: xx-large;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-}
-
-.closeButton-replace {
-  position: absolute;
-  top: 525px;
-  right: 1110px;
-  font-size: xx-large;
-  cursor: pointer;
-  font-size: 20px;
-  color: #333;
-} */
 p {
   font-size: x-large;
   font-family: "Courier New", Courier, monospace;
+}
+button {
+  margin: 15px;
 }

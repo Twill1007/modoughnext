@@ -96,8 +96,9 @@ function ItemSelector({ cookieType }) {
 
   return (
     <>
-      <div className="dropdown-container">
+      <div>
         <select
+          className="dropdown-selector"
           value={selectedValue}
           label="Quantity"
           onChange={handleDropdownChange}
@@ -114,47 +115,10 @@ function ItemSelector({ cookieType }) {
           ))}
         </select>
 
-        <button id="dropdown-container-addTo" onClick={handleSubmit}>
+        <button id="dropdown-button-addTo" onClick={handleSubmit}>
           Add to Cart
         </button>
 
-        <div id="cartSummary">
-          Cart Items
-          {items.map((item, productId) => (
-            <div key={productId}>
-              {item.label} {item.title}
-              {showEditDeleteX && (
-                <span onClick={() => handleRemoveItem(item.productId)}>
-                  {""} x
-                </span>
-              )}
-            </div>
-          ))}
-          {items.length > 0 && !showEditDeleteX && (
-            <button
-              style={{ position: "absolute", top: "213px", right: "85px" }}
-              onClick={handleShowDeleteX}
-            >
-              Edit Cart Items
-            </button>
-          )}
-          {items.length > 0 && showEditDeleteX && (
-            <button
-              style={{ position: "absolute", top: "213px", right: "100px" }}
-              onClick={handleHideDeleteX}
-            >
-              Done Editing
-            </button>
-          )}
-        </div>
-
-        <Link href="/order-form">
-          <button id="dropdown-container-cart">Go to Cart</button>
-        </Link>
-
-        <Link id="dropdown-container-shop" href="/cookie-menu">
-          <button>Shop Other Treats</button>
-        </Link>
         <div className="cookie-description">
           Experience the ultimate convenience and freshness with our frozen
           chocolate chip cookie dough balls. Immerse yourself in the aroma of
@@ -166,6 +130,33 @@ function ItemSelector({ cookieType }) {
           our frozen dough balls – a culinary secret ready to unfold. Make every
           moment special, savor the warmth, and relish the joy of homemade
           perfection, one cookie at a time.
+        </div>
+      </div>
+      <div className="cartSummary">
+        Cart Items
+        {items.map((item, productId) => (
+          <div key={productId}>
+            {item.label} {item.title}
+            {showEditDeleteX && (
+              <span onClick={() => handleRemoveItem(item.productId)}>
+                {""} x
+              </span>
+            )}
+          </div>
+        ))}
+        <div className="buttonCookieMenu">
+          <Link href="/order-form">
+            <button>Go to Cart</button>
+          </Link>
+          <Link href="/cookie-menu">
+            <button>Shop Other Treats</button>
+          </Link>
+          {items.length > 0 && !showEditDeleteX && (
+            <button onClick={handleShowDeleteX}>Edit Cart Items</button>
+          )}
+          {items.length > 0 && showEditDeleteX && (
+            <button onClick={handleHideDeleteX}>Done Editing</button>
+          )}
         </div>
       </div>
       {showModal && <ModalCookie onClose={closeModal}></ModalCookie>}
