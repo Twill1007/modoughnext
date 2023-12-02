@@ -1,6 +1,5 @@
 import React from "react";
 import "../modalCookie/modal.css";
-import { Padding } from "@mui/icons-material";
 
 const ModalCookie = ({ onClose, children }) => {
   return (

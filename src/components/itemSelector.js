@@ -1,8 +1,9 @@
 import React, { Fragment, useEffect, useState } from "react";
 import Link from "next/link";
 import ModalCookie from "../components/modal/modalCookie/Modal";
+import SelectComponent from "./Utility/SelectComponent";
 import useCart from "@/hooks/use-cart";
-import { calculatePrices } from "./pricingLogic";
+import { calculatePrices } from "./Utility/pricingLogic";
 import { v4 as uuidv4 } from "uuid";
 import "../components/itemSelector.css";
 
@@ -62,6 +63,9 @@ function ItemSelector({ cookieType }) {
     setSelectedValue(event.target.value);
   };
 
+  const valuePropertyInCart = selectedValue;
+  console.log("This should be the value", valuePropertyInCart);
+
   const handleSubmit = () => {
     if (selectedValue !== "Select" && selectedValue !== "") {
       const selectedItem = dropdownOptions.find(
@@ -97,27 +101,12 @@ function ItemSelector({ cookieType }) {
   return (
     <>
       <div>
-        <select
-          className="dropdown-selector"
-          value={selectedValue}
-          label="Quantity"
-          onChange={handleDropdownChange}
-        >
-          <option value="Select">--Select--</option>
-          {dropdownOptions.map((option, productId) => (
-            <option
-              key={productId}
-              value={option.value}
-              data-info={JSON.stringify(option)}
-            >
-              {option.label}
-            </option>
-          ))}
-        </select>
-
-        <button id="dropdown-button-addTo" onClick={handleSubmit}>
-          Add to Cart
-        </button>
+        <SelectComponent
+          selectedValue={selectedValue}
+          dropdownOptions={dropdownOptions}
+          handleDropdownChange={handleDropdownChange}
+          handleSubmit={handleSubmit}
+        />
 
         <div className="cookie-description">
           Experience the ultimate convenience and freshness with our frozen
@@ -145,6 +134,9 @@ function ItemSelector({ cookieType }) {
           </div>
         ))}
         <div className="buttonCookieMenu">
+          <button id="dropdown-button-addTo" onClick={handleSubmit}>
+            Add to Cart
+          </button>
           <Link href="/order-form">
             <button>Go to Cart</button>
           </Link>
@@ -157,6 +149,7 @@ function ItemSelector({ cookieType }) {
           {items.length > 0 && showEditDeleteX && (
             <button onClick={handleHideDeleteX}>Done Editing</button>
           )}
+          {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
         </div>
       </div>
       {showModal && <ModalCookie onClose={closeModal}></ModalCookie>}

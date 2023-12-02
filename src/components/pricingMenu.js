@@ -1,5 +1,5 @@
 import React from "react";
-import { calculatePrices } from "./pricingLogic";
+import { calculatePrices } from "./Utility/pricingLogic";
 import "../components/pricingMenu.css";
 
 function PricingMenu({ cookieType }) {
