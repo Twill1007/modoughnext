@@ -17,9 +17,12 @@ var cartSlice = (0, _toolkit.createSlice)({
       state.push(newItem);
     },
     removeItemFromCartById: function removeItemFromCartById(state, action) {
-      var itemId = action.payload;
+      var _action$payload = action.payload,
+          productId = _action$payload.productId,
+          id = _action$payload.id;
+      console.log("Removing item with productId:", productId, "and id:", id);
       return state.filter(function (item) {
-        return item.productId !== itemId && item.id !== itemId;
+        return item.productId !== productId || item.id !== id;
       });
     }
   }

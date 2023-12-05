@@ -64,19 +64,20 @@ function ItemSelector({ cookieType }) {
     setSelectedValue(event.target.value);
   };
 
+  const selectedItem = dropdownOptions.find(
+    (option) => option.value === selectedValue
+  );
+
   const handleSubmit = () => {
     if (selectedValue !== "Select" && selectedValue !== "") {
-      const selectedItem = dropdownOptions.find(
-        (option) => option.value === selectedValue
-      );
       const itemAlreadyInCart = items.some(
         (item) => item.id === selectedItem.id
       );
+
       if (itemAlreadyInCart) {
         setCartOptionChoice(selectedItem);
         setShowModal(true);
       } else {
-        console.log("This is the selectedItem", selectedItem);
         addItem(selectedItem);
       }
     }
@@ -86,41 +87,44 @@ function ItemSelector({ cookieType }) {
     return element.value === selectedValue;
   });
 
+  const usersSelectedId = selectedValue;
+
   const handleCartOptionChoice = (choice) => {
     if (choice === "combine") {
       const combinedItem = {
         ...cartOptionChoice,
       };
-
       addItem(combinedItem);
     } else if (choice === "replace") {
-      const foundItem = items.find((item) => item.id);
-      console.log("This is the foundItem", foundItem);
-      if (foundItem) {
-        const cookieId = {
-          id: foundItem.id,
-        };
-        console.log("This is the cookieId", cookieId);
-        removeItem(cookieId);
-        const selectedItem = dropdownOptions.find(
-          (option) => option.value === selectedValue
-        );
-        addItem(selectedItem);
-      }
+      const filteredItems = items.filter((item) => item.id !== selectedItem.id);
+      console.log("items that pass the filter test", filteredItems);
+
+      const itemsToRemove = filteredItems.map((item) => ({
+        productId: item.productId,
+        id: item.id,
+      }));
+
+      itemsToRemove.forEach((item) => {
+        removeItem(item.id);
+        console.log("this is supposed to be the cookie id", item.id);
+      });
+
+      // filteredItems.forEach((filteredItem) => {
+      //   addItem(filteredItem);
+      // });
+
+      addItem(selectedItem);
     }
     setShowModal(false);
   };
-  console.log("This is what is in the cart right now", items);
 
   const closeModal = () => {
     setShowModal(false);
   };
 
   const handleRemoveItem = (productId) => {
-    const selectedItems = {
-      productId: productId,
-    };
-    removeItem(selectedItems);
+    console.log("productId", productId);
+    removeItem({ productId });
   };
 
   const handleShowDeleteX = () => {
@@ -156,8 +160,8 @@ function ItemSelector({ cookieType }) {
       </div>
       <div className="cartSummary">
         Cart Items
-        {items.map((item, productId) => (
-          <div key={productId}>
+        {items.map((item) => (
+          <div key={item.productId}>
             {item.label} {item.title}
             {showEditDeleteX && (
               <span onClick={() => handleRemoveItem(item.productId)}>

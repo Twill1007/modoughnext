@@ -14,7 +14,11 @@ function useCart() {
     dispatch(addItemToCart(item));
   };
   const removeItem = ({ productId, id }) => {
-    dispatch(removeItemFromCartById(productId || id));
+    console.log(
+      "this is in the use-cart hook and is showing what the id is hopefully it is the cookie id",
+      id
+    );
+    dispatch(removeItemFromCartById({ productId, id }));
   };
 
   return { addItem, removeItem, items };

@@ -21,7 +21,11 @@ function useCart() {
   var removeItem = function removeItem(_ref) {
     var productId = _ref.productId,
         id = _ref.id;
-    dispatch((0, _cartSlice.removeItemFromCartById)(productId || id));
+    console.log("this is in the use-cart hook and is showing what the id is hopefully it is the cookie id", id);
+    dispatch((0, _cartSlice.removeItemFromCartById)({
+      productId: productId,
+      id: id
+    }));
   };
 
   return {
