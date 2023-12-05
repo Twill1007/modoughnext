@@ -13,8 +13,8 @@ function useCart() {
   const addItem = (item) => {
     dispatch(addItemToCart(item));
   };
-  const removeItem = (productId) => {
-    dispatch(removeItemFromCartById(productId));
+  const removeItem = ({ productId, id }) => {
+    dispatch(removeItemFromCartById(productId || id));
   };
 
   return { addItem, removeItem, items };

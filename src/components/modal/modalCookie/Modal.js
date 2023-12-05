@@ -1,7 +1,7 @@
 import React from "react";
 import "../modalCookie/modal.css";
 
-const ModalCookie = ({ onClose, children }) => {
+const ModalCookie = ({ onClose, children, onCartOptionChoice }) => {
   return (
     <>
       <div className="modalOverlay">
@@ -15,8 +15,8 @@ const ModalCookie = ({ onClose, children }) => {
           {children}
         </div>
         <div className="button">
-          <button>Combine</button>
-          <button>Replace</button>
+          <button onClick={() => onCartOptionChoice("combine")}>Combine</button>
+          <button onClick={() => onCartOptionChoice("replace")}>Replace</button>
           <button onClick={onClose}>Cancel</button>
         </div>
       </div>

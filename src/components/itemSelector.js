@@ -13,6 +13,7 @@ function ItemSelector({ cookieType }) {
   const [selectedValue, setSelectedValue] = useState("");
   const [showEditDeleteX, setShowDeleteX] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const [cartOptionChoice, setCartOptionChoice] = useState(null);
 
   const prices = discountedPrices;
 
@@ -63,9 +64,6 @@ function ItemSelector({ cookieType }) {
     setSelectedValue(event.target.value);
   };
 
-  const valuePropertyInCart = selectedValue;
-  console.log("This should be the value", valuePropertyInCart);
-
   const handleSubmit = () => {
     if (selectedValue !== "Select" && selectedValue !== "") {
       const selectedItem = dropdownOptions.find(
@@ -75,19 +73,54 @@ function ItemSelector({ cookieType }) {
         (item) => item.id === selectedItem.id
       );
       if (itemAlreadyInCart) {
+        setCartOptionChoice(selectedItem);
         setShowModal(true);
       } else {
+        console.log("This is the selectedItem", selectedItem);
         addItem(selectedItem);
       }
     }
   };
+
+  const valueOfElement = dropdownOptions.find((element) => {
+    return element.value === selectedValue;
+  });
+
+  const handleCartOptionChoice = (choice) => {
+    if (choice === "combine") {
+      const combinedItem = {
+        ...cartOptionChoice,
+      };
+
+      addItem(combinedItem);
+    } else if (choice === "replace") {
+      const foundItem = items.find((item) => item.id);
+      console.log("This is the foundItem", foundItem);
+      if (foundItem) {
+        const cookieId = {
+          id: foundItem.id,
+        };
+        console.log("This is the cookieId", cookieId);
+        removeItem(cookieId);
+        const selectedItem = dropdownOptions.find(
+          (option) => option.value === selectedValue
+        );
+        addItem(selectedItem);
+      }
+    }
+    setShowModal(false);
+  };
+  console.log("This is what is in the cart right now", items);
 
   const closeModal = () => {
     setShowModal(false);
   };
 
   const handleRemoveItem = (productId) => {
-    removeItem(productId);
+    const selectedItems = {
+      productId: productId,
+    };
+    removeItem(selectedItems);
   };
 
   const handleShowDeleteX = () => {
@@ -152,7 +185,12 @@ function ItemSelector({ cookieType }) {
           {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
         </div>
       </div>
-      {showModal && <ModalCookie onClose={closeModal}></ModalCookie>}
+      {showModal && (
+        <ModalCookie
+          onCartOptionChoice={handleCartOptionChoice}
+          onClose={closeModal}
+        ></ModalCookie>
+      )}
     </>
   );
 }
