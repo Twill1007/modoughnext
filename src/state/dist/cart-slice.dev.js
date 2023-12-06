@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports["default"] = exports.removeItemFromCartById = exports.addItemToCart = exports.selectItemsById = exports.selectItems = exports.cartSlice = void 0;
+exports["default"] = exports.removeItemFromCartByProductId = exports.removeItemFromCartByCookieId = exports.removeItemFromCartById = exports.addItemToCart = exports.selectItemsById = exports.selectItems = exports.cartSlice = void 0;
 
 var _toolkit = require("@reduxjs/toolkit");
 
@@ -16,13 +16,18 @@ var cartSlice = (0, _toolkit.createSlice)({
       var newItem = action.payload;
       state.push(newItem);
     },
-    removeItemFromCartById: function removeItemFromCartById(state, action) {
-      var _action$payload = action.payload,
-          productId = _action$payload.productId,
-          id = _action$payload.id;
-      console.log("Removing item with productId:", productId, "and id:", id);
+    removeItemFromCartByProductId: function removeItemFromCartByProductId(state, action) {
+      var productId = action.payload;
+      console.log("Removing item with productId:", productId);
       return state.filter(function (item) {
-        return item.productId !== productId || item.id !== id;
+        return item.productId !== productId;
+      });
+    },
+    removeItemFromCartByCookieId: function removeItemFromCartByCookieId(state, action) {
+      var id = action.payload;
+      console.log("Removing item with productId:", id);
+      return state.filter(function (item) {
+        return item.id !== id;
       });
     }
   }
@@ -48,7 +53,11 @@ var selectItemsById = function selectItemsById(id) {
 exports.selectItemsById = selectItemsById;
 var _cartSlice$actions = cartSlice.actions,
     addItemToCart = _cartSlice$actions.addItemToCart,
-    removeItemFromCartById = _cartSlice$actions.removeItemFromCartById;
+    removeItemFromCartById = _cartSlice$actions.removeItemFromCartById,
+    removeItemFromCartByCookieId = _cartSlice$actions.removeItemFromCartByCookieId,
+    removeItemFromCartByProductId = _cartSlice$actions.removeItemFromCartByProductId;
+exports.removeItemFromCartByProductId = removeItemFromCartByProductId;
+exports.removeItemFromCartByCookieId = removeItemFromCartByCookieId;
 exports.removeItemFromCartById = removeItemFromCartById;
 exports.addItemToCart = addItemToCart;
 var _default = cartSlice.reducer;

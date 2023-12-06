@@ -18,19 +18,18 @@ function useCart() {
     dispatch((0, _cartSlice.addItemToCart)(item));
   };
 
-  var removeItem = function removeItem(_ref) {
-    var productId = _ref.productId,
-        id = _ref.id;
-    console.log("this is in the use-cart hook and is showing what the id is hopefully it is the cookie id", id);
-    dispatch((0, _cartSlice.removeItemFromCartById)({
-      productId: productId,
-      id: id
-    }));
+  var removeItemByProductId = function removeItemByProductId(productId) {
+    dispatch((0, _cartSlice.removeItemFromCartByProductId)(productId));
+  };
+
+  var removeItemByCookieId = function removeItemByCookieId(id) {
+    dispatch((0, _cartSlice.removeItemFromCartByCookieId)(id));
   };
 
   return {
     addItem: addItem,
-    removeItem: removeItem,
+    removeItemByProductId: removeItemByProductId,
+    removeItemByCookieId: removeItemByCookieId,
     items: items
   };
 }

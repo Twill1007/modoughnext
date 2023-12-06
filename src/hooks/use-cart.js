@@ -2,7 +2,8 @@
 import { useDispatch, useSelector } from "react-redux";
 import {
   addItemToCart,
-  removeItemFromCartById,
+  removeItemFromCartByProductId,
+  removeItemFromCartByCookieId,
   selectItems,
 } from "@/state/cart-slice";
 
@@ -13,15 +14,14 @@ function useCart() {
   const addItem = (item) => {
     dispatch(addItemToCart(item));
   };
-  const removeItem = ({ productId, id }) => {
-    console.log(
-      "this is in the use-cart hook and is showing what the id is hopefully it is the cookie id",
-      id
-    );
-    dispatch(removeItemFromCartById({ productId, id }));
+  const removeItemByProductId = (productId) => {
+    dispatch(removeItemFromCartByProductId(productId));
+  };
+  const removeItemByCookieId = (id) => {
+    dispatch(removeItemFromCartByCookieId(id));
   };
 
-  return { addItem, removeItem, items };
+  return { addItem, removeItemByProductId, removeItemByCookieId, items };
 }
 
 export default useCart;

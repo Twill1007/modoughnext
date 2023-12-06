@@ -9,7 +9,8 @@ import "../components/itemSelector.css";
 
 function ItemSelector({ cookieType }) {
   const { discountedPrices } = calculatePrices();
-  const { items, addItem, removeItem } = useCart();
+  const { items, addItem, removeItemByCookieId, removeItemByProductId } =
+    useCart();
   const [selectedValue, setSelectedValue] = useState("");
   const [showEditDeleteX, setShowDeleteX] = useState(false);
   const [showModal, setShowModal] = useState(false);
@@ -96,23 +97,7 @@ function ItemSelector({ cookieType }) {
       };
       addItem(combinedItem);
     } else if (choice === "replace") {
-      const filteredItems = items.filter((item) => item.id !== selectedItem.id);
-      console.log("items that pass the filter test", filteredItems);
-
-      const itemsToRemove = filteredItems.map((item) => ({
-        productId: item.productId,
-        id: item.id,
-      }));
-
-      itemsToRemove.forEach((item) => {
-        removeItem(item.id);
-        console.log("this is supposed to be the cookie id", item.id);
-      });
-
-      // filteredItems.forEach((filteredItem) => {
-      //   addItem(filteredItem);
-      // });
-
+      removeItemByCookieId(selectedItem.id);
       addItem(selectedItem);
     }
     setShowModal(false);
@@ -123,8 +108,7 @@ function ItemSelector({ cookieType }) {
   };
 
   const handleRemoveItem = (productId) => {
-    console.log("productId", productId);
-    removeItem({ productId });
+    removeItemByProductId(productId);
   };
 
   const handleShowDeleteX = () => {

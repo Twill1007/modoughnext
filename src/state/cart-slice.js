@@ -10,12 +10,15 @@ export const cartSlice = createSlice({
       const newItem = action.payload;
       state.push(newItem);
     },
-    removeItemFromCartById: (state, action) => {
-      const { productId, id } = action.payload;
-      console.log("Removing item with productId:", productId, "and id:", id);
-      return state.filter(
-        (item) => item.productId !== productId || item.id !== id
-      );
+    removeItemFromCartByProductId: (state, action) => {
+      const productId = action.payload;
+      console.log("Removing item with productId:", productId);
+      return state.filter((item) => item.productId !== productId);
+    },
+    removeItemFromCartByCookieId: (state, action) => {
+      const id = action.payload;
+      console.log("Removing item with productId:", id);
+      return state.filter((item) => item.id !== id);
     },
   },
 });
@@ -30,6 +33,11 @@ export const selectItemsById = (id) => (state) => {
   return state.cart.filter((item) => item.id === id);
 };
 
-export const { addItemToCart, removeItemFromCartById } = cartSlice.actions;
+export const {
+  addItemToCart,
+  removeItemFromCartById,
+  removeItemFromCartByCookieId,
+  removeItemFromCartByProductId,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;
