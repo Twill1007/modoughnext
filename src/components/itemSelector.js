@@ -86,23 +86,15 @@ function ItemSelector({ cookieType }) {
   };
 
   const handleCartOptionChoice = (choice) => {
-    const firstChoice = items.map((v) => v.value);
-    console.log("This is firstChoice", firstChoice);
-    const firstPick = +firstChoice;
-    if (choice === "combine") {
-      const secondChoice = +selectedValue;
-      const addingValues = firstPick + secondChoice;
-      console.log("total Value", addingValues);
-      const combinedItem = {
-        ...cartOptionChoice,
-      };
-      addItem(combinedItem);
-    } else if (choice === "replace") {
+    if (choice === "replace") {
       removeItemByCookieId(selectedItem.id);
       addItem(selectedItem);
       setSelectedValue("");
+    } else if (choice === "cancel") {
+      setShowModal(false);
     }
     setShowModal(false);
+    setSelectedValue("");
   };
 
   const closeModal = () => {
