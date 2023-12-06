@@ -80,18 +80,19 @@ function ItemSelector({ cookieType }) {
         setShowModal(true);
       } else {
         addItem(selectedItem);
+        setSelectedValue("");
       }
     }
   };
 
-  const valueOfElement = dropdownOptions.find((element) => {
-    return element.value === selectedValue;
-  });
-
-  const usersSelectedId = selectedValue;
-
   const handleCartOptionChoice = (choice) => {
+    const firstChoice = items.map((v) => v.value);
+    console.log("This is firstChoice", firstChoice);
+    const firstPick = +firstChoice;
     if (choice === "combine") {
+      const secondChoice = +selectedValue;
+      const addingValues = firstPick + secondChoice;
+      console.log("total Value", addingValues);
       const combinedItem = {
         ...cartOptionChoice,
       };
@@ -99,6 +100,7 @@ function ItemSelector({ cookieType }) {
     } else if (choice === "replace") {
       removeItemByCookieId(selectedItem.id);
       addItem(selectedItem);
+      setSelectedValue("");
     }
     setShowModal(false);
   };

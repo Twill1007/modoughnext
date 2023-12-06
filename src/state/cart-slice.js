@@ -12,12 +12,10 @@ export const cartSlice = createSlice({
     },
     removeItemFromCartByProductId: (state, action) => {
       const productId = action.payload;
-      console.log("Removing item with productId:", productId);
       return state.filter((item) => item.productId !== productId);
     },
     removeItemFromCartByCookieId: (state, action) => {
       const id = action.payload;
-      console.log("Removing item with productId:", id);
       return state.filter((item) => item.id !== id);
     },
   },
