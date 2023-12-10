@@ -41,14 +41,16 @@ button {
   top: 200px;
 }
 .cookie-description {
+  background-color: red;
   font-size: x-large;
   display: flex;
   flex-direction: row;
-  position: absolute;
-  top: 175px;
-  right: 185px;
-  width: 800px;
-  height: 250px;
+  justify-content: flex-end;
+  position: relative;
+  max-width: 100%;
+  width: 25%;
+  height: 25%;
+  margin-left: auto;
 }
 .dropdown-selector {
   width: 200px;

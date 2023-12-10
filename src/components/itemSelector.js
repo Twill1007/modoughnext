@@ -115,15 +115,14 @@ function ItemSelector({ cookieType }) {
 
   return (
     <>
-      <div>
-        <SelectComponent
-          selectedValue={selectedValue}
-          dropdownOptions={dropdownOptions}
-          handleDropdownChange={handleDropdownChange}
-          handleSubmit={handleSubmit}
-        />
-
-        <div className="cookie-description">
+      <SelectComponent
+        selectedValue={selectedValue}
+        dropdownOptions={dropdownOptions}
+        handleDropdownChange={handleDropdownChange}
+        handleSubmit={handleSubmit}
+      />
+      <div className="cookie-description">
+        <div>
           Experience the ultimate convenience and freshness with our frozen
           chocolate chip cookie dough balls. Immerse yourself in the aroma of
           gourmet baking without the effort. Crafted from the finest

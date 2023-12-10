@@ -1,0 +1,17 @@
+nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center; /* Center the items vertically */
+  justify-content: center; /* Center the items horizontally */
+  position: absolute;
+  right: 700px; /* Adjust the right position */
+  padding: 2px;
+  margin: 0 2rem;
+  background-color: var(--mainColor);
+}
+
+.navLink {
+  text-decoration: none;
+  font-size: 2.5rem;
+  margin: 0 45px; /* Add margin to create space between links */
+}

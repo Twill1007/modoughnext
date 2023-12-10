@@ -4,6 +4,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import CartIcon from "../UI/cartIcon";
 import useCart from "@/hooks/use-cart";
 import Link from "next/link";
+import "../components/navBar.css";
 
 function NavBar() {
   const { items } = useCart();
@@ -15,17 +16,15 @@ function NavBar() {
 
   return (
     <header>
-      <nav ref={navRef}>
-        <Link href="/cookie-home">
-          <h3>Mo's Dough</h3>
-        </Link>
-        <Link className="navLink" onClick={showNavBar} href="/cookie-about">
+      <nav className="navLink" ref={navRef}>
+        <Link href="/cookie-home">Mo's Dough</Link>
+        <Link onClick={showNavBar} href="/cookie-about">
           About
         </Link>
-        <Link className="navLink" onClick={showNavBar} href="/cookie-menu">
+        <Link onClick={showNavBar} href="/cookie-menu">
           Menu
         </Link>
-        <Link className="navLink" onClick={showNavBar} href="/order-form">
+        <Link onClick={showNavBar} href="/order-form">
           Cart
         </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
