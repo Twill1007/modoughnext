@@ -16,15 +16,17 @@ function NavBar() {
 
   return (
     <header>
-      <nav className="navLink" ref={navRef}>
-        <Link href="/cookie-home">Mo's Dough</Link>
-        <Link onClick={showNavBar} href="/cookie-about">
+      <Link className="nav-link" href="/cookie-home">
+        Mo's Dough
+      </Link>
+      <nav ref={navRef}>
+        <Link className="link" onClick={showNavBar} href="/cookie-about">
           About
         </Link>
-        <Link onClick={showNavBar} href="/cookie-menu">
+        <Link className="link" onClick={showNavBar} href="/cookie-menu">
           Menu
         </Link>
-        <Link onClick={showNavBar} href="/order-form">
+        <Link className="link" onClick={showNavBar} href="/order-form">
           Cart
         </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>

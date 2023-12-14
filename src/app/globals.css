@@ -17,11 +17,8 @@
 
 header {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: row;
   height: 100px;
-  padding: 0 2rem;
-  margin: 0;
   background-color: var(--mainColor);
   color: var(--textColor);
   z-index: 1;
@@ -30,19 +27,15 @@ header {
   top: 0;
 }
 
-header h3 {
-  background-color: var(--mainColor);
-  position: absolute;
+header .nav-link {
   display: flex;
   justify-content: center;
   align-items: center;
-  top: 5px;
-  width: 205px;
-  right: 1020px;
+  background-color: var(--mainColor);
   font-size: 2.5rem;
-  color: var(--textColor);
-  margin: auto;
+  width: 15%;
 }
+
 .faTimes {
   background-color: var(--mainColor);
 }
