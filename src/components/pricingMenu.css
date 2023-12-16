@@ -2,21 +2,21 @@
   font-size: xx-large;
   display: flex;
   flex-direction: column;
+  position: relative;
+  background-color: red;
   border: 1px solid black;
   border-radius: 10px;
-  position: absolute;
-  top: 290px;
-  left: 40%;
   transform: translate(-50%, -50%);
   width: 200px;
 }
 
 .menu-div-prices {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: start;
   font-size: 1.4rem;
   font-family: "Handlee", cursive;
-  position: relative;
-  right: 0;
-  top: -5px;
 }
 
 .menuCookie-idcc {
@@ -35,7 +35,7 @@
 
 .menuCookie-idsd {
   position: absolute;
-  top: 150px;
+  top: 650px;
   border-radius: 15px;
   border: 1px solid black;
   margin: 25px;

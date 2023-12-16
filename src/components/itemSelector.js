@@ -3,6 +3,7 @@ import Link from "next/link";
 import ModalCookie from "../components/modal/modalCookie/Modal";
 import SelectComponent from "./Utility/SelectComponent";
 import useCart from "@/hooks/use-cart";
+import CartItems from "./Utility/CartItems";
 import { calculatePrices } from "./Utility/pricingLogic";
 import { v4 as uuidv4 } from "uuid";
 import "../components/itemSelector.css";
@@ -114,57 +115,48 @@ function ItemSelector({ cookieType }) {
   };
 
   return (
-    <>
-      <SelectComponent
-        selectedValue={selectedValue}
-        dropdownOptions={dropdownOptions}
-        handleDropdownChange={handleDropdownChange}
-        handleSubmit={handleSubmit}
-      />
+    <div>
+      <div>
+        <SelectComponent
+          className="selectComponent"
+          selectedValue={selectedValue}
+          dropdownOptions={dropdownOptions}
+          handleDropdownChange={handleDropdownChange}
+          handleSubmit={handleSubmit}
+        />
+      </div>
       <div className="cookie-description">
-        <div>
-          Experience the ultimate convenience and freshness with our frozen
-          chocolate chip cookie dough balls. Immerse yourself in the aroma of
-          gourmet baking without the effort. Crafted from the finest
-          ingredients, each perfectly portioned ball guarantees a batch of warm,
-          gooey cookies in minutes. From freezer to oven, effortlessly transform
-          your space into a bakery, delighting in the anticipation of every
-          golden, chewy bite. Elevate your dessert game with the convenience of
-          our frozen dough balls – a culinary secret ready to unfold. Make every
-          moment special, savor the warmth, and relish the joy of homemade
-          perfection, one cookie at a time.
-        </div>
+        Experience the ultimate convenience and freshness with our frozen
+        chocolate chip cookie dough balls. Immerse yourself in the aroma of
+        gourmet baking without the effort. Crafted from the finest ingredients,
+        each perfectly portioned ball guarantees a batch of warm, gooey cookies
+        in minutes.
       </div>
       <div className="cartSummary">
         Cart Items
-        {items.map((item) => (
-          <div key={item.productId}>
-            {item.label} {item.title}
-            {showEditDeleteX && (
-              <span onClick={() => handleRemoveItem(item.productId)}>
-                {""} x
-              </span>
-            )}
-          </div>
-        ))}
-        <div className="buttonCookieMenu">
-          <button id="dropdown-button-addTo" onClick={handleSubmit}>
-            Add to Cart
+        <CartItems showX={showEditDeleteX} handleRemove={handleRemoveItem} />
+      </div>
+      <div>
+        <button className="buttons" onClick={handleSubmit}>
+          Add to Cart
+        </button>
+        <Link href="/order-form">
+          <button className="buttons">Go to Cart</button>
+        </Link>
+        <Link href="/cookie-menu">
+          <button className="buttons">Shop Other Treats</button>
+        </Link>
+        {items.length > 0 && !showEditDeleteX && (
+          <button className="buttons" onClick={handleShowDeleteX}>
+            Edit Cart Items
           </button>
-          <Link href="/order-form">
-            <button>Go to Cart</button>
-          </Link>
-          <Link href="/cookie-menu">
-            <button>Shop Other Treats</button>
-          </Link>
-          {items.length > 0 && !showEditDeleteX && (
-            <button onClick={handleShowDeleteX}>Edit Cart Items</button>
-          )}
-          {items.length > 0 && showEditDeleteX && (
-            <button onClick={handleHideDeleteX}>Done Editing</button>
-          )}
-          {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
-        </div>
+        )}
+        {items.length > 0 && showEditDeleteX && (
+          <button className="buttons" onClick={handleHideDeleteX}>
+            Done Editing
+          </button>
+        )}
+        {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
       </div>
       {showModal && (
         <ModalCookie
@@ -172,7 +164,7 @@ function ItemSelector({ cookieType }) {
           onClose={closeModal}
         ></ModalCookie>
       )}
-    </>
+    </div>
   );
 }
 

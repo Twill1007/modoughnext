@@ -22,7 +22,7 @@ header {
   background-color: var(--mainColor);
   color: var(--textColor);
   z-index: 1;
-  position: fixed;
+  position: relative;
   width: 100%;
   top: 0;
 }
@@ -112,10 +112,5 @@ header .nav-btn {
 
 body {
   min-height: 100vh;
-  margin: 0px;
+  margin: 0;
 }
-
-/* a {
-  text-decoration: none;
-  color: black;
-} */
