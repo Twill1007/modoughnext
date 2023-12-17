@@ -1,5 +1,6 @@
 import React from "react";
 import "../modalCookie/modal.css";
+import "../../itemSelector.css";
 import useCart from "@/hooks/use-cart";
 
 const ModalCookie = ({ children, onCartOptionChoice }) => {
@@ -16,9 +17,17 @@ const ModalCookie = ({ children, onCartOptionChoice }) => {
           </p>
 
           {children}
-          <div className="button">
-            <button onClick={() => onCartOptionChoice("cancel")}>Cancel</button>
-            <button onClick={() => onCartOptionChoice("replace")}>
+          <div>
+            <button
+              className="buttons"
+              onClick={() => onCartOptionChoice("cancel")}
+            >
+              Cancel
+            </button>
+            <button
+              className="buttons"
+              onClick={() => onCartOptionChoice("replace")}
+            >
               Replace
             </button>
           </div>

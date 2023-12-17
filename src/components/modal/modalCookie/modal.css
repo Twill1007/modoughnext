@@ -9,8 +9,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1;
 }
-.button {
+/* .button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -20,12 +21,14 @@
   width: 100%;
   font-size: xx-large;
   font-size: 20px;
-}
+} */
 .modalContent {
-  height: 210px;
-  width: 25%;
+  display: inline-block;
+  justify-content: center;
+  align-items: center;
   border-radius: 15px;
-  position: relative;
+  width: 25%;
+  height: 25%;
   border: 5px solid rgb(118, 13, 134);
 }
 
