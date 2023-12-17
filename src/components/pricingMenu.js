@@ -7,6 +7,7 @@ function PricingMenu({ cookieType }) {
 
   return (
     <>
+      <div className={"menuCookie-id" + cookieType?.id}></div>
       <div className="menu-div-prices">
         Price Section:
         <div>
@@ -19,8 +20,6 @@ function PricingMenu({ cookieType }) {
           ))}
         </div>
       </div>
-      Copy me to find the image.
-      <div className={"menuCookie-id" + cookieType?.id}></div>
     </>
   );
 }

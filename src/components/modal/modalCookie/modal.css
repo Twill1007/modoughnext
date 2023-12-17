@@ -1,6 +1,7 @@
 /* Modal.module.css */
 .modalOverlay {
   position: fixed;
+
   top: 0;
   left: 0;
   width: 100%;
@@ -24,16 +25,38 @@
 } */
 .modalContent {
   display: inline-block;
+  box-sizing: border-box;
   justify-content: center;
   align-items: center;
   border-radius: 15px;
   width: 25%;
-  height: 25%;
   border: 5px solid rgb(118, 13, 134);
+}
+
+.modalButtons {
+  display: inline-flex;
+  padding: 10px;
+  margin: 0px 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  font-size: 16px;
+  background-color: var(--mainColor);
+  color: #fff;
+  border: black 0.5px solid;
+  cursor: pointer;
+  z-index: 1;
 }
 
 p {
   font-size: x-large;
   font-family: "Courier New", Courier, monospace;
   margin: 5px;
+}
+.modalContent > div:last-child {
+  display: flex;
+  margin-bottom: 5px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
 }

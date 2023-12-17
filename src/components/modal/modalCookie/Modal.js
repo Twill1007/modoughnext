@@ -19,13 +19,13 @@ const ModalCookie = ({ children, onCartOptionChoice }) => {
           {children}
           <div>
             <button
-              className="buttons"
+              className="modalButtons"
               onClick={() => onCartOptionChoice("cancel")}
             >
               Cancel
             </button>
             <button
-              className="buttons"
+              className="modalButtons"
               onClick={() => onCartOptionChoice("replace")}
             >
               Replace

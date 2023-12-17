@@ -26,7 +26,9 @@ function CookieOrder({ params }) {
   return (
     <Fragment>
       {selectedCookie ? (
-        <div>{selectedCookie.title}</div>
+        <div style={{ fontSize: "xx-large", padding: "3px" }}>
+          {selectedCookie.title}
+        </div>
       ) : (
         <div>Loading...</div>
       )}

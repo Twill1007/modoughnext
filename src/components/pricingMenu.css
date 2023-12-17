@@ -13,7 +13,9 @@
 .menu-div-prices {
   display: inline-block;
   flex-direction: column;
-  border: 3px black solid;
+  border: 1px black solid;
+  margin: 3px;
+  border-radius: 15px;
   justify-content: center;
   align-items: start;
   font-size: 1.4rem;
@@ -21,13 +23,12 @@
 }
 
 .menuCookie-idcc {
-  position: absolute;
-  top: 150px;
+  display: inline-block;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 25px;
-  height: 150px;
-  width: 150px;
+  height: 350px;
+  width: 350px;
+  margin: 3px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -39,9 +40,9 @@
   top: 650px;
   border-radius: 15px;
   border: 1px solid black;
-  margin: 25px;
-  height: 150px;
-  width: 150px;
+  height: 350px;
+  width: 350px;
+  margin: 3px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -49,13 +50,13 @@
 }
 
 .menuCookie-idpbc {
-  position: absolute;
+  display: inline-block;
   top: 150px;
   border: 1px solid black;
   border-radius: 15px;
-  margin: 25px;
-  height: 150px;
-  width: 150px;
+  height: 350px;
+  width: 350px;
+  margin: 3px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -63,13 +64,13 @@
 }
 
 .menuCookie-idsc {
-  position: absolute;
+  display: inline-block;
   top: 150px;
   border-radius: 15px;
   border: 1px solid black;
-  margin: 25px;
-  height: 150px;
-  width: 150px;
+  height: 350px;
+  width: 350px;
+  margin: 3px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

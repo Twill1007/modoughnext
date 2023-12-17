@@ -7,9 +7,11 @@
 }
 
 .buttons {
-  display: inline-block;
+  display: inline-flex;
   padding: 15px;
   margin: 15px;
+  justify-content: center;
+  align-items: center;
   border-radius: 10px;
   font-size: 16px;
   background-color: var(--mainColor);
@@ -32,15 +34,10 @@
 .cookie-description {
   display: inline-block;
   font-size: x-large;
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
   position: relative;
   max-width: 100%;
   width: 25%;
   height: 25%;
-  margin: 1rem;
-  padding: 1rem;
   border: 3px solid blue;
 }
 .dropdown-selector {
@@ -61,8 +58,9 @@ button:hover {
 }
 
 /* Additional styles for the items in the cart */
-div > div {
-  margin-top: 5px;
+.menu-div-prices > div:last-child {
+  margin: 5px;
+  font-size: xx-large;
 }
 
 span {
