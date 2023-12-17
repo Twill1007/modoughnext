@@ -22,7 +22,7 @@ const OrderPage = () => {
         style={{
           border: "solid 1px black",
           position: "absolute",
-          top: "150px",
+          top: "250px",
           width: "400px",
           height: "600px",
         }}

@@ -7,9 +7,9 @@ function PricingMenu({ cookieType }) {
 
   return (
     <>
-      <div className="menu-div-main">
+      <div className="menu-div-prices">
         Price Section:
-        <div className="menu-div-prices">
+        <div>
           {keys.map((key, index) => (
             <div key={index}>
               <span>
@@ -19,6 +19,7 @@ function PricingMenu({ cookieType }) {
           ))}
         </div>
       </div>
+      Copy me to find the image.
       <div className={"menuCookie-id" + cookieType?.id}></div>
     </>
   );

@@ -30,10 +30,9 @@ function CookieOrder({ params }) {
       ) : (
         <div>Loading...</div>
       )}
-      <div>
-        <PricingMenu cookieType={selectedCookie} />
-        <ItemSelector cookieType={selectedCookie} />
-      </div>
+
+      <PricingMenu cookieType={selectedCookie} />
+      <ItemSelector cookieType={selectedCookie} />
     </Fragment>
   );
 }

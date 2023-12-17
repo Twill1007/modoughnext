@@ -7,9 +7,9 @@
 }
 
 .buttons {
-  display: flex;
-  flex-direction: row;
+  display: inline-block;
   padding: 15px;
+  margin: 15px;
   border-radius: 10px;
   font-size: 16px;
   background-color: var(--mainColor);
@@ -20,17 +20,17 @@
 }
 
 .cartSummary {
+  display: inline-block;
   border: solid 1px black;
+  margin: 1% 15px;
+  width: 400px;
   border-radius: 10px;
   font-size: 1.2rem;
-  height: 200px;
-  width: 500px;
-  display: flex;
   flex-direction: column;
-  padding: 5px;
 }
 
 .cookie-description {
+  display: inline-block;
   font-size: x-large;
   display: flex;
   flex-direction: row;
@@ -44,13 +44,9 @@
   border: 3px solid blue;
 }
 .dropdown-selector {
-  position: absolute;
-  width: 200px;
+  display: inline-block;
+  border: 3px black solid;
   border-radius: 15px;
-  top: 305px;
-  right: 1042px;
-  padding: 10px;
-  margin-bottom: 10px;
   font-size: 1.2rem;
   align-self: flex-end; /* Align the select to the right side */
 }
@@ -73,14 +69,4 @@ span {
   font-family: monospace;
   cursor: pointer;
   margin-left: 5px;
-}
-
-/* Styles for the "Go to Cart" and "Shop Other Treats" buttons */
-button:last-child {
-  background-color: #24a388;
-  padding: 15px; /* Adjust the padding to make the buttons larger */
-}
-
-button:last-child:hover {
-  background-color: #24a388;
 }

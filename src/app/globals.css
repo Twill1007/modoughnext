@@ -23,7 +23,6 @@ header {
   color: var(--textColor);
   z-index: 1;
   position: relative;
-  width: 100%;
   top: 0;
 }
 
@@ -64,7 +63,7 @@ header .nav-link {
 }
 
 header .nav-btn {
-  padding: 5px;
+  padding: 2px;
   cursor: pointer;
   background: transparent;
   border: none;

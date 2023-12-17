@@ -28,15 +28,11 @@ function NavBar() {
         </Link>
         <Link className="link" onClick={showNavBar} href="/order-form">
           Cart
+          <CartIcon cartItems={items} />
         </Link>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes className="faTimes" />
         </button>
-        <span>
-          <Link href="/order-form">
-            <CartIcon className="nav-cart" cartItems={items} />
-          </Link>
-        </span>
       </nav>
       <button className="nav-btn" onClick={showNavBar}>
         <FaBars className="faBars" />

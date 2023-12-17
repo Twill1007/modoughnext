@@ -12,5 +12,9 @@ nav {
 
 nav .link {
   background-color: var(--mainColor);
-  margin: 2rem;
+  margin: 0 2rem;
+}
+
+nav .link:hover {
+  color: white;
 }
