@@ -15,17 +15,6 @@
   --textColor: #eee;
 }
 
-header {
-  display: flex;
-  flex-direction: row;
-  height: 100px;
-  background-color: var(--mainColor);
-  color: var(--textColor);
-  z-index: 1;
-  position: relative;
-  top: 0;
-}
-
 header .nav-link {
   display: flex;
   justify-content: center;

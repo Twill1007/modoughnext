@@ -1,3 +1,16 @@
+.main-header {
+  display: flex;
+  flex-direction: row;
+  position: fixed;
+  height: 100px;
+  width: 100%;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  z-index: 1;
+  /* position: relative; */
+  top: 0;
+}
+
 nav {
   display: flex;
   flex-direction: row;

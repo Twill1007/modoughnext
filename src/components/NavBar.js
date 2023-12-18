@@ -5,6 +5,7 @@ import CartIcon from "../UI/cartIcon";
 import useCart from "@/hooks/use-cart";
 import Link from "next/link";
 import "../components/navBar.css";
+import "../app/globals.css";
 
 function NavBar() {
   const { items } = useCart();
@@ -15,7 +16,7 @@ function NavBar() {
   };
 
   return (
-    <header>
+    <header className="main-header">
       <Link className="nav-link" href="/cookie-home">
         Mo's Dough
       </Link>

@@ -23,6 +23,7 @@
 
 .cartSummary {
   display: inline-block;
+
   border: solid 1px black;
   margin: 1% 15px;
   width: 400px;
@@ -34,7 +35,7 @@
 .cookie-description {
   display: inline-block;
   font-size: x-large;
-  position: relative;
+
   max-width: 100%;
   width: 25%;
   height: 25%;
