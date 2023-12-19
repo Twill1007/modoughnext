@@ -116,13 +116,6 @@ function ItemSelector({ cookieType }) {
 
   return (
     <>
-      <SelectComponent
-        selectedValue={selectedValue}
-        dropdownOptions={dropdownOptions}
-        handleDropdownChange={handleDropdownChange}
-        handleSubmit={handleSubmit}
-      />
-
       <div className="cookie-description">
         Experience the ultimate convenience and freshness with our frozen
         chocolate chip cookie dough balls. Immerse yourself in the aroma of
@@ -130,6 +123,13 @@ function ItemSelector({ cookieType }) {
         each perfectly portioned ball guarantees a batch of warm, gooey cookies
         in minutes.
       </div>
+      <SelectComponent
+        selectedValue={selectedValue}
+        dropdownOptions={dropdownOptions}
+        handleDropdownChange={handleDropdownChange}
+        handleSubmit={handleSubmit}
+      />
+
       <div className="cartSummary">
         Cart Items
         <CartItems showX={showEditDeleteX} handleRemove={handleRemoveItem} />

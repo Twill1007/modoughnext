@@ -3,11 +3,13 @@
 .selectComponent {
   display: flex;
   flex-direction: row;
-  background-color: red;
 }
 
 .buttons {
   display: inline-flex;
+  position: relative;
+  top: -275px;
+  left: 375px;
   padding: 15px;
   margin: 15px;
   justify-content: center;
@@ -22,8 +24,9 @@
 }
 
 .cartSummary {
-  display: inline-block;
-
+  position: relative;
+  top: -275px;
+  left: 375px;
   border: solid 1px black;
   margin: 1% 15px;
   width: 400px;
@@ -33,17 +36,21 @@
 }
 
 .cookie-description {
-  display: inline-block;
-  font-size: x-large;
-
-  max-width: 100%;
-  width: 25%;
+  /* display: inline-block; */
+  position: relative;
+  top: -280px;
+  left: 605px;
+  font-size: xx-large;
+  width: 50%;
   height: 25%;
-  border: 3px solid blue;
 }
 .dropdown-selector {
   display: inline-block;
-  border: 3px black solid;
+  position: relative;
+  top: -130px;
+  left: 10px;
+  width: 350px;
+  border: 1px black solid;
   border-radius: 15px;
   font-size: 1.2rem;
   align-self: flex-end; /* Align the select to the right side */

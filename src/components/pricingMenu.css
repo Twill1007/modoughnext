@@ -1,17 +1,8 @@
-/* .menu-div-main {
-  font-size: xx-large;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  background-color: red;
-  border: 1px solid black;
-  border-radius: 10px;
-
-  width: 200px;
-} */
-
 .menu-div-prices {
   display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 30px;
   flex-direction: column;
   border: 1px black solid;
   margin: 3px;
@@ -19,11 +10,13 @@
   justify-content: center;
   align-items: start;
   font-size: 1.4rem;
-  font-family: "Handlee", cursive;
 }
 
-.menuCookie-idcc {
+.menuCookieId {
   display: inline-block;
+  position: relative;
+  top: 100px;
+  left: 5px;
   border: 1px solid black;
   border-radius: 15px;
   height: 350px;
@@ -32,47 +25,20 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+.menuCookieIdcc {
   background-image: url("https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg?output-format=auto&output-quality=auto&resize=600:*");
 }
 
-.menuCookie-idsd {
-  display: inline-block;
-  top: 650px;
-  border-radius: 15px;
-  border: 1px solid black;
-  height: 350px;
-  width: 350px;
-  margin: 3px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.menuCookieIdsd {
   background-image: url("https://www.jessicagavin.com/wp-content/uploads/2019/12/snickerdoodle-cookies-10-1200.jpg");
 }
 
-.menuCookie-idpbc {
-  display: inline-block;
-  top: 150px;
-  border: 1px solid black;
-  border-radius: 15px;
-  height: 350px;
-  width: 350px;
-  margin: 3px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.menuCookieIdpbc {
   background-image: url("https://preppykitchen.com/wp-content/uploads/2021/07/Peanut-Butter-Cookie-Recipe-n.jpg");
 }
 
-.menuCookie-idsc {
-  display: inline-block;
-  top: 150px;
-  border-radius: 15px;
-  border: 1px solid black;
-  height: 350px;
-  width: 350px;
-  margin: 3px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+.menuCookieIdsc {
   background-image: url("https://www.alattefood.com/wp-content/uploads/2019/12/Chewy-Sugar-Cookie-Recipe-99.jpg");
 }

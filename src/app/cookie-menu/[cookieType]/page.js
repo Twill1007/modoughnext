@@ -3,6 +3,7 @@ import { Fragment, useEffect, useState } from "react";
 import useCookieDough from "@/hooks/use-cookieDough";
 import ItemSelector from "@/components/itemSelector";
 import PricingMenu from "@/components/pricingMenu";
+import "../[cookieType]/page.css";
 
 function CookieOrder({ params }) {
   const { getCookieDough } = useCookieDough();
@@ -26,9 +27,7 @@ function CookieOrder({ params }) {
   return (
     <Fragment>
       {selectedCookie ? (
-        <div style={{ fontSize: "xx-large", padding: "3px" }}>
-          {selectedCookie.title}
-        </div>
+        <div className="cookieTitle">{selectedCookie.title}</div>
       ) : (
         <div>Loading...</div>
       )}

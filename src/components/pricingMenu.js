@@ -4,10 +4,11 @@ import "../components/pricingMenu.css";
 
 function PricingMenu({ cookieType }) {
   const { keys, discountedPrices } = calculatePrices();
+  const dynamicClass = cookieType ? `menuCookieId${cookieType.id}` : "";
 
   return (
     <>
-      <div className={"menuCookie-id" + cookieType?.id}></div>
+      <div className={`menuCookieId ${dynamicClass}`}></div>
       <div className="menu-div-prices">
         Price Section:
         <div>
