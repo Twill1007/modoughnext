@@ -14,20 +14,20 @@
 
 .pricing-menu {
   background-color: red;
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  width: 900px;
   font-size: 2rem;
-  margin: 0 15rem;
-  padding: 1rem;
 }
 
 .cookie-description {
   background-color: green;
-  width: 25%;
+  width: 40%;
   font-size: xx-large;
 }
 
 .menu-cookie-picture {
-  width: 350px;
-  height: 350px;
   background-color: yellow;
 }
 

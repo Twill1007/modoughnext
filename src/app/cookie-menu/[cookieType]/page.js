@@ -63,7 +63,7 @@ function CookieOrder({ params }) {
           <MenuCookiePicture cookieType={selectedCookie} />
         </div>
 
-        <div style={{ backgroundColor: "blue" }}>
+        <div style={{ backgroundColor: "blue", display: "flex" }}>
           <ItemSelector cookieType={selectedCookie} />
           {items.length > 0 && !showEditDeleteX && (
             <button onClick={handleShowDeleteX}>Edit Cart Items</button>
