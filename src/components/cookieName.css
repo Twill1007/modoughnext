@@ -1,0 +1,14 @@
+/* .div-cookie-title {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+} */
+
+#cookie-title {
+  background-color: pink;
+  height: 100px;
+  font-size: 75px;
+  height: 100px;
+  padding: 1rem;
+}

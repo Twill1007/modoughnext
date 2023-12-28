@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import useCookieDough from "@/hooks/use-cookieDough";
+import "../components/cookieName.css";
 
 function CookieName({ params }) {
   const { getCookieDough } = useCookieDough();
@@ -22,9 +23,9 @@ function CookieName({ params }) {
   return (
     <div>
       {selectedCookie ? (
-        <div className="cookie-title">{selectedCookie.title}</div>
+        <div id="cookie-title">{selectedCookie.title}</div>
       ) : (
-        <div>Loading...</div>
+        <div id="cookie-title">Loading...</div>
       )}
     </div>
   );
