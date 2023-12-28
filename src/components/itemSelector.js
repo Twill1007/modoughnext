@@ -13,7 +13,6 @@ function ItemSelector({ cookieType }) {
   const { items, addItem, removeItemByCookieId, removeItemByProductId } =
     useCart();
   const [selectedValue, setSelectedValue] = useState("");
-  const [showEditDeleteX, setShowDeleteX] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const [cartOptionChoice, setCartOptionChoice] = useState(null);
 
@@ -102,27 +101,8 @@ function ItemSelector({ cookieType }) {
     setShowModal(false);
   };
 
-  const handleRemoveItem = (productId) => {
-    removeItemByProductId(productId);
-  };
-
-  const handleShowDeleteX = () => {
-    setShowDeleteX(true);
-  };
-
-  const handleHideDeleteX = () => {
-    setShowDeleteX(false);
-  };
-
   return (
     <>
-      <div className="cookie-description">
-        Experience the ultimate convenience and freshness with our frozen
-        chocolate chip cookie dough balls. Immerse yourself in the aroma of
-        gourmet baking without the effort. Crafted from the finest ingredients,
-        each perfectly portioned ball guarantees a batch of warm, gooey cookies
-        in minutes.
-      </div>
       <SelectComponent
         selectedValue={selectedValue}
         dropdownOptions={dropdownOptions}
@@ -130,31 +110,13 @@ function ItemSelector({ cookieType }) {
         handleSubmit={handleSubmit}
       />
 
-      <div className="cartSummary">
-        Cart Items
-        <CartItems showX={showEditDeleteX} handleRemove={handleRemoveItem} />
-      </div>
-
-      <button className="buttons" onClick={handleSubmit}>
-        Add to Cart
-      </button>
+      <button onClick={handleSubmit}>Add to Cart</button>
       <Link href="/order-form">
-        <button className="buttons">Go to Cart</button>
+        <button>Go to Cart</button>
       </Link>
       <Link href="/cookie-menu">
-        <button className="buttons">Shop Other Treats</button>
+        <button>Shop Other Treats</button>
       </Link>
-      {items.length > 0 && !showEditDeleteX && (
-        <button className="buttons" onClick={handleShowDeleteX}>
-          Edit Cart Items
-        </button>
-      )}
-      {items.length > 0 && showEditDeleteX && (
-        <button className="buttons" onClick={handleHideDeleteX}>
-          Done Editing
-        </button>
-      )}
-      {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
 
       {showModal && (
         <ModalCookie

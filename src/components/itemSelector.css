@@ -35,17 +35,7 @@
   flex-direction: column;
 }
 
-.cookie-description {
-  /* display: inline-block; */
-  position: relative;
-  top: -280px;
-  left: 605px;
-  font-size: xx-large;
-  width: 50%;
-  height: 25%;
-}
 .dropdown-selector {
-  display: inline-block;
   position: relative;
   top: -130px;
   left: 10px;

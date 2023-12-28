@@ -9,12 +9,12 @@ function PricingMenu({ cookieType }) {
   return (
     <>
       <div className={`menuCookieId ${dynamicClass}`}></div>
-      <div className="menu-div-prices">
+      <div>
         Price Section:
         <div>
           {keys.map((key, index) => (
             <div key={index}>
-              <span>
+              <span style={{ fontFamily: "Handlee" }}>
                 {key} Dozen: ${discountedPrices[index]}
               </span>
             </div>

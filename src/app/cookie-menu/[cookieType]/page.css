@@ -1,6 +1,9 @@
-.cookieTitle {
-  position: relative;
-  top: 100px;
-  left: 10px;
+.flex-container {
+  display: flex;
+  flex-direction: column;
+}
+.cookie-description {
+  display: flex;
+  background-color: green;
   font-size: xx-large;
 }
