@@ -6,14 +6,14 @@ import ItemSelector from "@/components/itemSelector";
 import CartItems from "@/components/Utility/CartItems";
 import PricingMenu from "@/components/pricingMenu";
 import CookieName from "@/components/cookieName";
+import MenuCookiePicture from "@/components/menuCookiePicture";
 import "../[cookieType]/page.css";
 
 function CookieOrder({ params }) {
   const { getCookieDough } = useCookieDough();
   const [cookieData, setCookieData] = useState([]);
   const [showEditDeleteX, setShowDeleteX] = useState(false);
-  const { items, addItem, removeItemByCookieId, removeItemByProductId } =
-    useCart();
+  const { items, removeItemByProductId } = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -46,7 +46,12 @@ function CookieOrder({ params }) {
   return (
     <Fragment>
       <div className="flex-container">
-        <CookieName />
+        <div className="cookie-title">
+          <CookieName params={params} />
+        </div>
+        <div className="pricing-menu">
+          <PricingMenu cookieType={selectedCookie} />
+        </div>
         <div className="cookie-description">
           Experience the ultimate convenience and freshness with our frozen
           chocolate chip cookie dough balls. Immerse yourself in the aroma of
@@ -54,18 +59,21 @@ function CookieOrder({ params }) {
           ingredients, each perfectly portioned ball guarantees a batch of warm,
           gooey cookies in minutes.
         </div>
-        <div
-          style={{
-            backgroundColor: "red",
-            fontSize: "xx-large",
-          }}
-        >
-          <PricingMenu cookieType={selectedCookie} />
-          Testing
+        <div className="menu-cookie-picture">
+          <MenuCookiePicture cookieType={selectedCookie} />
         </div>
+
         <div style={{ backgroundColor: "blue" }}>
           <ItemSelector cookieType={selectedCookie} />
+          {items.length > 0 && !showEditDeleteX && (
+            <button onClick={handleShowDeleteX}>Edit Cart Items</button>
+          )}
+          {items.length > 0 && showEditDeleteX && (
+            <button onClick={handleHideDeleteX}>Done Editing</button>
+          )}
+          {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
         </div>
+
         <div style={{ backgroundColor: "purple" }}>
           Cart Items
           <CartItems
@@ -73,19 +81,6 @@ function CookieOrder({ params }) {
             handleRemove={handleRemoveItem}
           ></CartItems>
         </div>
-        <div>
-          {items.length > 0 && !showEditDeleteX && (
-            <button className="buttons" onClick={handleShowDeleteX}>
-              Edit Cart Items
-            </button>
-          )}
-        </div>
-        {items.length > 0 && showEditDeleteX && (
-          <button className="buttons" onClick={handleHideDeleteX}>
-            Done Editing
-          </button>
-        )}
-        {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
       </div>
     </Fragment>
   );

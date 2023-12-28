@@ -10,7 +10,6 @@ const SelectComponent = ({
   return (
     <>
       <select
-        className="dropdown-selector"
         value={selectedValue}
         label="Quantity"
         onChange={handleDropdownChange}

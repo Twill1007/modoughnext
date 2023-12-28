@@ -1,9 +1,44 @@
 .flex-container {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
+
+.cookie-title {
+  background-color: orange;
+  font-size: 100px;
+  padding: 3rem;
+}
+
+.pricing-menu {
+  background-color: red;
+  font-size: 2rem;
+  margin: 0 15rem;
+  padding: 1rem;
+}
+
 .cookie-description {
-  display: flex;
   background-color: green;
+  width: 25%;
   font-size: xx-large;
+}
+
+.menu-cookie-picture {
+  width: 350px;
+  height: 350px;
+  background-color: yellow;
+}
+
+button {
+  padding: 15px;
+  margin: 15px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  font-size: 16px;
+  background-color: var(--mainColor);
+  color: #fff;
+  border: black 0.5px solid;
+  cursor: pointer;
+  z-index: 1;
 }

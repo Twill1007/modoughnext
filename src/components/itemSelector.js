@@ -103,13 +103,6 @@ function ItemSelector({ cookieType }) {
 
   return (
     <>
-      <SelectComponent
-        selectedValue={selectedValue}
-        dropdownOptions={dropdownOptions}
-        handleDropdownChange={handleDropdownChange}
-        handleSubmit={handleSubmit}
-      />
-
       <button onClick={handleSubmit}>Add to Cart</button>
       <Link href="/order-form">
         <button>Go to Cart</button>
@@ -117,6 +110,13 @@ function ItemSelector({ cookieType }) {
       <Link href="/cookie-menu">
         <button>Shop Other Treats</button>
       </Link>
+
+      <SelectComponent
+        selectedValue={selectedValue}
+        dropdownOptions={dropdownOptions}
+        handleDropdownChange={handleDropdownChange}
+        handleSubmit={handleSubmit}
+      />
 
       {showModal && (
         <ModalCookie

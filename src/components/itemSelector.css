@@ -61,13 +61,13 @@ button:hover {
   font-size: xx-large;
 }
 
-span {
+/* span {
   font-family: monospace;
   cursor: pointer;
   margin-left: 5px;
-}
+} */
 
-@media screen and (max-width: 1537px) {
+/* @media screen and (max-width: 1537px) {
   .cartSummary {
     position: relative;
     top: -185px;
@@ -97,7 +97,7 @@ span {
     border: 1px black solid;
     border-radius: 15px;
     font-size: 1.2rem;
-    align-self: flex-end; /* Align the select to the right side */
+    align-self: flex-end;
   }
 
   .buttons {
@@ -117,4 +117,4 @@ span {
     cursor: pointer;
     z-index: 1;
   }
-}
+} */

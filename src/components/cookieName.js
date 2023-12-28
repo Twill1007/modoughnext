@@ -16,15 +16,13 @@ function CookieName({ params }) {
     fetchData();
   }, []);
 
-  console.log("Here is the cookieData", cookieData);
-
   const selectedCookie = params?.cookieType
     ? cookieData.find((cookie) => cookie.id === params.cookieType)
     : undefined;
   return (
     <div>
       {selectedCookie ? (
-        <div>{selectedCookie.title}</div>
+        <div className="cookie-title">{selectedCookie.title}</div>
       ) : (
         <div>Loading...</div>
       )}
