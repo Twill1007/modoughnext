@@ -14,6 +14,7 @@ function ItemSelector({ cookieType }) {
     useCart();
   const [selectedValue, setSelectedValue] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [showEditDeleteX, setShowDeleteX] = useState(false);
   const [cartOptionChoice, setCartOptionChoice] = useState(null);
 
   const prices = discountedPrices;
@@ -69,6 +70,10 @@ function ItemSelector({ cookieType }) {
     (option) => option.value === selectedValue
   );
 
+  const handleRemoveItem = (productId) => {
+    removeItemByProductId(productId);
+  };
+
   const handleSubmit = () => {
     if (selectedValue !== "Select" && selectedValue !== "") {
       const itemAlreadyInCart = items.some(
@@ -97,6 +102,14 @@ function ItemSelector({ cookieType }) {
     setSelectedValue("");
   };
 
+  const handleShowDeleteX = () => {
+    setShowDeleteX(true);
+  };
+
+  const handleHideDeleteX = () => {
+    setShowDeleteX(false);
+  };
+
   const closeModal = () => {
     setShowModal(false);
   };
@@ -110,6 +123,21 @@ function ItemSelector({ cookieType }) {
       <Link href="/cookie-menu">
         <button>Shop Other Treats</button>
       </Link>
+      {items.length > 0 && !showEditDeleteX && (
+        <button onClick={handleShowDeleteX}>Edit Cart Items</button>
+      )}
+      {items.length > 0 && showEditDeleteX && (
+        <button onClick={handleHideDeleteX}>Done Editing</button>
+      )}
+      {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+
+      <div style={{ backgroundColor: "purple" }}>
+        Cart Items
+        <CartItems
+          showX={showEditDeleteX}
+          handleRemove={handleRemoveItem}
+        ></CartItems>
+      </div>
 
       <SelectComponent
         selectedValue={selectedValue}

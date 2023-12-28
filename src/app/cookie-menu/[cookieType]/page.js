@@ -12,8 +12,6 @@ import "../[cookieType]/page.css";
 function CookieOrder({ params }) {
   const { getCookieDough } = useCookieDough();
   const [cookieData, setCookieData] = useState([]);
-  const [showEditDeleteX, setShowDeleteX] = useState(false);
-  const { items, removeItemByProductId } = useCart();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,18 +28,6 @@ function CookieOrder({ params }) {
   const selectedCookie = cookieData.find(
     (cookie) => cookie.id === params.cookieType
   );
-
-  const handleRemoveItem = (productId) => {
-    removeItemByProductId(productId);
-  };
-
-  const handleShowDeleteX = () => {
-    setShowDeleteX(true);
-  };
-
-  const handleHideDeleteX = () => {
-    setShowDeleteX(false);
-  };
 
   return (
     <Fragment>
@@ -63,23 +49,8 @@ function CookieOrder({ params }) {
           <MenuCookiePicture cookieType={selectedCookie} />
         </div>
 
-        <div style={{ backgroundColor: "blue", display: "flex" }}>
+        <div style={{ backgroundColor: "blue" }}>
           <ItemSelector cookieType={selectedCookie} />
-          {items.length > 0 && !showEditDeleteX && (
-            <button onClick={handleShowDeleteX}>Edit Cart Items</button>
-          )}
-          {items.length > 0 && showEditDeleteX && (
-            <button onClick={handleHideDeleteX}>Done Editing</button>
-          )}
-          {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
-        </div>
-
-        <div style={{ backgroundColor: "purple" }}>
-          Cart Items
-          <CartItems
-            showX={showEditDeleteX}
-            handleRemove={handleRemoveItem}
-          ></CartItems>
         </div>
       </div>
     </Fragment>
