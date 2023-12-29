@@ -123,29 +123,33 @@ function ItemSelector({ cookieType }) {
         handleSubmit={handleSubmit}
       />
       <div style={{ display: "flex", flexDirection: "row" }}>
-        <button className="buttons" onClick={handleSubmit}>
-          Add to Cart
-        </button>
-        <Link href="/order-form">
-          <button className="buttons">Go to Cart</button>
-        </Link>
-        <Link href="/cookie-menu">
-          <button className="buttons">Shop Other Treats</button>
-        </Link>
-        {items.length > 0 && !showEditDeleteX && (
-          <button className="buttons" onClick={handleShowDeleteX}>
-            Edit Cart Items
+        <div style={{ display: "flex" }}>
+          <button className="buttons" onClick={handleSubmit}>
+            Add to Cart
           </button>
-        )}
-        {items.length > 0 && showEditDeleteX && (
-          <button className="buttons" onClick={handleHideDeleteX}>
-            Done Editing
-          </button>
-        )}
-        {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+          <Link href="/order-form">
+            <button className="buttons">Go to Cart</button>
+          </Link>
+          <Link href="/cookie-menu">
+            <button className="buttons">Shop Other Treats</button>
+          </Link>
+          {items.length > 0 && !showEditDeleteX && (
+            <button className="buttons" onClick={handleShowDeleteX}>
+              Edit Cart Items
+            </button>
+          )}
+          {items.length > 0 && showEditDeleteX && (
+            <button className="buttons" onClick={handleHideDeleteX}>
+              Done Editing
+            </button>
+          )}
+          {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+        </div>
       </div>
       <div>
-        <div style={{ backgroundColor: "purple" }}>
+        <div
+          style={{ backgroundColor: "purple", display: "flex", width: "25%" }}
+        >
           Cart Items
           <CartItems
             showX={showEditDeleteX}

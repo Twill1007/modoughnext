@@ -47,7 +47,7 @@ function CookieOrder({ params }) {
           <MenuCookiePicture cookieType={selectedCookie} />
         </div>
 
-        <div>
+        <div style={{ width: "35%" }}>
           <ItemSelector cookieType={selectedCookie} />
         </div>
       </div>
