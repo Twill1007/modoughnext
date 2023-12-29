@@ -1,15 +1,15 @@
 import React from "react";
-import "../../components/itemSelector.css";
+import "../../components/Utility/selectComponent.css";
 
 const SelectComponent = ({
   selectedValue,
   dropdownOptions,
   handleDropdownChange,
-  handleSubmit,
 }) => {
   return (
     <>
       <select
+        className="dropdown-selector"
         value={selectedValue}
         label="Quantity"
         onChange={handleDropdownChange}

@@ -1,9 +1,7 @@
 "use client";
 import { Fragment, useEffect, useState } from "react";
-import useCart from "@/hooks/use-cart";
 import useCookieDough from "@/hooks/use-cookieDough";
 import ItemSelector from "@/components/itemSelector";
-import CartItems from "@/components/Utility/CartItems";
 import PricingMenu from "@/components/pricingMenu";
 import CookieName from "@/components/cookieName";
 import MenuCookiePicture from "@/components/menuCookiePicture";
@@ -49,7 +47,7 @@ function CookieOrder({ params }) {
           <MenuCookiePicture cookieType={selectedCookie} />
         </div>
 
-        <div style={{ backgroundColor: "blue" }}>
+        <div>
           <ItemSelector cookieType={selectedCookie} />
         </div>
       </div>

@@ -30,18 +30,3 @@
 .menu-cookie-picture {
   background-color: yellow;
 }
-
-button {
-  padding: 15px;
-  width: 10rem;
-  margin: 15px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 16px;
-  background-color: var(--mainColor);
-  color: #fff;
-  border: black 0.5px solid;
-  cursor: pointer;
-  z-index: 1;
-}

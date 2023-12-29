@@ -5,7 +5,7 @@
   flex-direction: row;
 }
 
-.buttons {
+/* .buttons {
   display: inline-flex;
   position: relative;
   top: -300px;
@@ -21,12 +21,9 @@
   border: black 0.5px solid;
   cursor: pointer;
   z-index: 1;
-}
+} */
 
 .cartSummary {
-  position: relative;
-  top: -275px;
-  left: 375px;
   border: solid 1px black;
   margin: 1% 15px;
   width: 400px;
@@ -35,15 +32,19 @@
   flex-direction: column;
 }
 
-.dropdown-selector {
-  position: relative;
-  top: -130px;
-  left: 10px;
-  width: 350px;
-  border: 1px black solid;
-  border-radius: 15px;
+.buttons {
+  padding: 10px;
+  width: 15rem;
+  margin: 2rem 3rem 5rem 3rem;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
   font-size: 1.2rem;
-  align-self: flex-end; /* Align the select to the right side */
+  background-color: var(--mainColor);
+  color: #fff;
+  border: black 0.5px solid;
+  cursor: pointer;
+  z-index: 1;
 }
 
 /* select option {

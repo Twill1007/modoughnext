@@ -116,42 +116,50 @@ function ItemSelector({ cookieType }) {
 
   return (
     <>
-      <button onClick={handleSubmit}>Add to Cart</button>
-      <Link href="/order-form">
-        <button>Go to Cart</button>
-      </Link>
-      <Link href="/cookie-menu">
-        <button>Shop Other Treats</button>
-      </Link>
-      {items.length > 0 && !showEditDeleteX && (
-        <button onClick={handleShowDeleteX}>Edit Cart Items</button>
-      )}
-      {items.length > 0 && showEditDeleteX && (
-        <button onClick={handleHideDeleteX}>Done Editing</button>
-      )}
-      {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
-
-      <div style={{ backgroundColor: "purple" }}>
-        Cart Items
-        <CartItems
-          showX={showEditDeleteX}
-          handleRemove={handleRemoveItem}
-        ></CartItems>
-      </div>
-
       <SelectComponent
         selectedValue={selectedValue}
         dropdownOptions={dropdownOptions}
         handleDropdownChange={handleDropdownChange}
         handleSubmit={handleSubmit}
       />
+      <div style={{ display: "flex", flexDirection: "row" }}>
+        <button className="buttons" onClick={handleSubmit}>
+          Add to Cart
+        </button>
+        <Link href="/order-form">
+          <button className="buttons">Go to Cart</button>
+        </Link>
+        <Link href="/cookie-menu">
+          <button className="buttons">Shop Other Treats</button>
+        </Link>
+        {items.length > 0 && !showEditDeleteX && (
+          <button className="buttons" onClick={handleShowDeleteX}>
+            Edit Cart Items
+          </button>
+        )}
+        {items.length > 0 && showEditDeleteX && (
+          <button className="buttons" onClick={handleHideDeleteX}>
+            Done Editing
+          </button>
+        )}
+        {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+      </div>
+      <div>
+        <div style={{ backgroundColor: "purple" }}>
+          Cart Items
+          <CartItems
+            showX={showEditDeleteX}
+            handleRemove={handleRemoveItem}
+          ></CartItems>
+        </div>
 
-      {showModal && (
-        <ModalCookie
-          onCartOptionChoice={handleCartOptionChoice}
-          onClose={closeModal}
-        ></ModalCookie>
-      )}
+        {showModal && (
+          <ModalCookie
+            onCartOptionChoice={handleCartOptionChoice}
+            onClose={closeModal}
+          ></ModalCookie>
+        )}
+      </div>
     </>
   );
 }
