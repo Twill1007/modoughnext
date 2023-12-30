@@ -6,9 +6,19 @@
 } */
 
 #cookie-title {
+  display: flex;
+  flex-direction: row;
   background-color: pink;
-  height: 100px;
-  font-size: 75px;
-  height: 100px;
+
+  font-size: 50px;
+
   padding: 1rem;
+}
+
+@media (max-width: 2396px) {
+  #cookie-title {
+    font-size: 50px;
+    justify-content: center;
+    align-items: center;
+  }
 }

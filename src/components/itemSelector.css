@@ -1,41 +1,17 @@
-/* ItemSelector.css */
-
-.selectComponent {
-  display: flex;
-  flex-direction: row;
-}
-
-/* .buttons {
-  display: inline-flex;
-  position: relative;
-  top: -300px;
-  left: 375px;
-  padding: 15px;
-  margin: 15px;
-  justify-content: center;
-  align-items: center;
-  border-radius: 10px;
-  font-size: 16px;
-  background-color: var(--mainColor);
-  color: #fff;
-  border: black 0.5px solid;
-  cursor: pointer;
-  z-index: 1;
-} */
-
-.cartSummary {
+.cart-summary {
   border: solid 1px black;
-  margin: 1% 15px;
-  width: 400px;
+  padding: 10px;
+  margin: 200px 10px;
+  min-width: 300px;
   border-radius: 10px;
-  font-size: 1.2rem;
+  font-size: 1.6rem;
   flex-direction: column;
 }
 
 .buttons {
   padding: 10px;
-  width: 15rem;
-  margin: 2rem 3rem 5rem 3rem;
+
+  margin: 10px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -47,76 +23,3 @@
   z-index: 1;
   text-align: center;
 }
-
-/* select option {
-  font-size: 1.2rem;
-  border-radius: 10px;
-} */
-
-button:hover {
-  background-color: #24a388;
-}
-
-/* Additional styles for the items in the cart */
-.menu-div-prices > div:last-child {
-  margin: 5px;
-  font-size: xx-large;
-}
-
-/* span {
-  font-family: monospace;
-  cursor: pointer;
-  margin-left: 5px;
-} */
-
-/* @media screen and (max-width: 1537px) {
-  .cartSummary {
-    position: relative;
-    top: -185px;
-    left: 375px;
-    border: solid 1px black;
-    margin: 1% 15px;
-    width: 188px;
-    border-radius: 10px;
-    font-size: 1.2rem;
-    flex-direction: column;
-  }
-  .cookie-description {
-    position: relative;
-    top: -280px;
-    left: 605px;
-    font-size: x-large;
-    width: 50%;
-    height: 25%;
-  }
-
-  .dropdown-selector {
-    display: inline-block;
-    position: relative;
-    top: -40px;
-    left: 10px;
-    width: 350px;
-    border: 1px black solid;
-    border-radius: 15px;
-    font-size: 1.2rem;
-    align-self: flex-end;
-  }
-
-  .buttons {
-    display: inline-flex;
-    position: relative;
-    top: -200px;
-    left: 375px;
-    padding: 15px;
-    margin: 15px;
-    justify-content: center;
-    align-items: center;
-    border-radius: 10px;
-    font-size: 16px;
-    background-color: var(--mainColor);
-    color: #fff;
-    border: black 0.5px solid;
-    cursor: pointer;
-    z-index: 1;
-  }
-} */

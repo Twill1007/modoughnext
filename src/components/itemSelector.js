@@ -115,62 +115,48 @@ function ItemSelector({ cookieType }) {
   };
 
   return (
-    <>
+    <div>
       <SelectComponent
         selectedValue={selectedValue}
         dropdownOptions={dropdownOptions}
         handleDropdownChange={handleDropdownChange}
         handleSubmit={handleSubmit}
       />
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-        }}
-      >
-        <div style={{ display: "flex" }}>
-          <button className="buttons" onClick={handleSubmit}>
-            Add to Cart
-          </button>
-          <Link href="/order-form" className="buttons">
-            Go To Cart
-            {/* <button className="buttons">Go to Cart</button> */}
-          </Link>
-          <Link href="/cookie-menu" className="buttons">
-            Shop Other Treats
-          </Link>
-          {items.length > 0 && !showEditDeleteX && (
-            <button className="buttons" onClick={handleShowDeleteX}>
-              Edit Cart Items
-            </button>
-          )}
-          {items.length > 0 && showEditDeleteX && (
-            <button className="buttons" onClick={handleHideDeleteX}>
-              Done Editing
-            </button>
-          )}
-          {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
-        </div>
+      <button className="buttons" onClick={handleSubmit}>
+        Add to Cart
+      </button>
+      <Link href="/order-form" className="buttons">
+        Go to Cart
+      </Link>
+      <Link href="/cookie-menu" className="buttons">
+        Shop Other Treats
+      </Link>
+      {items.length > 0 && !showEditDeleteX && (
+        <button className="buttons" onClick={handleShowDeleteX}>
+          Edit Cart Items
+        </button>
+      )}
+      {items.length > 0 && showEditDeleteX && (
+        <button className="buttons" onClick={handleHideDeleteX}>
+          Done Editing
+        </button>
+      )}
+      {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+      <div className="cart-summary">
+        Cart Items
+        <CartItems
+          showX={showEditDeleteX}
+          handleRemove={handleRemoveItem}
+        ></CartItems>
       </div>
-      <div>
-        <div
-          style={{ backgroundColor: "purple", display: "flex", width: "25%" }}
-        >
-          Cart Items
-          <CartItems
-            showX={showEditDeleteX}
-            handleRemove={handleRemoveItem}
-          ></CartItems>
-        </div>
 
-        {showModal && (
-          <ModalCookie
-            onCartOptionChoice={handleCartOptionChoice}
-            onClose={closeModal}
-          ></ModalCookie>
-        )}
-      </div>
-    </>
+      {showModal && (
+        <ModalCookie
+          onCartOptionChoice={handleCartOptionChoice}
+          onClose={closeModal}
+        ></ModalCookie>
+      )}
+    </div>
   );
 }
 

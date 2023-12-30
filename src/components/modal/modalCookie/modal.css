@@ -12,17 +12,7 @@
   align-items: center;
   z-index: 1;
 }
-/* .button {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  bottom: 1%;
-  width: 100%;
-  font-size: xx-large;
-  font-size: 20px;
-} */
+
 .modalContent {
   display: inline-block;
   box-sizing: border-box;

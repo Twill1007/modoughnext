@@ -1,5 +1,6 @@
 import React from "react";
 import { calculatePrices } from "./Utility/pricingLogic";
+import "../components/pricingMenu.css";
 
 function PricingMenu() {
   const { keys, discountedPrices } = calculatePrices();
@@ -11,7 +12,7 @@ function PricingMenu() {
         <div>
           {keys.map((key, index) => (
             <div key={index}>
-              <span style={{ fontFamily: "Handlee" }}>
+              <span>
                 {key} Dozen: ${discountedPrices[index]}
               </span>
             </div>

@@ -29,25 +29,25 @@ function CookieOrder({ params }) {
 
   return (
     <Fragment>
-      <div className="flex-container">
-        <div className="cookie-title">
-          <CookieName params={params} />
-        </div>
-        <div className="pricing-menu">
-          <PricingMenu cookieType={selectedCookie} />
-        </div>
-        <div className="cookie-description">
-          Experience the ultimate convenience and freshness with our frozen
-          chocolate chip cookie dough balls. Immerse yourself in the aroma of
-          gourmet baking without the effort. Crafted from the finest
-          ingredients, each perfectly portioned ball guarantees a batch of warm,
-          gooey cookies in minutes.
-        </div>
-        <div className="menu-cookie-picture">
+      <div>
+        <div className="flex-container-column-1">
           <MenuCookiePicture cookieType={selectedCookie} />
-        </div>
+          <div className="cookie-title">
+            <CookieName params={params} />
+          </div>
+          <div className="pricing-menu">
+            <PricingMenu cookieType={selectedCookie} />
+          </div>
 
-        <div style={{ width: "35%", backgroundColor: "blue" }}>
+          <div className="cookie-description">
+            Experience the ultimate convenience and freshness with our frozen
+            chocolate chip cookie dough balls. Immerse yourself in the aroma of
+            gourmet baking without the effort. Crafted from the finest
+            ingredients, each perfectly portioned ball guarantees a batch of
+            warm, gooey cookies in minutes.
+          </div>
+        </div>
+        <div className="flex-container-middle">
           <ItemSelector cookieType={selectedCookie} />
         </div>
       </div>
