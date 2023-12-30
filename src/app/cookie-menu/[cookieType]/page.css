@@ -2,7 +2,7 @@
   background-color: aqua;
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .cookie-title {
@@ -16,17 +16,28 @@
   background-color: red;
   display: flex;
   flex-direction: row;
-  justify-content: start;
-  width: 900px;
+  justify-content: center;
   font-size: 2rem;
+  min-width: 250px;
+  padding: 30px;
+  margin-right: 300px;
 }
 
 .cookie-description {
   background-color: green;
-  width: 40%;
+  /* width: 40%; */
+  width: 700px;
   font-size: xx-large;
+  padding: 30px;
 }
 
 .menu-cookie-picture {
   background-color: yellow;
+}
+
+@media (max-width: 4000px) {
+  .cookie-description {
+    width: 400px;
+    font-size: large;
+  }
 }

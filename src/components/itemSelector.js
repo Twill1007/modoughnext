@@ -122,16 +122,22 @@ function ItemSelector({ cookieType }) {
         handleDropdownChange={handleDropdownChange}
         handleSubmit={handleSubmit}
       />
-      <div style={{ display: "flex", flexDirection: "row" }}>
+      <div
+        style={{
+          display: "flex",
+          flexDirection: "row",
+        }}
+      >
         <div style={{ display: "flex" }}>
           <button className="buttons" onClick={handleSubmit}>
             Add to Cart
           </button>
-          <Link href="/order-form">
-            <button className="buttons">Go to Cart</button>
+          <Link href="/order-form" className="buttons">
+            Go To Cart
+            {/* <button className="buttons">Go to Cart</button> */}
           </Link>
-          <Link href="/cookie-menu">
-            <button className="buttons">Shop Other Treats</button>
+          <Link href="/cookie-menu" className="buttons">
+            Shop Other Treats
           </Link>
           {items.length > 0 && !showEditDeleteX && (
             <button className="buttons" onClick={handleShowDeleteX}>
