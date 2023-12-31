@@ -5,12 +5,11 @@ span {
 }
 
 .menuCookieId {
+  margin-top: 150px;
   border: 1px solid black;
   border-radius: 15px;
-  min-width: 550px;
-  min-height: 550px;
-  padding: 4rem;
-  margin: 6px;
+  min-width: 650px;
+  min-height: 650px;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -30,4 +29,17 @@ span {
 
 .menuCookieIdsc {
   background-image: url("https://www.alattefood.com/wp-content/uploads/2019/12/Chewy-Sugar-Cookie-Recipe-99.jpg");
+}
+
+@media (max-width: 1914px) {
+  .menuCookieId {
+    margin-top: 150px;
+    border: 1px solid black;
+    border-radius: 15px;
+    min-width: 350px;
+    min-height: 350px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
 }

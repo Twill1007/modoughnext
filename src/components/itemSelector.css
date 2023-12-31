@@ -1,7 +1,8 @@
 .cart-summary {
   border: solid 1px black;
   padding: 10px;
-  margin: 200px 10px;
+  margin-top: 10px;
+  margin-bottom: 100px;
   min-width: 300px;
   border-radius: 10px;
   font-size: 1.6rem;
@@ -10,8 +11,7 @@
 
 .buttons {
   padding: 10px;
-
-  margin: 10px;
+  margin: 200px 10px 10px 0px;
   justify-content: center;
   align-items: center;
   border-radius: 10px;
@@ -22,4 +22,9 @@
   cursor: pointer;
   z-index: 1;
   text-align: center;
+}
+
+.button-parent {
+  display: flex;
+  flex-direction: row;
 }

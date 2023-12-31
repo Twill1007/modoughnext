@@ -122,26 +122,28 @@ function ItemSelector({ cookieType }) {
         handleDropdownChange={handleDropdownChange}
         handleSubmit={handleSubmit}
       />
-      <button className="buttons" onClick={handleSubmit}>
-        Add to Cart
-      </button>
-      <Link href="/order-form" className="buttons">
-        Go to Cart
-      </Link>
-      <Link href="/cookie-menu" className="buttons">
-        Shop Other Treats
-      </Link>
-      {items.length > 0 && !showEditDeleteX && (
-        <button className="buttons" onClick={handleShowDeleteX}>
-          Edit Cart Items
+      <div className="button-parent">
+        <button className="buttons" onClick={handleSubmit}>
+          Add to Cart
         </button>
-      )}
-      {items.length > 0 && showEditDeleteX && (
-        <button className="buttons" onClick={handleHideDeleteX}>
-          Done Editing
-        </button>
-      )}
-      {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+        <Link href="/order-form" className="buttons">
+          Go to Cart
+        </Link>
+        <Link href="/cookie-menu" className="buttons">
+          Shop Other Treats
+        </Link>
+        {items.length > 0 && !showEditDeleteX && (
+          <button className="buttons" onClick={handleShowDeleteX}>
+            Edit Cart Items
+          </button>
+        )}
+        {items.length > 0 && showEditDeleteX && (
+          <button className="buttons" onClick={handleHideDeleteX}>
+            Done Editing
+          </button>
+        )}
+        {items.length === 0 && showEditDeleteX && setShowDeleteX(false)}
+      </div>
       <div className="cart-summary">
         Cart Items
         <CartItems

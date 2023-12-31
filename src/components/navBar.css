@@ -1,9 +1,7 @@
 .main-header {
   display: flex;
   flex-direction: row;
-  position: relative;
-  height: 20%;
-  width: 100%;
+
   background-color: var(--mainColor);
   color: var(--textColor);
   z-index: 1;
@@ -30,4 +28,11 @@ nav .link {
 
 nav .link:hover {
   color: white;
+}
+
+.faTimes {
+  background-color: var(--mainColor);
+}
+.faBars {
+  background-color: var(--mainColor);
 }

@@ -8,14 +8,12 @@
 #cookie-title {
   display: flex;
   flex-direction: row;
-  background-color: pink;
 
   font-size: 50px;
-
   padding: 1rem;
 }
 
-@media (max-width: 2396px) {
+@media (max-width: 1914px) {
   #cookie-title {
     font-size: 50px;
     justify-content: center;

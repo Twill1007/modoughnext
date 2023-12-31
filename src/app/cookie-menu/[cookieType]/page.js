@@ -29,9 +29,11 @@ function CookieOrder({ params }) {
 
   return (
     <Fragment>
-      <div>
+      <div className="flex-container-row">
         <div className="flex-container-column-1">
           <MenuCookiePicture cookieType={selectedCookie} />
+        </div>
+        <div className="flex-container-column-2">
           <div className="cookie-title">
             <CookieName params={params} />
           </div>
@@ -46,8 +48,6 @@ function CookieOrder({ params }) {
             ingredients, each perfectly portioned ball guarantees a batch of
             warm, gooey cookies in minutes.
           </div>
-        </div>
-        <div className="flex-container-middle">
           <ItemSelector cookieType={selectedCookie} />
         </div>
       </div>
