@@ -15,14 +15,14 @@
   --textColor: #eee;
 }
 
-header .nav-link {
+/* header .nav-link {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--mainColor);
   font-size: 2.5rem;
   width: 15%;
-}
+} */
 
 /* Add the following styles for cart icon */
 .nav-cart {

@@ -1,0 +1,27 @@
+.main-nav-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100px;
+  background-color: var(--mainColor);
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+}
+.nav-links-left {
+  display: flex;
+  margin-right: auto;
+}
+.nav-links-right {
+  display: flex;
+  margin-right: auto;
+  gap: 50px;
+  background-color: var(--mainColor);
+}
+
+.nav-link {
+  background-color: var(--mainColor);
+}
+
+.nav-link:hover {
+  color: white;
+}

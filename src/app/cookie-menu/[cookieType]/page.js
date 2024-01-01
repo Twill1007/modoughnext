@@ -2,7 +2,7 @@
 import { Fragment, useEffect, useState } from "react";
 import useCookieDough from "@/hooks/use-cookieDough";
 import ItemSelector from "@/components/itemSelector";
-import PricingMenu from "@/components/pricingMenu";
+import PricingMenu from "@/components/PricingMenu";
 import CookieName from "@/components/cookieName";
 import MenuCookiePicture from "@/components/menuCookiePicture";
 import "../[cookieType]/page.css";

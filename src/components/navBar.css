@@ -1,21 +1,25 @@
 .main-header {
   display: flex;
   flex-direction: row;
-
   background-color: var(--mainColor);
   color: var(--textColor);
   z-index: 1;
-  top: 0;
 }
 
-nav {
+.home-link {
   display: flex;
   flex-direction: row;
-  align-items: center; /* Center the items vertically */
-  justify-content: center; /* Center the items horizontally */
-  position: relative;
-  width: 100%;
-  height: 100px;
+  background-color: var(--mainColor);
+  color: var(--textColor);
+  z-index: 1;
+  font-size: 2.5rem;
+}
+
+.header-links {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
   background-color: var(--mainColor);
   text-decoration: none;
   font-size: 2.5rem;
@@ -23,7 +27,7 @@ nav {
 
 nav .link {
   background-color: var(--mainColor);
-  margin: 0 2rem;
+  margin: 0px 10px;
 }
 
 nav .link:hover {

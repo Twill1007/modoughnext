@@ -17,20 +17,27 @@ function NavBar() {
 
   return (
     <header className="main-header">
-      <Link className="nav-link" href="/cookie-home">
-        Mo's Dough
-      </Link>
       <nav ref={navRef}>
-        <Link className="link" onClick={showNavBar} href="/cookie-about">
-          About
-        </Link>
-        <Link className="link" onClick={showNavBar} href="/cookie-menu">
-          Menu
-        </Link>
-        <Link className="link" onClick={showNavBar} href="/order-form">
-          Cart
-          <CartIcon cartItems={items} />
-        </Link>
+        <div>
+          <div>
+            <Link className="home-link" href="/cookie-home">
+              Mo's Dough
+            </Link>
+            <div className="header-links">
+              <Link className="link" onClick={showNavBar} href="/cookie-about">
+                About
+              </Link>
+              <Link className="link" onClick={showNavBar} href="/cookie-menu">
+                Menu
+              </Link>
+
+              <Link className="link" onClick={showNavBar} href="/order-form">
+                Cart
+                <CartIcon cartItems={items} />
+              </Link>
+            </div>
+          </div>
+        </div>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes className="faTimes" />
         </button>
