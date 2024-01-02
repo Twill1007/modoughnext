@@ -25,3 +25,6 @@
 .nav-link:hover {
   color: white;
 }
+
+@media (min-width: 1000px) {
+}

@@ -1,28 +1,38 @@
-import React from "react";
+"use client";
+import React, { useRef } from "react";
 import Link from "next/link";
+import { FaBars, FaTimes } from "react-icons/fa";
 import "./mainNav.css";
 
 function MainNav() {
+  const navRef = useRef();
+
+  const showNavBar = () => {
+    navRef.current.classList.toggle("responsive_nav");
+  };
   return (
     <header>
-      <nav className="main-nav-container">
+      <nav ref={navRef} className="main-nav-container">
         <div className="nav-links-left">
-          <Link className="nav-link" href="/cookie-home">
+          <Link className="nav-link" onClick={showNavBar} href="/cookie-home">
             Mo's Dough
           </Link>
         </div>
         <div className="nav-links-right">
-          <Link className="nav-link" href="/cookie-about">
+          <Link className="nav-link" onClick={showNavBar} href="/cookie-about">
             About
           </Link>
-          <Link className="nav-link" href="/cookie-menu">
+          <Link className="nav-link" onClick={showNavBar} href="/cookie-menu">
             Menu
           </Link>
-          <Link className="nav-link" href="/order-form">
+          <Link className="nav-link" onClick={showNavBar} href="/order-form">
             Cart
           </Link>
         </div>
       </nav>
+      <button className="nav-btn" onClick={showNavBar}>
+        <FaBars className="faBars" />
+      </button>
     </header>
   );
 }
