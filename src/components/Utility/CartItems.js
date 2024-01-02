@@ -7,7 +7,9 @@ function CartItems({ handleRemove, showX }) {
     <div key={item.productId}>
       {item.label} {item.title}
       {showX && (
-        <span onClick={() => handleRemove(item.productId)}>{""} x</span>
+        <span className="delete-x" onClick={() => handleRemove(item.productId)}>
+          x
+        </span>
       )}
     </div>
   ));
