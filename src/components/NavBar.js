@@ -38,13 +38,17 @@ function NavBar() {
             </div>
           </div>
         </div>
+      </nav>
+      <div>
         <button className="nav-btn nav-close-btn" onClick={showNavBar}>
           <FaTimes className="faTimes" />
         </button>
-      </nav>
-      <button className="nav-btn" onClick={showNavBar}>
-        <FaBars className="faBars" />
-      </button>
+      </div>
+      <div>
+        <button className="nav-btn" onClick={showNavBar}>
+          <FaBars className="faBars" />
+        </button>
+      </div>
     </header>
   );
 }

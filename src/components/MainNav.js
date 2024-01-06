@@ -29,10 +29,10 @@ function MainNav() {
             Cart
           </Link>
         </div>
+        <FaBars className="nav-btn" onClick={showNavBar} />
+
+        <FaTimes className="nav-btn" onClick={showNavBar} />
       </nav>
-      <button className="nav-btn" onClick={showNavBar}>
-        <FaBars className="faBars" />
-      </button>
     </header>
   );
 }
