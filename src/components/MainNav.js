@@ -18,6 +18,7 @@ function MainNav() {
             Mo's Dough
           </Link>
         </div>
+
         <div className="nav-links-right">
           <Link className="nav-link" onClick={showNavBar} href="/cookie-about">
             About
@@ -28,10 +29,9 @@ function MainNav() {
           <Link className="nav-link" onClick={showNavBar} href="/order-form">
             Cart
           </Link>
+          <FaTimes className="nav-btn" onClick={showNavBar} />
         </div>
         <FaBars className="nav-btn" onClick={showNavBar} />
-
-        <FaTimes className="nav-btn" onClick={showNavBar} />
       </nav>
     </header>
   );
