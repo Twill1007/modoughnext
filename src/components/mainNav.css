@@ -27,39 +27,56 @@
 }
 
 header .nav-btn {
-  cursor: pointer;
-  background: transparent;
-  border: none;
-  outline: none;
-  columns: var(--textColor);
   visibility: hidden;
-  opacity: 0;
-  font-size: 1.8rem;
 }
+
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
+/*  */
 
 @media only screen and (max-width: 1100px) {
   header .nav-btn {
     visibility: visible;
     opacity: 1;
     margin: 5px;
+    columns: var(--textColor);
     z-index: 1;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 1.8rem;
   }
   .main-nav-container .responsive_nav {
     display: flex;
     flex-direction: row;
   }
   .nav-links-right {
+    position: absolute;
     display: flex;
     flex-direction: row;
+    align-items: center;
+    width: 100vw;
     gap: 20px;
+
     /* background-color: var(--mainColor); */
     /* visibility: hidden; */
   }
   .responsive_nav .nav-links-right {
     display: flex;
     flex-direction: row;
+    align-items: center;
     visibility: visible;
-    transform: translateY(10vh);
+    transform: translateY(7vh);
     transition: transform 0.5s ease;
   }
   .nav-links-right {
@@ -67,29 +84,24 @@ header .nav-btn {
     transform: translateY(-10vh);
     transition: transform 0.5s ease;
   }
-
-  header nav {
-    /* min-height: 100vh;
-    min-width: 100vw; */
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    /* gap: 1.5rem; */
-    transition: 0.5s;
-    /* transform: translateY(100vh); */
+  .nav-links-right :first-child {
+    margin-left: 10px;
+  }
+  .nav-links-right :last-child {
+    margin-left: auto;
+    padding-right: 9px;
   }
 
-  /* .main-nav-container {
+  header nav {
     display: flex;
     flex-direction: row;
-    background-color: var(--mainColor);
-    font-size: 40px;
-    justify-content: center;
     align-items: center;
-  } */
-}
+    justify-content: center;
 
+    transition: 0.5s;
+  }
+}
+/* 
 @media only screen and (max-width: 412px) {
   header .nav-btn {
     visibility: visible;
@@ -129,23 +141,11 @@ header .nav-btn {
   }
 
   header nav {
-    /* min-height: 100vh;
-    min-width: 100vw; */
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
-    /* gap: 1.5rem; */
-    transition: 0.5s;
-    /* transform: translateY(100vh); */
-  }
 
-  /* .main-nav-container {
-    display: flex;
-    flex-direction: row;
-    background-color: var(--mainColor);
-    font-size: 40px;
-    justify-content: center;
-    align-items: center;
-  } */
-}
+    transition: 0.5s;
+  }
+} */

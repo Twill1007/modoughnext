@@ -31,15 +31,28 @@ span {
   background-image: url("https://www.alattefood.com/wp-content/uploads/2019/12/Chewy-Sugar-Cookie-Recipe-99.jpg");
 }
 
-@media (max-width: 1914px) {
-  .menuCookieId {
-    margin-top: 150px;
-    border: 1px solid black;
-    border-radius: 15px;
-    min-width: 350px;
-    min-height: 350px;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+@media (max-width: 1814px) {
+  .menuCookieIdcc {
+    display: none;
+    visibility: hidden;
+    background-image: url("https://img.buzzfeed.com/thumbnailer-prod-us-east-1/video-api/assets/62298.jpg?output-format=auto&output-quality=auto&resize=600:*");
+  }
+
+  .menuCookieIdsd {
+    display: none;
+    visibility: hidden;
+    background-image: url("https://www.jessicagavin.com/wp-content/uploads/2019/12/snickerdoodle-cookies-10-1200.jpg");
+  }
+
+  .menuCookieIdpbc {
+    display: none;
+    visibility: hidden;
+    background-image: url("https://preppykitchen.com/wp-content/uploads/2021/07/Peanut-Butter-Cookie-Recipe-n.jpg");
+  }
+
+  .menuCookieIdsc {
+    display: none;
+    visibility: hidden;
+    background-image: url("https://www.alattefood.com/wp-content/uploads/2019/12/Chewy-Sugar-Cookie-Recipe-99.jpg");
   }
 }

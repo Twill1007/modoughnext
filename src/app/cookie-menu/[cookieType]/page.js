@@ -6,10 +6,20 @@ import PricingMenu from "@/components/PricingMenu";
 import CookieName from "@/components/cookieName";
 import MenuCookiePicture from "@/components/menuCookiePicture";
 import "../[cookieType]/page.css";
+import CookieDescriptionAccordion from "@/components/CookieDesciptionAccord/CookieDescriptionAccord";
 
 function CookieOrder({ params }) {
   const { getCookieDough } = useCookieDough();
   const [cookieData, setCookieData] = useState([]);
+
+  const items = [
+    { title: "Ingedients", content: "List of dairy free ingredients" },
+    {
+      title: "Baking Instructions",
+      content: "Instructions for baking cookies",
+    },
+    { title: "Reviews", content: "These cookies have not been reviewed." },
+  ];
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +42,9 @@ function CookieOrder({ params }) {
       <div className="flex-container-row">
         <div className="flex-container-column-1">
           <MenuCookiePicture cookieType={selectedCookie} />
+          <div>
+            <CookieDescriptionAccordion items={items} />
+          </div>
         </div>
         <div className="flex-container-column-2">
           <div className="cookie-title">
