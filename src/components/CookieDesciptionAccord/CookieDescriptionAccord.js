@@ -15,13 +15,25 @@ function CookieDescriptionAccordion({ items }) {
           style={{
             cursor: "pointer",
             padding: "8px",
-
-            backgroundColor: openIndex === index ? "#e0e0e0" : "white",
+            margin: "10px 0px",
+            overflow: "hidden",
+            transition: "max-height 0.5s ease",
+            maxHeight: openIndex === index ? "100px" : "20px",
+            backgroundColor: openIndex === index ? "var(--mainColor)" : "white",
           }}
         >
           <div onClick={() => handleToggle(index)}>{item.title}</div>
           {openIndex === index && (
-            <div style={{ padding: "8px" }}>{item.content}</div>
+            <div
+              style={{
+                padding: "8px",
+                height: "30px",
+                transition: "max-height 0.5s ease",
+                maxHeight: openIndex === index ? "-100px" : "-20px",
+              }}
+            >
+              {item.content}
+            </div>
           )}
         </div>
       ))}

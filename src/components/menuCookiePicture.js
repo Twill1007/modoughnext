@@ -6,7 +6,7 @@ function MenuCookiePicture({ cookieType }) {
 
   return (
     <>
-      <div className={`menuCookieId ${dynamicClass}`}></div>;
+      <div className={`menuCookieId ${dynamicClass}`}></div>
     </>
   );
 }
