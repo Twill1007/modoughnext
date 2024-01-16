@@ -48,7 +48,7 @@
 
 ### Modal
 
-- Overlay Zelle/Venmo Information
+- Fix overlay that displays cart info (only show the type of cookie which they are trying to add to cart.)
 
 ### CartSummary/OrderForm Page
 

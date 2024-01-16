@@ -42,9 +42,7 @@ function CookieOrder({ params }) {
       <div className="flex-container-row">
         <div className="flex-container-column-1">
           <MenuCookiePicture cookieType={selectedCookie} />
-          <div>
-            <CookieDescriptionAccordion items={items} />
-          </div>
+          <CookieDescriptionAccordion items={items} />
         </div>
         <div className="flex-container-column-2">
           <div className="cookie-title">

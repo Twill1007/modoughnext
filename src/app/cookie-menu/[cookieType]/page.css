@@ -77,4 +77,13 @@
     justify-content: center;
     align-items: center;
   }
+  .flex-container-column-1 {
+    margin-bottom: 100px;
+    min-width: 585px;
+    order: 2;
+  }
+
+  .flex-container-column-2 {
+    order: 1;
+  }
 }
