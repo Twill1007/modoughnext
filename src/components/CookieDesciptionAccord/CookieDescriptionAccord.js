@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "../CookieDesciptionAccord/CookieDescriptionAccord.css";
 
 function CookieDescriptionAccordion({ items }) {
   const [openIndex, setOpenIndex] = useState(null);
@@ -8,15 +9,12 @@ function CookieDescriptionAccordion({ items }) {
   };
 
   return (
-    <div>
+    <div className="accordionContainer">
       {items.map((item, index) => (
         <div
+          className="accordionStyle"
           key={index}
           style={{
-            cursor: "pointer",
-            padding: "8px",
-            margin: "10px 0px",
-            overflow: "hidden",
             transition: "max-height 0.5s ease",
             maxHeight: openIndex === index ? "100px" : "20px",
             backgroundColor: openIndex === index ? "var(--mainColor)" : "white",

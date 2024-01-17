@@ -87,3 +87,11 @@
     order: 1;
   }
 }
+
+@media (max-width: 1370px) {
+  .flex-container-column-1 {
+    margin-bottom: 100px;
+    min-width: 385px;
+    order: 2;
+  }
+}
