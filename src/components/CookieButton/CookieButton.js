@@ -1,5 +1,5 @@
 import * as React from "react";
-import "../app/menu.css";
+import "../../components/CookieButton/cookieButton.css";
 import { useEffect, useState } from "react";
 import Link from "next/link";
 import useCookieDough from "@/hooks/use-cookieDough";
