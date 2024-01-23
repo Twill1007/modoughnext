@@ -1,3 +1,4 @@
+"use client";
 import React, { Fragment } from "react";
 import useCart from "@/hooks/use-cart";
 import "../../app/order-form/page.css";
@@ -7,15 +8,6 @@ function CartSummary() {
 
   return (
     <Fragment>
-      <h2
-        style={{
-          backgroundColor: "yellow",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        Cart Summary
-      </h2>
       <div className="order-summary-container">
         <div className="flex-container-column-1">
           {items.map((item) => (

@@ -5,26 +5,30 @@
 form {
   display: flex;
   flex-direction: column;
-  max-width: 300px; /* Optional: Set a maximum width for the form */
-  margin: auto; /* Optional: Center the form on the page */
+  max-width: 500px;
+  margin: auto;
+  border: solid 2px black;
+  border-radius: 15px;
+  padding: 20px;
 }
 
 label {
   margin-bottom: 10px;
+  font-size: large;
 }
 
 input {
   padding: 5px;
   margin-bottom: 15px;
+  display: flex;
+  width: 275px;
+  font-size: x-large;
 }
 
 button {
   padding: 10px;
-  background-color: #4caf50;
+  background-color: var(--mainColor);
   color: white;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: #45a049;
+  font-size: large;
 }

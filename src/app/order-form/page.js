@@ -19,10 +19,11 @@ const OrderPage = () => {
           display: "flex",
           marginTop: "50px",
           backgroundColor: "orange",
-          justifyContent: "space-around",
+          justifyContent: "space-between",
         }}
       >
-        <div>{userOrder}</div>
+        <CartSummary />
+        <OrderForm />
       </div>
       <div
         style={{
@@ -35,7 +36,6 @@ const OrderPage = () => {
       >
         Total Price: ${totalPrice}
       </div>
-      <OrderForm />
     </Fragment>
   );
 };
