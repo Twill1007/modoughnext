@@ -31,7 +31,11 @@ function CartSummary() {
       <div className="order-summary-container">
         <div className="flex-container-column-1">
           {items.map((item) => (
-            <div key={item.productId} className={`cart cookie${item.id}`}></div>
+            <div
+              style={{ margin: "20px" }}
+              key={item.productId}
+              className={`cart cookie${item.id}`}
+            ></div>
           ))}
         </div>
         <div className="flex-container-column-2">
