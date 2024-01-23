@@ -23,7 +23,6 @@ const OrderPage = () => {
         }}
       >
         <div>{userOrder}</div>
-        <OrderForm />
       </div>
       <div
         style={{
@@ -36,6 +35,7 @@ const OrderPage = () => {
       >
         Total Price: ${totalPrice}
       </div>
+      <OrderForm />
     </Fragment>
   );
 };

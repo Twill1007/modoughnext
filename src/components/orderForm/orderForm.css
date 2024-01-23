@@ -2,3 +2,29 @@
   background-color: blue;
   width: 750px;
 }
+form {
+  display: flex;
+  flex-direction: column;
+  max-width: 300px; /* Optional: Set a maximum width for the form */
+  margin: auto; /* Optional: Center the form on the page */
+}
+
+label {
+  margin-bottom: 10px;
+}
+
+input {
+  padding: 5px;
+  margin-bottom: 15px;
+}
+
+button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
