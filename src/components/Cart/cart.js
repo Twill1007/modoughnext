@@ -1,15 +1,18 @@
 "use client";
 import React, { Fragment } from "react";
 import useCart from "@/hooks/use-cart";
-import "../../app/order-form/page.css";
+import "../Cart/cart.css";
 
 function CartSummary() {
   const { items } = useCart();
 
+  const itemPrices = items.map((price) => price.price);
+  const totalPrice = itemPrices.reduce((sum, price) => sum + price, 0);
+
   return (
     <Fragment>
-      <div className="order-summary-container">
-        <div className="flex-container-column-1">
+      <div className="cart-order-summary-container">
+        <div className="cart-flex-container-column-1">
           {items.map((item) => (
             <div
               style={{ margin: "20px" }}
@@ -18,18 +21,19 @@ function CartSummary() {
             ></div>
           ))}
         </div>
-        <div className="flex-container-column-2">
+        <div className="cart-flex-container-column-2-title">
           {items.map((item) => (
             <div key={item.productId}>
               {item.label} {item.title}
             </div>
           ))}
         </div>
-        <div className="flex-container-column-3">
+        <div className="cart-flex-container-column-3">
           {items.map((item) => (
             <div key={item.productId}>${item.price}</div>
           ))}
         </div>
+        <div>Total Price: ${totalPrice}</div>
       </div>
     </Fragment>
   );

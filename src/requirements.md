@@ -60,3 +60,9 @@
 - Order Form
   --Create component with Form
   --Input Fields for Email, First and Last Name, & Address
+
+### Set Up Home Page
+
+- Update Mo's Picture
+- Update Cookie Picture
+- Add link to menu "Shop Cookies"
