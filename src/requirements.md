@@ -60,6 +60,13 @@
 - Order Form
   --Create component with Form
   --Input Fields for Email, First and Last Name, & Address
+- Edit/Delete Cart Items
+  --Edit/Delete button convert cart items to buttons
+- Cart Item Buttons
+  --Set up button to trigger overlay
+- Edit/Delete Overlay
+  --Create dropdown for quantity.
+  --Create button to delete cart item completely.
 
 ### Set Up Home Page
 
