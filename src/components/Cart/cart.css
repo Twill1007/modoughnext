@@ -11,7 +11,8 @@
 
 .cart-flex-container {
   display: flex;
-  flex-direction: row; /* Change to row layout */
+  flex-direction: column;
+  justify-content: center;
 }
 
 .cart-total-price {
@@ -19,25 +20,20 @@
   font-size: 30px;
 }
 
-.cart-flex-container-column-1,
-.cart-flex-container-column-2-title,
-.cart-flex-container-column-3 {
+.cart-flex-container-row {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-around;
-  padding: 5px 15px;
+  border: solid 1px black;
+  margin: 15px;
 }
 
 .cart {
   min-width: 100px;
   min-height: 100px;
-  font-size: xx-large;
+  font-size: large;
   font-weight: 900;
   color: rgb(0, 0, 0);
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: top;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
