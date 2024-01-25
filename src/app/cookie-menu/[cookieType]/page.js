@@ -41,13 +41,13 @@ function CookieOrder({ params }) {
     <Fragment>
       <div className="flex-container-row">
         <div className="flex-container-column-1">
+          <div className="cookie-title">
+            <CookieName params={params} />
+          </div>
           <MenuCookiePicture cookieType={selectedCookie} />
           <CookieDescriptionAccordion items={items} />
         </div>
         <div className="flex-container-column-2">
-          <div className="cookie-title">
-            <CookieName params={params} />
-          </div>
           <div className="pricing-menu">
             <PricingMenu cookieType={selectedCookie} />
           </div>

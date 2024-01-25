@@ -3,8 +3,10 @@
   flex-direction: column; /* Change to column layout */
   border: solid 2px black;
   border-radius: 15px;
-  width: 500px;
-  margin-left: 300px;
+  width: 600px;
+  margin-left: 200px;
+  margin-top: 50px;
+  margin-bottom: 50px;
   padding: 20px;
   font-size: 30px;
 }
@@ -24,8 +26,13 @@
   display: flex;
   flex-direction: row;
   justify-content: space-around;
+  align-items: center;
   border: solid 1px black;
+  border-radius: 15px;
+  font-size: 25px;
   margin: 15px;
+  padding: 15px;
+  cursor: pointer;
 }
 
 .cart {
@@ -38,6 +45,7 @@
   background-position: center;
   background-repeat: no-repeat;
   border: solid 1px black;
+
   border-radius: 5%;
 }
 

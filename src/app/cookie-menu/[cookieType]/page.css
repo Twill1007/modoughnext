@@ -41,7 +41,7 @@
 
 .flex-container-column-2 {
   /* background-color: blue; */
-
+  margin-top: 125px;
   display: flex;
   flex-direction: column;
   max-width: 50%;
