@@ -48,10 +48,6 @@ function CookieOrder({ params }) {
           <CookieDescriptionAccordion items={items} />
         </div>
         <div className="flex-container-column-2">
-          <div className="pricing-menu">
-            <PricingMenu cookieType={selectedCookie} />
-          </div>
-
           <div className="cookie-description">
             Experience the ultimate convenience and freshness with our frozen
             chocolate chip cookie dough balls. Immerse yourself in the aroma of
@@ -59,6 +55,11 @@ function CookieOrder({ params }) {
             ingredients, each perfectly portioned ball guarantees a batch of
             warm, gooey cookies in minutes.
           </div>
+
+          <div className="pricing-menu">
+            <PricingMenu cookieType={selectedCookie} />
+          </div>
+
           <ItemSelector cookieType={selectedCookie} />
         </div>
       </div>

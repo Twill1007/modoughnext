@@ -28,7 +28,12 @@ function CartSummary() {
             <div>No items in the cart</div>
           )}
         </div>
-        <div className="cart-total-price">Total Price: ${totalPrice}</div>
+        <div className="price-edit-button-container">
+          <div className="cart-total-price">Total Price: ${totalPrice}</div>
+          <div>
+            <button>Edit Cart Items</button>
+          </div>
+        </div>
       </div>
     </Fragment>
   );
