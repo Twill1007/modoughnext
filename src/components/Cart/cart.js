@@ -30,9 +30,11 @@ function CartSummary() {
         </div>
         <div className="price-edit-button-container">
           <div className="cart-total-price">Total Price: ${totalPrice}</div>
-          <div>
-            <button>Edit Cart Items</button>
-          </div>
+          {items.length > 0 && (
+            <div>
+              <button>Edit Cart Items</button>
+            </div>
+          )}
         </div>
       </div>
     </Fragment>
