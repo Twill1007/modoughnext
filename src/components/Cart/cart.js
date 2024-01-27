@@ -17,7 +17,6 @@ function CartSummary() {
     <Fragment>
       <div className="cart-order-summary-container">
         {items.length > 0 ? (
-          // <div className={`cart-flex-container ${editMode ? "edit-mode" : ""}`}>
           <div className="cart-flex-container">
             {items.map((item) => (
               <div key={item.productId}>
@@ -42,14 +41,16 @@ function CartSummary() {
         ) : (
           <div>No items in the cart</div>
         )}
-        <div className="price-edit-button-container">
-          <div className="cart-total-price">Total Price: ${totalPrice}</div>
-          <div>
-            <button onClick={toggleEditMode}>
-              {editMode ? "Done Editing" : "Edit Cart Items"}
-            </button>
+        {items.length > 0 && (
+          <div className="price-edit-button-container">
+            <div className="cart-total-price">Total Price: ${totalPrice}</div>
+            <div>
+              <button onClick={toggleEditMode}>
+                {editMode ? "Done Editing" : "Edit Cart Items"}
+              </button>
+            </div>
           </div>
-        </div>
+        )}
       </div>
     </Fragment>
   );

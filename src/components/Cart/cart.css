@@ -56,7 +56,34 @@
   padding: 15px;
   border: solid 1px black;
   border-radius: 15px;
-  background-color: yellow;
+  background-color: #6ee9ce;
+}
+
+.cart-flex-container-row-edit-mode div {
+  background-color: #6ee9ce;
+}
+
+.cart-flex-container-row-edit-mode:hover {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 25px;
+  margin: 15px;
+  padding: 15px;
+  border: solid 1px black;
+  border-radius: 15px;
+  background-color: var(--mainColor);
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  transform: scale(1.01);
+}
+
+.cart-flex-container-row-edit-mode:hover div {
+  cursor: pointer;
+  background-color: var(--mainColor);
+  transition: transform 0.3s ease;
+  transform: scale(1.01);
 }
 
 .cart {
