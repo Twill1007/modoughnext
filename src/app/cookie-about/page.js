@@ -1,6 +1,6 @@
 "use client";
 import "../globals.css";
-import ModalCookie from "../../components/modal/modalCookie/Modal";
+
 import useCart from "@/hooks/use-cart";
 
 import { Fragment } from "react";

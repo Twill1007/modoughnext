@@ -5,12 +5,18 @@ import "../Cart/cart.css";
 function CartSummary() {
   const { items } = useCart();
   const [editMode, setEditMode] = useState(false);
+  const [showEditCartModal, setShowEditCartModal] = useState(false);
 
   const itemPrices = items.map((price) => price.price);
   const totalPrice = itemPrices.reduce((sum, price) => sum + price, 0);
 
   const toggleEditMode = () => {
     setEditMode((prevEditMode) => !prevEditMode);
+  };
+
+  const handleShowEditModal = () => {
+    setShowEditCartModal(true);
+    console.log("This should show true", showEditCartModal);
   };
 
   return (
@@ -21,7 +27,10 @@ function CartSummary() {
             {items.map((item) => (
               <div key={item.productId}>
                 {editMode ? (
-                  <div className="cart-flex-container-row-edit-mode">
+                  <div
+                    className="cart-flex-container-row-edit-mode"
+                    onClick={handleShowEditModal}
+                  >
                     <div className={`cart cookie${item.id}`}></div>
                     <div>{item.label}</div>
                     <div>{item.title}</div>
@@ -39,7 +48,9 @@ function CartSummary() {
             ))}
           </div>
         ) : (
-          <div>No items in the cart</div>
+          <div>
+            <div>No items in the cart</div>
+          </div>
         )}
         {items.length > 0 && (
           <div className="price-edit-button-container">
