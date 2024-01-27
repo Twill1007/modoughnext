@@ -16,7 +16,6 @@ function CartSummary() {
 
   const handleShowEditModal = () => {
     setShowEditCartModal(true);
-    console.log("This should show true", showEditCartModal);
   };
 
   return (
@@ -55,6 +54,9 @@ function CartSummary() {
         {items.length > 0 && (
           <div className="price-edit-button-container">
             <div className="cart-total-price">Total Price: ${totalPrice}</div>
+            {editMode && (
+              <span className="edit-comment">Select Cookies to Edit</span>
+            )}
             <div>
               <button onClick={toggleEditMode}>
                 {editMode ? "Done Editing" : "Edit Cart Items"}

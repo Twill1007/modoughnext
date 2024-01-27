@@ -99,6 +99,13 @@
   border-radius: 5%;
 }
 
+.edit-comment {
+  font-family: handlee;
+  font-size: large;
+  font-weight: 200;
+  min-width: 50px;
+}
+
 .cart.cookiecc {
   background-image: url("https://namelymarly.com/wp-content/uploads/2016/01/Cookie_Dough_Balls_02-web.jpg.webp");
 }
