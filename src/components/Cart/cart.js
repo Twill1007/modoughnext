@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 import useCart from "@/hooks/use-cart";
 import "../Cart/cart.css";
+import ModalEditCart from "../modal/modalEditCart/modalEditCart";
 
 function CartSummary() {
   const { items } = useCart();
@@ -14,8 +15,18 @@ function CartSummary() {
     setEditMode((prevEditMode) => !prevEditMode);
   };
 
+  const handleCartOptionChoice = (choice) => {
+    if (choice === "cancel") {
+      setShowEditCartModal(false);
+    }
+  };
+
   const handleShowEditModal = () => {
     setShowEditCartModal(true);
+  };
+
+  const closeModal = () => {
+    setShowEditCartModal(false);
   };
 
   return (
@@ -65,6 +76,9 @@ function CartSummary() {
           </div>
         )}
       </div>
+      {showEditCartModal && (
+        <ModalEditCart onCartOptionChoice={handleCartOptionChoice} />
+      )}
     </Fragment>
   );
 }
