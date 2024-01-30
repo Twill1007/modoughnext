@@ -14,9 +14,7 @@ const SelectComponent = ({
         label="Quantity"
         onChange={handleDropdownChange}
       >
-        <option style={{ textAlign: "center" }} value="Select">
-          --Select--
-        </option>
+        <option value="Select">--Select--</option>
         {dropdownOptions.map((option, productId) => (
           <option
             key={productId}

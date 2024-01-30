@@ -120,7 +120,7 @@ function ItemSelector({ cookieType }) {
         selectedValue={selectedValue}
         dropdownOptions={dropdownOptions}
         handleDropdownChange={handleDropdownChange}
-        handleSubmit={handleSubmit}
+        // handleSubmit={handleSubmit}
       />
       <div className="button-parent">
         <button className="buttons" onClick={handleSubmit}>

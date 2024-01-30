@@ -1,9 +1,10 @@
 import React, { Fragment, useState } from "react";
 import useCart from "@/hooks/use-cart";
 import "../Cart/cart.css";
+import EditCart from "./EditCart";
 import ModalEditCart from "../modal/modalEditCart/modalEditCart";
 
-function CartSummary() {
+function CartSummary({ selectedCookie }) {
   const { items } = useCart();
   const [editMode, setEditMode] = useState(false);
   const [showEditCartModal, setShowEditCartModal] = useState(false);
@@ -75,6 +76,7 @@ function CartSummary() {
             </div>
           </div>
         )}
+        <EditCart cookieType={selectedCookie} />
       </div>
       {showEditCartModal && (
         <ModalEditCart onCartOptionChoice={handleCartOptionChoice} />
