@@ -1,7 +1,6 @@
 "use client";
 import Link from "next/link";
 import "../homePage.css";
-import EditCart from "@/components/Cart/EditCart";
 
 const HomePage = () => {
   return (

@@ -1,10 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 import { calculatePrices } from "../../components/Utility/pricingLogic";
 import { v4 as uuidv4 } from "uuid";
+import useCart from "@/hooks/use-cart";
 
-function CartOptions(cookieType) {
+function CartOptions({ cookieType, cookieEditId, onCartOptionsChoice }) {
+  const { removeItemByCookieId } = useCart();
+  const [selectedValue, setSelectedValue] = useState();
   const { discountedPrices } = calculatePrices();
   const prices = discountedPrices;
+
+  const handleSelectChange = (e) => {
+    setSelectedValue(e.target.value);
+  };
 
   const dropdownOptions = [
     {
@@ -49,13 +56,27 @@ function CartOptions(cookieType) {
     option.productId = uuidv4();
   });
 
+  const handleSubmit = () => {};
+
   return (
     <>
-      {dropdownOptions.map((option, index) => (
-        <select key={index}>
-          <option value={option.value} />
-        </select>
-      ))}
+      <select value={selectedValue} onChange={handleSelectChange}>
+        {dropdownOptions.map((option, index) => (
+          <option value={option.label} key={index}>
+            {option.label}
+          </option>
+        ))}
+      </select>
+      <p>Selected Value: {selectedValue}</p>
+      <button onClick={handleSubmit}>Update Cart</button>
+      <button
+        onClick={() => {
+          removeItemByCookieId(cookieEditId);
+          // onCartOptionsChoice("cancel");
+        }}
+      >
+        Delete Cart Item
+      </button>
     </>
   );
 }

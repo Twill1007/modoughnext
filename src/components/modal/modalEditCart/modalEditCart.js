@@ -1,17 +1,18 @@
 import React, { useState } from "react";
 import "../modalEditCart/modalEditCart.css";
-import useCart from "@/hooks/use-cart";
+
 import EditCart from "@/components/Cart/EditCart";
 
-const ModalEditCart = ({ children, onCartOptionChoice }) => {
-  const { items, addItem } = useCart();
-
+const ModalEditCart = ({ children, onCartOptionChoice, cookieEditId }) => {
   return (
     <>
       <div className="modalOverlay">
-        <EditCart />
-        <button onClick={() => onCartOptionChoice("cancel")}>Close</button>
-        {children}
+        <div className="modalContent">
+          <div>Change Quantity</div>
+          <EditCart cookieEditId={cookieEditId} />
+          <button onClick={() => onCartOptionChoice("cancel")}>Cancel</button>
+          {children}
+        </div>
       </div>
     </>
   );

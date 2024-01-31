@@ -24,10 +24,8 @@ export default function CookieButton() {
     <>
       <div className="btnContainer">
         {cookieData.map((cookie, index) => (
-          <Link href={"cookie-menu/" + cookie.id}>
-            <div className={"cookieBtn cookie" + cookie.id} key={index}>
-              {cookie.title}
-            </div>
+          <Link href={"cookie-menu/" + cookie.id} key={index}>
+            <div className={"cookieBtn cookie" + cookie.id}>{cookie.title}</div>
           </Link>
         ))}
       </div>
