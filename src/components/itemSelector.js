@@ -8,17 +8,8 @@ import { calculatePrices } from "./Utility/pricingLogic";
 import { v4 as uuidv4 } from "uuid";
 import "../components/itemSelector.css";
 
-function ItemSelector({ cookieType }) {
-  const { discountedPrices } = calculatePrices();
-  const { items, addItem, removeItemByCookieId, removeItemByProductId } =
-    useCart();
-  const [selectedValue, setSelectedValue] = useState("");
-  const [showModal, setShowModal] = useState(false);
-  const [showEditDeleteX, setShowDeleteX] = useState(false);
-  const [cartOptionChoice, setCartOptionChoice] = useState(null);
-
+export function generateDropdownOptions(cookieType, discountedPrices) {
   const prices = discountedPrices;
-
   const dropdownOptions = [
     {
       value: "1",
@@ -61,6 +52,19 @@ function ItemSelector({ cookieType }) {
     option.price = prices[parseInt(option.value, 10) - 1];
     option.productId = uuidv4();
   });
+  return dropdownOptions;
+}
+
+function ItemSelector({ cookieType }) {
+  const { discountedPrices } = calculatePrices();
+  const { items, addItem, removeItemByCookieId, removeItemByProductId } =
+    useCart();
+  const [selectedValue, setSelectedValue] = useState("");
+  const [showModal, setShowModal] = useState(false);
+  const [showEditDeleteX, setShowDeleteX] = useState(false);
+  const [cartOptionChoice, setCartOptionChoice] = useState(null);
+
+  const dropdownOptions = generateDropdownOptions(cookieType, discountedPrices);
 
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
