@@ -70,6 +70,8 @@ function ItemSelector({ cookieType }) {
     setSelectedValue(event.target.value);
   };
 
+  console.log("itemSelector", selectedValue);
+
   const selectedItem = dropdownOptions.find(
     (option) => option.value === selectedValue
   );
@@ -99,7 +101,7 @@ function ItemSelector({ cookieType }) {
       removeItemByCookieId(selectedItem.id);
       addItem(selectedItem);
       setSelectedValue("");
-      console.log("This is the replace option", selectedItem);
+      console.log("This is the selectedItem", selectedItem);
     } else if (choice === "cancel") {
       setShowModal(false);
     }
