@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "../modalEditCart/modalEditCart.css";
-
 import EditCart from "@/components/Cart/EditCart";
 
 const ModalEditCart = ({ children, onCartOptionChoice, cookieEditId }) => {
@@ -10,7 +9,12 @@ const ModalEditCart = ({ children, onCartOptionChoice, cookieEditId }) => {
         <div className="modalContent">
           <div>Change Quantity</div>
           <EditCart cookieEditId={cookieEditId} />
-          <button onClick={() => onCartOptionChoice("cancel")}>Cancel</button>
+          <button
+            className="buttons"
+            onClick={() => onCartOptionChoice("cancel")}
+          >
+            Cancel
+          </button>
           {children}
         </div>
       </div>

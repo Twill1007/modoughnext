@@ -9,6 +9,7 @@ function CartOptions({ cookieEditId }) {
     <>
       {/* <SelectComponent /> */}
       <button
+        className="buttons"
         onClick={() => {
           removeItemByCookieId(cookieEditId);
         }}

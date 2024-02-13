@@ -9,7 +9,7 @@ import { v4 as uuidv4 } from "uuid";
 import "../components/itemSelector.css";
 
 export function generateDropdownOptions(cookieType, discountedPrices) {
-  const prices = discountedPrices;
+  const prices = discountedPrices || [];
   const dropdownOptions = [
     {
       value: "1",
@@ -99,6 +99,7 @@ function ItemSelector({ cookieType }) {
       removeItemByCookieId(selectedItem.id);
       addItem(selectedItem);
       setSelectedValue("");
+      console.log("This is the replace option", selectedItem);
     } else if (choice === "cancel") {
       setShowModal(false);
     }
