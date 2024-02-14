@@ -1,17 +1,16 @@
 import React from "react";
 import useCart from "@/hooks/use-cart";
-import SelectComponent from "../Utility/SelectComponent";
 
-function CartOptions({ cookieEditId }) {
+function CartOptions({ cookieEditId, onCartOptionChoice }) {
   const { removeItemByCookieId } = useCart();
 
   return (
     <>
-      {/* <SelectComponent /> */}
       <button
         className="buttons"
         onClick={() => {
           removeItemByCookieId(cookieEditId);
+          onCartOptionChoice("cancel");
         }}
       >
         Delete Cart Item

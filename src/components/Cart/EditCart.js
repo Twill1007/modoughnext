@@ -5,7 +5,7 @@ import { calculatePrices } from "../Utility/pricingLogic";
 import { generateDropdownOptions } from "../itemSelector";
 import useCart from "@/hooks/use-cart";
 
-function EditCart({ cookieType, cookieEditId, onCartOptionsChoice }) {
+function EditCart({ cookieType, cookieEditId, onCartOptionChoice }) {
   const { discountedPrices } = calculatePrices();
   const [selectedValue, setSelectedValue] = useState("");
   const { items, addItem, removeItemByCookieId } = useCart();
@@ -37,12 +37,18 @@ function EditCart({ cookieType, cookieEditId, onCartOptionsChoice }) {
         selectedValue={selectedValue}
         handleDropdownChange={handleDropdownChange}
       />
-      <button className="buttons" onClick={handleSubmit}>
+      <button
+        className="buttons"
+        onClick={() => {
+          handleSubmit();
+          onCartOptionChoice("cancel");
+        }}
+      >
         Update Cart
       </button>
       <CartOptions
         cookieEditId={cookieEditId}
-        onCartOptionsChoice={onCartOptionsChoice}
+        onCartOptionChoice={onCartOptionChoice}
       />
     </>
   );

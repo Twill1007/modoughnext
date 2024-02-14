@@ -8,7 +8,10 @@ const ModalEditCart = ({ children, onCartOptionChoice, cookieEditId }) => {
       <div className="modalOverlay">
         <div className="modalContent">
           <div>Change Quantity</div>
-          <EditCart cookieEditId={cookieEditId} />
+          <EditCart
+            onCartOptionChoice={onCartOptionChoice}
+            cookieEditId={cookieEditId}
+          />
           <button
             className="buttons"
             onClick={() => onCartOptionChoice("cancel")}
