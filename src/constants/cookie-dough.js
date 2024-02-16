@@ -1,5 +1,3 @@
-//TODO: replace "oneDOzen", "twoDozen" with "basePrice"
-
 const cookieDough = [
   { id: "cc", title: "Chocolate Chip", basePrice: 10 },
   {

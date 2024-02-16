@@ -52,6 +52,7 @@ export function generateDropdownOptions(cookieType, discountedPrices) {
     option.price = prices[parseInt(option.value, 10) - 1];
     option.productId = uuidv4();
   });
+
   return dropdownOptions;
 }
 
@@ -69,8 +70,6 @@ function ItemSelector({ cookieType }) {
   const handleDropdownChange = (event) => {
     setSelectedValue(event.target.value);
   };
-
-  console.log("itemSelector", selectedValue);
 
   const selectedItem = dropdownOptions.find(
     (option) => option.value === selectedValue
@@ -101,7 +100,6 @@ function ItemSelector({ cookieType }) {
       removeItemByCookieId(selectedItem.id);
       addItem(selectedItem);
       setSelectedValue("");
-      console.log("This is the selectedItem", selectedItem);
     } else if (choice === "cancel") {
       setShowModal(false);
     }

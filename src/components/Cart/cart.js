@@ -7,8 +7,10 @@ import ModalEditCart from "../modal/modalEditCart/modalEditCart";
 function CartSummary() {
   const { items } = useCart();
   const [cookieEditId, setCookieEditId] = useState(null);
+  const [selectedCookie, setSelectedCookie] = useState({});
   const [editMode, setEditMode] = useState(false);
   const [showEditCartModal, setShowEditCartModal] = useState(false);
+
   const itemPrices = items.map((price) => price.price);
   const totalPrice = itemPrices.reduce((sum, price) => sum + price, 0);
 
@@ -31,9 +33,11 @@ function CartSummary() {
     setShowEditCartModal(false);
   };
 
-  const showCartItem = (index) => {
+  const showCartItem = (index, item) => {
     const clickedObject = items[index];
     setCookieEditId(clickedObject.id);
+    setSelectedCookie(item);
+    console.log("This is the clicked object", clickedObject);
   };
 
   return (
@@ -48,7 +52,7 @@ function CartSummary() {
                     className="cart-flex-container-row-edit-mode"
                     onClick={() => {
                       handleShowEditModal();
-                      showCartItem(index);
+                      showCartItem(index, item);
                     }}
                   >
                     <div className={`cart cookie${item.id}`}></div>
@@ -90,6 +94,7 @@ function CartSummary() {
         <ModalEditCart
           onCartOptionChoice={handleCartOptionChoice}
           cookieEditId={cookieEditId}
+          cookieType={selectedCookie}
         />
       )}
     </Fragment>
