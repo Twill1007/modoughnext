@@ -31,20 +31,23 @@ function EditCart({ cookieType, cookieEditId, onCartOptionChoice }) {
 
   return (
     <>
-      <SelectComponent
-        selectedValue={selectedValue}
-        dropdownOptions={dropdownOptions}
-        handleDropdownChange={handleDropdownChange}
-      />
-
+      <div style={{ maxWidth: "200px", marginLeft: "20px" }}>
+        <div>Change Quantity</div>
+        <SelectComponent
+          selectedValue={selectedValue}
+          dropdownOptions={dropdownOptions}
+          handleDropdownChange={handleDropdownChange}
+        />
+      </div>
       <button
+        style={{ marginLeft: "20px" }}
         className="buttons"
         onClick={() => {
           handleSubmit();
           onCartOptionChoice("cancel");
         }}
       >
-        Update Cart
+        Update Quantity
       </button>
       <CartOptions
         cookieEditId={cookieEditId}

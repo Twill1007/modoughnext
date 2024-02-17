@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../modalEditCart/modalEditCart.css";
 import EditCart from "@/components/Cart/EditCart";
+import "../../Cart/cart.css";
 
 const ModalEditCart = ({
   children,
@@ -12,7 +13,14 @@ const ModalEditCart = ({
     <>
       <div className="modalOverlay">
         <div className="modalContent">
-          <div>Change Quantity</div>
+          <div
+            style={{
+              height: "200px",
+              margin: "20px",
+            }}
+            className={`cart cookie${cookieType.id}`}
+          ></div>
+
           <EditCart
             cookieType={cookieType}
             onCartOptionChoice={onCartOptionChoice}
