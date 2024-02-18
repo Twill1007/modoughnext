@@ -25,8 +25,6 @@ function OrderForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    console.log("Form Data:", formData);
   };
   useEffect(() => {
     setDomLoaded(true);
@@ -91,7 +89,9 @@ function OrderForm() {
               onChange={handleChange}
             ></input>
           </label>
-          <button>Continue with Payment</button>
+          <button className="buttons" style={{ marginTop: "0px", zIndex: "0" }}>
+            Continue with Payment
+          </button>
         </form>
       )}
     </>

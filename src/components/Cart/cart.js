@@ -83,7 +83,11 @@ function CartSummary() {
               <span className="edit-comment">Select Cookies to Edit</span>
             )}
             <div>
-              <button onClick={toggleEditMode}>
+              <button
+                onClick={toggleEditMode}
+                className="buttons"
+                style={{ margin: "0px" }}
+              >
                 {editMode ? "Done Editing" : "Edit Cart Items"}
               </button>
             </div>
