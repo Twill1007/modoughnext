@@ -1,0 +1,15 @@
+.cartItemContainer {
+  display: flex;
+  flex-direction: row;
+}
+
+.cartItemContainer div:last-child {
+  margin-left: auto;
+}
+
+.delete-x {
+  margin-left: 5px;
+  font-size: 25px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  cursor: pointer;
+}

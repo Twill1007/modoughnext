@@ -29,7 +29,7 @@
   -2 Dozen for $18 etc.
 - Picture of Cookie
 - Dropdown Menu
-- Order Form
+- Display Cart Items & Price
 
 ### Order Form Page
 
@@ -40,11 +40,6 @@
 
 - Image of Mo
 - About Mo Text
-- Cart Summary
-  - User's Cart Order
-  - Order Button
-  - Edit Order Button
-  - Delete Order Button
 
 ### Modal
 
