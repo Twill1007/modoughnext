@@ -1,7 +1,7 @@
 import React from "react";
 import useCart from "@/hooks/use-cart";
 
-function CartOptions({ cookieEditId, onCartOptionChoice }) {
+function CartOptions({ cookieEditId, onCartOptionChoice, cookieType }) {
   const { removeItemByCookieId } = useCart();
 
   return (
@@ -13,7 +13,7 @@ function CartOptions({ cookieEditId, onCartOptionChoice }) {
           onCartOptionChoice("cancel");
         }}
       >
-        Delete Cart Item
+        Delete {cookieType.title}
       </button>
     </>
   );

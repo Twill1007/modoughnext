@@ -52,6 +52,7 @@ function EditCart({ cookieType, cookieEditId, onCartOptionChoice }) {
       <CartOptions
         cookieEditId={cookieEditId}
         onCartOptionChoice={onCartOptionChoice}
+        cookieType={cookieType}
       />
     </>
   );
