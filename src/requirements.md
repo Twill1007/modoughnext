@@ -68,3 +68,7 @@
 - Update Mo's Picture
 - Update Cookie Picture
 - Add link to menu "Shop Cookies"
+
+### Validation of Form
+
+-

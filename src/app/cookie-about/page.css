@@ -1,0 +1,21 @@
+.aboutMoContainer {
+  display: flex;
+}
+
+.aboutMoContent {
+  border: 1px solid black;
+  width: 300px;
+  padding: 25px;
+  margin: 25px 200px;
+  background-color: aqua;
+}
+
+.aboutMoPicture {
+  margin: 25px 200px;
+  height: 500px;
+  min-width: 500px;
+  background-image: url("../../asset/Morgan.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
