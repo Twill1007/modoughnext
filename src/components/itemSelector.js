@@ -7,7 +7,6 @@ import CartItems from "./Utility/CartItems";
 import { calculatePrices } from "./Utility/pricingLogic";
 import { v4 as uuidv4 } from "uuid";
 import "../components/itemSelector.css";
-import sendCartDataToDatabase from "../../server/mongo/cart";
 
 export function generateDropdownOptions(cookieType, discountedPrices) {
   const prices = discountedPrices || [];
@@ -92,12 +91,6 @@ function ItemSelector({ cookieType }) {
       } else {
         addItem(selectedItem);
 
-        try {
-          await sendCartDataToDatabase({ items: [selectedItem] });
-          console.log("Cart data sent to the database successfully");
-        } catch (error) {
-          console.error("Error sending cart data to the database:", error);
-        }
         setSelectedValue("");
       }
     }
