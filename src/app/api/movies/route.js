@@ -1,6 +1,6 @@
-import clientPromise from "../../../lib/db";
+import clientPromise from "@/lib/db";
 
-export default async function handler(req, res) {
+export default async (req, res) => {
   if (req.method === "GET") {
     try {
       const client = await clientPromise;
@@ -18,4 +18,4 @@ export default async function handler(req, res) {
       console.error(e);
     }
   }
-}
+};
