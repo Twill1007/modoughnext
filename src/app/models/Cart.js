@@ -6,9 +6,11 @@ mongoose.Promise = global.Promise;
 
 const cartSchema = new Schema(
   {
+    value: Number,
+    label: String,
+    id: String,
     title: String,
     price: Number,
-    quantity: Number,
     // name: String,
     // address: String,
     // city: String,

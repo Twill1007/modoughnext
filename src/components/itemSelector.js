@@ -79,7 +79,7 @@ function ItemSelector({ cookieType }) {
     removeItemByProductId(productId);
   };
 
-  const handleSubmit = async () => {
+  const handleSubmit = async (e) => {
     if (selectedValue !== "Select" && selectedValue !== "") {
       const itemAlreadyInCart = items.some(
         (item) => item.id === selectedItem.id

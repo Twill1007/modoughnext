@@ -1,16 +1,20 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
+import useCart from "@/hooks/use-cart";
+
 // import { Form } from "react-router-dom";
 import "../../components/orderForm/orderForm.css";
 
 function OrderForm() {
+  const { items } = useCart();
+  const router = useRouter();
   const [domLoaded, setDomLoaded] = useState(false);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     street: "",
     city: "",
-    state: "",
     zipCode: "",
     emailAddress: "",
   });
@@ -23,12 +27,25 @@ function OrderForm() {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const res = await fetch("api/check-out", {
+      method: "POST",
+      body: JSON.stringify({ formData }),
+      "content-type": "application/json",
+    });
+    if (!res.ok) {
+      throw new Error("Form Data Failed");
+    }
+    router.refresh();
+    router.push("/cookie-home");
+    console.log("Here is the formData", formData);
   };
   useEffect(() => {
     setDomLoaded(true);
   });
+
+  console.log(items);
 
   return (
     <>
@@ -57,8 +74,8 @@ function OrderForm() {
             Street Address:
             <input
               type="text"
-              name="streetAddress"
-              value={formData.streetAddress}
+              name="street"
+              value={formData.street}
               onChange={handleChange}
             ></input>
           </label>
@@ -84,12 +101,17 @@ function OrderForm() {
             Email:
             <input
               type="email"
-              name="email"
-              value={formData.email}
+              name="emailAddress"
+              value={formData.emailAddress}
               onChange={handleChange}
             ></input>
           </label>
-          <button className="buttons" style={{ marginTop: "0px", zIndex: "0" }}>
+          <button
+            className="buttons"
+            type="submit"
+            value="Continue With Payment"
+            style={{ marginTop: "0px", zIndex: "0" }}
+          >
             Continue with Payment
           </button>
         </form>
