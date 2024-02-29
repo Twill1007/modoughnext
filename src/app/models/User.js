@@ -4,7 +4,7 @@ mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.Promise = global.Promise;
 
-const formSchema = new Schema(
+const userSchema = new Schema(
   {
     firstName: String,
     lastName: String,
@@ -12,12 +12,19 @@ const formSchema = new Schema(
     city: String,
     zipCode: Number,
     emailAddress: String,
+    id: String,
+    label: String,
+    price: Number,
+    productId: String,
+    title: String,
+    type: String,
+    value: String,
   },
   {
     timestamps: true,
   }
 );
 
-const Form = mongoose.models.Form || mongoose.model("Form", formSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
 
-export default Form;
+export default User;

@@ -1,4 +1,4 @@
-import Cart from "@/app/models/Cart";
+import User from "@/app/models/User";
 import { NextResponse } from "next/server";
 
 //This is the skeleton of the post requests.
@@ -6,8 +6,10 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const cartData = body.cartData;
-    await Cart.create(cartData);
+    const userCartData = body.userCartData;
+    // formData.items = items;
+    await User.create(userCartData);
+    console.log("Server Side", userCartData);
 
     return NextResponse.json({ message: "Cart Filled" }, { status: 201 });
   } catch (error) {

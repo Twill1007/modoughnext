@@ -21,17 +21,22 @@ function OrderForm() {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+
     setFormData({
       ...formData,
       [name]: value,
     });
   };
 
+  const userCartData = { ...formData, items };
+  console.log("userCartData", userCartData);
+  console.log("cart items", items);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch("api/check-out", {
       method: "POST",
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({ userCartData }),
       "content-type": "application/json",
     });
     if (!res.ok) {
@@ -39,13 +44,10 @@ function OrderForm() {
     }
     router.refresh();
     router.push("/cookie-home");
-    console.log("Here is the formData", formData);
   };
   useEffect(() => {
     setDomLoaded(true);
   });
-
-  console.log(items);
 
   return (
     <>
