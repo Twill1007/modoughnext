@@ -18,7 +18,10 @@ function OrderForm() {
     zipCode: "",
     emailAddress: "",
   });
-
+  console.log(
+    "This is an array mixed with strings and numbers, correct?",
+    items
+  );
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -28,20 +31,20 @@ function OrderForm() {
     });
   };
 
-  const userCartData = { ...formData, items };
-  console.log("userCartData", userCartData);
-  console.log("cart items", items);
+  console.log("userCartData", formData);
+  // console.log("cart items", items);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const res = await fetch("api/check-out", {
       method: "POST",
-      body: JSON.stringify({ userCartData }),
+      body: JSON.stringify({ formData }),
       "content-type": "application/json",
     });
     if (!res.ok) {
       throw new Error("Form Data Failed");
     }
+    console.log("State of formData", formData);
     router.refresh();
     router.push("/cookie-home");
   };

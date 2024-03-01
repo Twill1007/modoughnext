@@ -12,19 +12,42 @@ const userSchema = new Schema(
     city: String,
     zipCode: Number,
     emailAddress: String,
-    id: String,
-    label: String,
-    price: Number,
-    productId: String,
-    title: String,
-    type: String,
-    value: String,
+    // cartItems: [String],
   },
   {
     timestamps: true,
   }
 );
 
-const User = mongoose.models.User || mongoose.model("User", userSchema);
+// const userSchema = new Schema({
+//   firstName: String,
+//   lastName: String,
+//   street: String,
+//   city: String,
+//   zipCode: Number,
+//   emailAddress: String,
+// });
 
-export default User;
+// const itemSchema = new Schema({
+//   id: String,
+//   label: String,
+//   price: Number,
+//   productId: String,
+//   title: String,
+//   type: String,
+//   value: String,
+// });
+
+// const cartSchema = new Schema({
+//   items: [itemSchema],
+// });
+
+// const userCartSchema = new Schema({
+//   user: userSchema,
+//   cart: cartSchema,
+// });
+
+const UserCartModel =
+  mongoose.models.User || mongoose.model("User", userSchema);
+
+export default UserCartModel;

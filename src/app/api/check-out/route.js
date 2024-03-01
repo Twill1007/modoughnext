@@ -6,7 +6,7 @@ import { NextResponse } from "next/server";
 export async function POST(req) {
   try {
     const body = await req.json();
-    const userCartData = body.userCartData;
+    const userCartData = body.formData;
     // formData.items = items;
     await User.create(userCartData);
     console.log("Server Side", userCartData);
