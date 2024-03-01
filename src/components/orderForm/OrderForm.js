@@ -31,14 +31,15 @@ function OrderForm() {
     });
   };
 
-  console.log("userCartData", formData);
+  console.log("cart Items", items);
   // console.log("cart items", items);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    const data = { ...formData, items };
     const res = await fetch("api/check-out", {
       method: "POST",
-      body: JSON.stringify({ formData }),
+      body: JSON.stringify({ formData: data }),
       "content-type": "application/json",
     });
     if (!res.ok) {

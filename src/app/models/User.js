@@ -4,6 +4,16 @@ mongoose.connect(process.env.MONGODB_URI);
 
 mongoose.Promise = global.Promise;
 
+const itemSchema = new Schema({
+  id: String,
+  label: String,
+  price: Number,
+  productId: String,
+  title: String,
+  type: String,
+  value: String,
+});
+
 const userSchema = new Schema(
   {
     firstName: String,
@@ -12,6 +22,7 @@ const userSchema = new Schema(
     city: String,
     zipCode: Number,
     emailAddress: String,
+    items: [itemSchema],
     // cartItems: [String],
   },
   {
@@ -47,7 +58,7 @@ const userSchema = new Schema(
 //   cart: cartSchema,
 // });
 
-const UserCartModel =
-  mongoose.models.User || mongoose.model("User", userSchema);
+const User = mongoose.models.User || mongoose.model("User", userSchema);
+// const User = mongoose.models.User || mongoose.model("User", userSchema);
 
-export default UserCartModel;
+export default User;
