@@ -5,9 +5,7 @@ import { DISCOUNT_TABLE } from "@/constants/discount-table";
 function useCookieDough() {
   const getCookieDough = async () => {
     return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(cookieDough);
-      }, 0.0001);
+      resolve(cookieDough);
     });
   };
   const getDiscountedPrice = (dozens, basePrice) => {

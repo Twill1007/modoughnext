@@ -11,21 +11,14 @@ import CookieDescriptionAccordion from "@/components/CookieDesciptionAccord/Cook
 function CookieOrder({ params }) {
   const { getCookieDough } = useCookieDough();
   const [cookieData, setCookieData] = useState([]);
-
-  const items = [
-    { title: "Ingedients", content: "List of dairy free ingredients" },
-    {
-      title: "Baking Instructions",
-      content: "Instructions for baking cookies",
-    },
-    { title: "Reviews", content: "These cookies have not been reviewed." },
-  ];
+  // const [cookieInfo, setCookieInfo] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
       try {
         const cookieDoughData = await getCookieDough();
         setCookieData(cookieDoughData);
+        // setCookieInfo(cookieDoughData);
       } catch (error) {
         console.log("Did not receive data", error);
       }
@@ -36,6 +29,21 @@ function CookieOrder({ params }) {
   const selectedCookie = cookieData.find(
     (cookie) => cookie.id === params.cookieType
   );
+
+  const fetchInstructions = getCookieDough();
+
+  console.log("fetch instructions", fetchInstructions);
+
+  const instruction = cookieData ? cookieData[0]?.instructions : "";
+
+  const items = [
+    { title: "Ingedients", content: "List of dairy free ingredients" },
+    {
+      title: "Baking Instructions",
+      content: instruction,
+    },
+    { title: "Reviews", content: "Feature coming soon!" },
+  ];
 
   return (
     <Fragment>
