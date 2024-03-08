@@ -1,42 +1,38 @@
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
+import { NextResponse } from "next/server";
 
-export default async function POST(req, res) {
+export async function POST(req, res) {
   if (req.method === "POST") {
     try {
-      // Create Checkout Sessions from body params.
       const session = await stripe.checkout.sessions.create({
-        ui_mode: "embedded",
+        // const params = {
+        submit_type: "donate",
+        payment_method_types: ["cards"],
         line_items: [
           {
-            // Provide the exact Price ID (for example, pr_1234) of
-            // the product you want to sell
-            price: "{{PRICE_ID}}",
+            name: "Custom Amount Donations",
+            amount: formatAmountForStripe(amount, CURRENCY),
+            currency: CURRENCY,
             quantity: 1,
           },
         ],
         mode: "payment",
-        return_url: `${req.headers.origin}/return?session_id={CHECKOUT_SESSION_ID}`,
+        success_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${req.headers.origin}/result?session_id={CHECKOUT_SESSION_ID}`,
       });
 
-      res.send({ clientSecret: session.client_secret });
+      NextResponse.redirect(303, session.url);
+      // .status(200)
+      // .json({ url:  });
+      //below is redirect url.
+      // "https://buy.stripe.com/test_3cs4gl47R6NlbvO3cd"
     } catch (err) {
-      res.status(err.statusCode || 500).json(err.message);
-    }
-  } else if (req.method === "GET") {
-    try {
-      const session = await stripe.checkout.sessions.retrieve(
-        req.query.session_id
-      );
-
-      res.send({
-        status: session.status,
-        customer_email: session.customer_details.email,
-      });
-    } catch (err) {
-      res.status(err.statusCode || 500).json(err.message);
+      console.error("Error:", err.message);
+      NextResponse.status(err.statusCode || 500).json(err.message);
     }
   } else {
-    res.setHeader("Allow", req.method);
-    res.status(405).end("Method Not Allowed");
+    NextResponse.setHeader("Allow", "POST");
+    NextResponse.status(405).end("Method Not Allowed");
   }
 }
+// await stripe.checkout.sessions.create(params);

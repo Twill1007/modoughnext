@@ -3,13 +3,6 @@ import { useRouter } from "next/navigation";
 import React, { useState, useEffect } from "react";
 import useCart from "@/hooks/use-cart";
 import "../../components/orderForm/orderForm.css";
-import { loadStripe } from "@stripe/stripe-js";
-
-// Make sure to call `loadStripe` outside of a component’s render to avoid
-// recreating the `Stripe` object on every render.
-const stripePromise = loadStripe(
-  process.env.NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY
-);
 
 function OrderForm() {
   const { items } = useCart();
@@ -23,10 +16,7 @@ function OrderForm() {
     zipCode: "",
     emailAddress: "",
   });
-  console.log(
-    "This is an array mixed with strings and numbers, correct?",
-    items
-  );
+
   const handleChange = (e) => {
     const { name, value } = e.target;
 
@@ -35,9 +25,6 @@ function OrderForm() {
       [name]: value,
     });
   };
-
-  console.log("cart Items", items);
-  // console.log("cart items", items);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
